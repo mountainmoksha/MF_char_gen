@@ -135,6 +135,55 @@ def char_modifiers(character):
 
     mods.append(tech_mod)
 
+    reaction_mod = 'Reaction Adjustment: '
+    retainers_mod = 'Retainers: '
+    morale_mod = 'Retainer Morale: '
+
+    if (character['attributes'])['Charisma'] < 4:
+        reaction_mod = str(reaction_mod + '+2')
+        retainers_mod = str(retainers_mod + '1')
+        morale_mod = str(morale_mod + '4')
+    elif (character['attributes'])['Charisma'] < 6:
+        reaction_mod = str(reaction_mod + '+1')
+        retainers_mod = str(retainers_mod + '2')
+        morale_mod = str(morale_mod + '5')
+    elif (character['attributes'])['Charisma'] < 9:
+        reaction_mod = str(reaction_mod + '+1')
+        retainers_mod = str(retainers_mod + '3')
+        morale_mod = str(morale_mod + '6')
+    elif (character['attributes'])['Charisma'] < 13:
+        reaction_mod = str(reaction_mod + '0')
+        retainers_mod = str(retainers_mod + '4')
+        morale_mod = str(morale_mod + '7')
+    elif (character['attributes'])['Charisma'] < 16:
+        reaction_mod = str(reaction_mod + '-1')
+        retainers_mod = str(retainers_mod + '5')
+        morale_mod = str(morale_mod + '8')
+    elif (character['attributes'])['Charisma'] < 18:
+        reaction_mod = str(reaction_mod + '-1')
+        retainers_mod = str(retainers_mod + '6')
+        morale_mod = str(morale_mod + '9')
+    elif (character['attributes'])['Charisma'] < 19:
+        reaction_mod = str(reaction_mod + '-2')
+        retainers_mod = str(retainers_mod + '7')
+        morale_mod = str(morale_mod + '10')
+    elif (character['attributes'])['Charisma'] < 20:
+        reaction_mod = str(reaction_mod + '-2')
+        retainers_mod = str(retainers_mod + '8')
+        morale_mod = str(morale_mod + '10')
+    elif (character['attributes'])['Charisma'] < 21:
+        reaction_mod = str(reaction_mod + '-3')
+        retainers_mod = str(retainers_mod + '9')
+        morale_mod = str(morale_mod + '11')
+    elif (character['attributes'])['Charisma'] < 22:
+        reaction_mod = str(reaction_mod + '-3')
+        retainers_mod = str(retainers_mod + '10')
+        morale_mod = str(morale_mod + '11')
+
+    mods.append(reaction_mod)
+    mods.append(retainers_mod)
+    mods.append(morale_mod)
+
     character['modifiers'] = mods
 
 
