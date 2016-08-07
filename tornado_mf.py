@@ -20,6 +20,9 @@ class MainHandler(tornado.web.RequestHandler):
         self.write('<font size="2">')
         self.create_nav()
         self.write('</font>')
+        self.write('<font size="2">')
+        self.create_body()
+        self.write('</font>')
         self.write('<footer>Mutant Future</footer></body></html>')
 
     def create_style_sheet(self):
@@ -37,13 +40,8 @@ class MainHandler(tornado.web.RequestHandler):
         self.write('    float:left;')
         self.write('    padding:5px;	      ')
         self.write('}')
-        self.write('procs_list {')
-        self.write('    width:350px;')
-        self.write('    float:left;')
-        self.write('    padding:10px;	 	 ')
-        self.write('}')
-        self.write('files_list {')
-        self.write('    width:350px;')
+        self.write('body_text {')
+        self.write('    width:800px;')
         self.write('    float:left;')
         self.write('    padding:10px;	 	 ')
         self.write('}')
@@ -57,6 +55,14 @@ class MainHandler(tornado.web.RequestHandler):
         self.write('</style>')
 #        self.write('<head><meta http-equiv="refresh" content="3"></head>')
         self.write('<head></head>')
+
+    def create_body(self):
+        """create body section"""
+
+        self.write('<body_text>')
+        self.write("Source Code at https://github.com/exit0/MF_char_gen/")
+        self.write('</body_text>')
+
 
 
     def create_nav(self):
