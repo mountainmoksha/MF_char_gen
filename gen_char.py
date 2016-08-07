@@ -270,6 +270,8 @@ def char(char_type=None):
     character['type'] = char_type
     character['attributes'] = gen_attrs.attrs()
 
+    character['AC'] = 10
+
     char_HP(character)
 
     char_mutations(character)

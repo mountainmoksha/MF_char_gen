@@ -63,11 +63,18 @@ class MainHandler(tornado.web.RequestHandler):
         """create navigation section"""
 
         self.write('<nav>')
+        self.write("<a href=\"/BASIC_ANDROID\">Basic Android</a><br>")
+        self.write("<a href=\"/SYNTHETIC_ANDROID\">Synthetic Android</a><br>")
+        self.write("<a href=\"/REPLICANT\">Replicant</a><br>")
+        self.write("<a href=\"/MUTANT_HUMAN\">Mutant Human</a><br>")
+        self.write("<a href=\"/MUTANT_ANIMAL\">Mutant Animal</a><br>")
+        self.write("<a href=\"/MUTANT_PLANT\">Mutant Plant</a><br>")
         self.write("<a href=\"/PURE_HUMAN\">Pure Human</a><br>")
+        self.write("<a href=\"/RANDOM\">Random</a><br>")
         self.write('</nav>')
 
 
-class PureHumanHandler(tornado.web.RequestHandler):
+class CharacterHandler(tornado.web.RequestHandler):
     """Handler Purely for Humans"""
 
     def data_received(self, chunk):
@@ -76,15 +83,57 @@ class PureHumanHandler(tornado.web.RequestHandler):
     def get(self):
         """respond to HTTP get method"""
 
-        character = gen_char.char('Pure Human')
+        if self.request.uri == '/BASIC_ANDROID':
+            character = gen_char.char('Basic Android')
+        elif self.request.uri == '/SYNTHETIC_ANDROID':
+            character = gen_char.char('Synthetic Android')
+        elif self.request.uri == '/REPLICANT':
+            character = gen_char.char('Replicant')
+        elif self.request.uri == '/MUTANT_HUMAN':
+            character = gen_char.char('Mutant Human')
+        elif self.request.uri == '/MUTANT_ANIMAL':
+            character = gen_char.char('Mutant Animal')
+        elif self.request.uri == '/MUTANT_PLANT':
+            character = gen_char.char('Mutant Plant')
+        elif self.request.uri == '/PURE_HUMAN':
+            character = gen_char.char('Pure Human')
+        else: # random
+            character = gen_char.char()
 
-        self.write('Name:<br>')
+        self.write('<b>Name:</b><br>')
         self.write('<br>')
-        self.write('Type: ' + character['type'] + '<br>')
+        self.write('<b>Type: </b>' + character['type'] + '<br>')
         self.write('<br>')
         for attribute in character['attributes']:
-            self.write(attribute + ':' + str((character['attributes'])[attribute]) + '<br>')
+            self.write('<b>' + attribute + ' : </b>' +
+                       str((character['attributes'])[attribute]) + '<br>')
         self.write('<br>')
+        self.write('<b>AC: </b>' + str(character['AC']) + '<br>')
+        self.write('<br>')
+        self.write('<b>HP: </b>' + str(character['HP']) + '<br>')
+        self.write('<br>')
+        self.write('<b>Physical Mutations:</b><br>')
+        self.write('<br>')
+        for mutation in character['physical']:
+            self.write(mutation + '<br>')
+        self.write('<br>')
+        self.write('<b>Mental Mutations:</b><br>')
+        self.write('<br>')
+        for mutation in character['mental']:
+            self.write(mutation + '<br>')
+        self.write('<br>')
+        self.write('<b>Plant Mutations:</b><br>')
+        self.write('<br>')
+        for mutation in character['plant']:
+            self.write(mutation + '<br>')
+        self.write('<br>')
+        self.write('<b>Modifiers:</b><br>')
+        self.write('<br>')
+        for modifier in character['modifiers']:
+            self.write(modifier + '<br>')
+        self.write('<br>')
+        self.write('<a href="/">Back</a> ')
+
 
 
 def make_app():
@@ -92,7 +141,14 @@ def make_app():
 
     return tornado.web.Application([
         (r"/", MainHandler),
-        (r"/PURE_HUMAN", PureHumanHandler),
+        (r"/BASIC_ANDROID", CharacterHandler),
+        (r"/SYNTHETIC_ANDROID", CharacterHandler),
+        (r"/REPLICANT", CharacterHandler),
+        (r"/MUTANT_HUMAN", CharacterHandler),
+        (r"/MUTANT_ANIMAL", CharacterHandler),
+        (r"/MUTANT_PLANT", CharacterHandler),
+        (r"/PURE_HUMAN", CharacterHandler),
+        (r"/RANDOM", CharacterHandler),
     ])
 
 
