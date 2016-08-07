@@ -274,6 +274,10 @@ def char(char_type=None):
 
     char_HP(character)
 
+    character['GP'] = (random.randrange(1, 9) +
+                       random.randrange(1, 9) +
+                       random.randrange(1, 9)) * 10
+
     char_mutations(character)
 
     char_modifiers(character)

@@ -112,6 +112,8 @@ class CharacterHandler(tornado.web.RequestHandler):
         self.write('<br>')
         self.write('<b>HP: </b>' + str(character['HP']) + '<br>')
         self.write('<br>')
+        self.write('<b>GP: </b>' + str(character['GP']) + '<br>')
+        self.write('<br>')
         self.write('<b>Physical Mutations:</b><br>')
         self.write('<br>')
         for mutation in character['physical']:
