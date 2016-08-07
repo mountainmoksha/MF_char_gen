@@ -76,9 +76,15 @@ class PureHumanHandler(tornado.web.RequestHandler):
     def get(self):
         """respond to HTTP get method"""
 
-        gen_char.char('Pure Human')
+        character = gen_char.char('Pure Human')
 
-        self.write('hello whirled')
+        self.write('Name:<br>')
+        self.write('<br>')
+        self.write('Type: ' + character['type'] + '<br>')
+        self.write('<br>')
+        for attribute in character['attributes']:
+            self.write(attribute + ':' + str((character['attributes'])[attribute]) + '<br>')
+        self.write('<br>')
 
 
 def make_app():
