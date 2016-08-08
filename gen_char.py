@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
+"""main module: Mutant Future low-level char gen"""
 
 import random
 import read_muts
 import gen_attrs
 
 def char_modifiers(character):
+    """assign modifiers given a set of character attributes"""
 
     mods = []
 
@@ -188,10 +190,11 @@ def char_modifiers(character):
 
 
 def char_mutations(character):
+    """assign physical, mental and plant mutations"""
 
     # Gen Mutations variably by class
     if ((character['type'] == 'Mutant Human') or
-        (character['type'] == 'Mutant Animal')):
+            (character['type'] == 'Mutant Animal')):
         character['physical'] = read_muts.muts('physical')
         character['mental'] = read_muts.muts('mental')
         character['plant'] = ['']
@@ -221,18 +224,19 @@ def char_mutations(character):
         character['physical'] = ['Pick any combination of 3 beneficial ' +
                                  'mental and/or physical mutations']
         character['mental'] = ['Pick any combination of 3 beneficial ' +
-                                 'mental and/or physical mutations']
+                               'mental and/or physical mutations']
         character['plant'] = ['']
 
 
-def char_HP(character):
+def char_hit_points(character):
+    """obtain character hit points by class"""
 
     # Gen HP by class
     hit_points = 0
     if character['type'] == 'Pure Human':
         for _ in range((character['attributes'])['Constitution']):
             hit_points = hit_points + random.randrange(1, 9)
-        character['HP'] = hit_points 
+        character['HP'] = hit_points
 
     elif character['type'] == 'Mutant Human':
         for _ in range((character['attributes'])['Constitution']):
@@ -242,18 +246,19 @@ def char_HP(character):
     elif character['type'] == 'Mutant Animal':
         for _ in range((character['attributes'])['Constitution']):
             hit_points = hit_points + random.randrange(1, 7)
-        character['HP'] = hit_points 
+        character['HP'] = hit_points
 
     elif character['type'] == 'Mutant Plant':
         for _ in range((character['attributes'])['Constitution']):
             hit_points = hit_points + random.randrange(1, 7)
-        character['HP'] = hit_points 
+        character['HP'] = hit_points
 
     else: # androids
         character['HP'] = 50
 
 
 def char(char_type=None):
+    """obtain fully-populated character"""
 
     with open('MF_classes.txt', 'r') as classes_file:
         types = classes_file.read().splitlines()
@@ -272,7 +277,7 @@ def char(char_type=None):
 
     character['AC'] = 10
 
-    char_HP(character)
+    char_hit_points(character)
 
     character['GP'] = (random.randrange(1, 9) +
                        random.randrange(1, 9) +
@@ -286,5 +291,5 @@ def char(char_type=None):
 
 if __name__ == '__main__':
 
-    character = char()
-    print(character)
+    CHARACTER = char()
+    print(CHARACTER)
