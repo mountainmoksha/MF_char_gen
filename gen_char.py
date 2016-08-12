@@ -284,7 +284,8 @@ def char(char_type=None):
     character['type'] = char_type
     character['attributes'] = gen_attrs.attrs()
 
-    character['AC'] = 10
+    # Base unarmored AC
+    character['AC'] = 9
 
     char_hit_points(character)
 
