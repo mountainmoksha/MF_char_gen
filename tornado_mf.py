@@ -15,6 +15,7 @@ class MainHandler(tornado.web.RequestHandler):
 
         self.write('<html><head><style>')
         self.create_style_sheet()
+        self.write('<title>Mutant Future Character Generator</title>')
         self.write('</style></head><body>')
         self.write('<header><h1>Mutant Future Character Generator</h1></header>')
         self.write('<font size="2">')
@@ -53,14 +54,29 @@ class MainHandler(tornado.web.RequestHandler):
         self.write('    padding:5px;	 	 ')
         self.write('}')
         self.write('</style>')
-#        self.write('<head><meta http-equiv="refresh" content="3"></head>')
         self.write('<head></head>')
 
     def create_body(self):
         """create body section"""
 
         self.write('<body_text>')
-        self.write("Source Code at https://github.com/exit0/MF_char_gen/")
+        self.write('Mutant Future was created by ' +
+                   '<a href=\"http://www.goblinoidgames.com/\">' +
+                   'Goblinoid Games<a> ' +
+                   'who kindly granted permission to use their pdf character sheets<br>')
+        self.write('<br>')
+        self.write('This character generator is ' +
+                   '<a href=\"http://www.gnu.org/copyleft/gpl.html\">' +
+                   'free software<a><br>')
+        self.write('It was created by ' +
+                   '<a href=\"https://amutatedpumanamedgrrr.wordpress.com/\">' +
+                   'A Mutated Puma Named Grrr<a><br>')
+        self.write('Check out the source Code at ' +
+                   '<a href=\"https://github.com/exit0/MF_char_gen/\">' +
+                   'https://github.com/exit0/MF_char_gen/<a><br>')
+        self.write('Please submit bugs and feature requests at ' +
+                   '<a href=\"https://github.com/exit0/MF_char_gen/issues/\">' +
+                   'https://github.com/exit0/MF_char_gen/issues/<a><br>')
         self.write('</body_text>')
 
 
