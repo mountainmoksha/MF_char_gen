@@ -85,14 +85,30 @@ class MainHandler(tornado.web.RequestHandler):
         """create navigation section"""
 
         self.write('<nav>')
-        self.write("<a href=\"/BASIC_ANDROID\">Basic Android</a><br>")
-        self.write("<a href=\"/SYNTHETIC_ANDROID\">Synthetic Android</a><br>")
-        self.write("<a href=\"/REPLICANT\">Replicant</a><br>")
-        self.write("<a href=\"/MUTANT_HUMAN\">Mutant Human</a><br>")
-        self.write("<a href=\"/MUTANT_ANIMAL\">Mutant Animal</a><br>")
-        self.write("<a href=\"/MUTANT_PLANT\">Mutant Plant</a><br>")
-        self.write("<a href=\"/PURE_HUMAN\">Pure Human</a><br>")
-        self.write("<a href=\"/RANDOM\">Random</a><br>")
+
+        self.write('<b>Class:</b><br>')
+        self.write('<form>')
+        self.write('<select id="class_select">')
+        self.write('<option value="BASIC_ANDROID">Basic Android</option>')
+        self.write('<option value="SYNTHETIC_ANDROID">Synthetic Android</option>')
+        self.write('<option value="REPLICANT">Replicant</option>')
+        self.write('<option value="MUTANT_HUMAN">Mutant Human</option>')
+        self.write('<option value="MUTANT_ANIMAL">Mutant Animal</option>')
+        self.write('<option value="MUTANT_PLANT">Mutant Plant</option>')
+        self.write('<option value="PURE_HUMAN">Pure Human</option>')
+        self.write('<option value="RANDOM">Random</option>')
+        self.write('</select><br>')
+        self.write('<input type="checkbox" id="sub" value="sub_spec" />' +
+                   'Assign sub-species for animals and plants<br>')
+        self.write('<button type="button" onclick="generate_character()">Generate</button><br>')
+        self.write('</form>')
+
+        self.write('<script>')
+        self.write('function generate_character() {')
+        self.write('     window.location = document.getElementById("class_select").value + "?" + document.getElementById("sub").value + "=" + document.getElementById("sub").checked;')
+        self.write('}')
+        self.write('</script>')
+
         self.write('</nav>')
 
 
