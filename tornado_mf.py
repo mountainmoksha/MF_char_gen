@@ -105,7 +105,9 @@ class MainHandler(tornado.web.RequestHandler):
 
         self.write('<script>')
         self.write('function generate_character() {')
-        self.write('     window.location = document.getElementById("class_select").value + "?" + document.getElementById("sub").value + "=" + document.getElementById("sub").checked;')
+        self.write('     window.location = document.getElementById("class_select").value ' +
+                   '+ "?" + document.getElementById("sub").value + "=" + ' +
+                   'document.getElementById("sub").checked;')
         self.write('}')
         self.write('</script>')
 
@@ -120,6 +122,17 @@ class CharacterHandler(tornado.web.RequestHandler):
 
     def get(self):
         """respond to HTTP get method"""
+
+        sub_spec = False
+
+        for section in self.request.uri.split('?'):
+            this_section = section.split('=')
+            if len(this_section) == 1:
+                pass # server name, first arg
+            else:
+                if this_section[0] == 'sub_spec':
+                    if section.split('=')[1] == 'true':
+                        sub_spec = True
 
         if self.request.uri == '/BASIC_ANDROID':
             character = gen_char.char('Basic Android')
