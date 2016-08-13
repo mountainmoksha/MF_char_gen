@@ -266,7 +266,7 @@ def char_hit_points(character):
         character['HP'] = 50
 
 
-def char(char_type=None):
+def char(char_type=None, sub_type=False):
     """obtain fully-populated character"""
 
     with open('MF_classes.txt', 'r') as classes_file:
@@ -283,6 +283,19 @@ def char(char_type=None):
     character = {}
     character['type'] = char_type
     character['attributes'] = gen_attrs.attrs()
+
+    # optional sub-species for plants and animals
+    if sub_type:
+
+        if character['type'] == 'Mutant Animal':
+            with open('MF_animals.txt', 'r') as animals_file:
+                animals = animals_file.read().splitlines()
+            character['sub_type'] = animals[random.randrange(len(animals))]
+
+        if character['type'] == 'Mutant Plant':
+            with open('MF_plants.txt', 'r') as plants_file:
+                plants = plants_file.read().splitlines()
+            character['sub_type'] = plants[random.randrange(len(plants))]
 
     # Base unarmored AC
     character['AC'] = 9

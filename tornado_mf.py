@@ -128,32 +128,35 @@ class CharacterHandler(tornado.web.RequestHandler):
         for section in self.request.uri.split('?'):
             this_section = section.split('=')
             if len(this_section) == 1:
-                pass # server name, first arg
+                base_url = this_section[0]
             else:
                 if this_section[0] == 'sub_spec':
                     if section.split('=')[1] == 'true':
                         sub_spec = True
 
-        if self.request.uri == '/BASIC_ANDROID':
+        if base_url == '/BASIC_ANDROID':
             character = gen_char.char('Basic Android')
-        elif self.request.uri == '/SYNTHETIC_ANDROID':
+        elif base_url == '/SYNTHETIC_ANDROID':
             character = gen_char.char('Synthetic Android')
-        elif self.request.uri == '/REPLICANT':
+        elif base_url == '/REPLICANT':
             character = gen_char.char('Replicant')
-        elif self.request.uri == '/MUTANT_HUMAN':
+        elif base_url == '/MUTANT_HUMAN':
             character = gen_char.char('Mutant Human')
-        elif self.request.uri == '/MUTANT_ANIMAL':
-            character = gen_char.char('Mutant Animal')
-        elif self.request.uri == '/MUTANT_PLANT':
-            character = gen_char.char('Mutant Plant')
-        elif self.request.uri == '/PURE_HUMAN':
+        elif base_url == '/MUTANT_ANIMAL':
+            character = gen_char.char('Mutant Animal', sub_spec)
+        elif base_url == '/MUTANT_PLANT':
+            character = gen_char.char('Mutant Plant', sub_spec)
+        elif base_url == '/PURE_HUMAN':
             character = gen_char.char('Pure Human')
         else: # random
             character = gen_char.char()
 
         self.write('<b>Name:</b><br>')
         self.write('<br>')
-        self.write('<b>Type: </b>' + character['type'] + '<br>')
+        self.write('<b>Type: </b>' + character['type'])
+        if 'sub_type' in character:
+            self.write(' (' + character['sub_type'] +')')
+        self.write('<br>')
         self.write('<br>')
         for attribute in character['attributes']:
             self.write('<b>' + attribute + ' : </b>' +
