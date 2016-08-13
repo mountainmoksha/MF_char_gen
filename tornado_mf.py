@@ -98,7 +98,7 @@ class MainHandler(tornado.web.RequestHandler):
         self.write('<option value="PURE_HUMAN">Pure Human</option>')
         self.write('<option value="RANDOM">Random</option>')
         self.write('</select><br>')
-        self.write('<input type="checkbox" id="sub" value="sub_spec" />' +
+        self.write('<input type="checkbox" id="sub" value="sub_spec" checked="checked"/>' +
                    'Assign sub-species for animals and plants<br>')
         self.write('<button type="button" onclick="generate_character()">Generate</button><br>')
         self.write('</form>')
@@ -149,7 +149,7 @@ class CharacterHandler(tornado.web.RequestHandler):
         elif base_url == '/PURE_HUMAN':
             character = gen_char.char('Pure Human')
         else: # random
-            character = gen_char.char()
+            character = gen_char.char(None, sub_spec)
 
         self.write('<b>Name:</b><br>')
         self.write('<br>')
