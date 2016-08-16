@@ -270,8 +270,8 @@ def char_name(character):
     """I suspect this will be a little controversal with
        people.  It's a completely randomized naming system"""
 
-    consonants = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-                  'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm',
+                  'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
 
     vowels = ['a', 'e', 'i', 'o', 'u']
 
@@ -385,5 +385,5 @@ def char(char_type=None, sub_type=False, gen_name=False):
 
 if __name__ == '__main__':
 
-    CHARACTER = char()
+    CHARACTER = char(None, True, True)
     print(CHARACTER)
