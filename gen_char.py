@@ -267,6 +267,8 @@ def char_hit_points(character):
 
 
 def char_name(character):
+    """I suspect this will be a little controversal with
+       people.  It's a completely randomized naming system"""
 
     consonants = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
                   'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -293,6 +295,21 @@ def char_name(character):
         character_name = character_name + ' '
 
         # last name:
+        for letter_idx in range(random.randrange(5, 9)):
+            if letter_idx % 2 == 0:
+                letter = consonants[random.randrange(len(consonants))]
+            else:
+                letter = vowels[random.randrange(len(vowels))]
+
+            if letter_idx == 0:
+                character_name = character_name + letter.upper()
+            else:
+                character_name = character_name + letter.lower()
+
+    elif ((character['type'] == 'Mutant Animal') or
+            (character['type'] == 'Mutant Plant')):
+
+        # one name, but longer
         for letter_idx in range(random.randrange(5, 10)):
             if letter_idx % 2 == 0:
                 letter = consonants[random.randrange(len(consonants))]
@@ -304,26 +321,16 @@ def char_name(character):
             else:
                 character_name = character_name + letter.lower()
 
+    else: # all androids
 
-        print(character_name)
+        character_name = consonants[random.randrange(len(consonants))].upper() + '-'
 
-#    elif character['type'] == 'Mutant Human':
-#        for _ in range((character['attributes'])['Constitution']):
-#            hit_points = hit_points + random.randrange(1, 7)
-#        character['HP'] = hit_points
-#
-#    elif character['type'] == 'Mutant Animal':
-#        for _ in range((character['attributes'])['Constitution']):
-#            hit_points = hit_points + random.randrange(1, 7)
-#        character['HP'] = hit_points
-#
-#    elif character['type'] == 'Mutant Plant':
-#        for _ in range((character['attributes'])['Constitution']):
-#            hit_points = hit_points + random.randrange(1, 7)
-#        character['HP'] = hit_points
-#
-#    else: # androids
-#        character['HP'] = 50
+        for _ in range(5):
+
+            character_name = character_name + str(random.randrange(10))
+
+        character_name = character_name + '-' + vowels[random.randrange(len(vowels))].upper()
+
 
     return character_name
 
