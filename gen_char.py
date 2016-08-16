@@ -281,7 +281,7 @@ def char_name(character):
         (character['type'] == 'Mutant Human')):
 
         # first name:
-        for letter_idx in range(random.randrange(5, 8)):
+        for letter_idx in range(random.randrange(3, 6)):
             if letter_idx % 2 == 0:
                 letter = consonants[random.randrange(len(consonants))]
             else:
@@ -295,7 +295,7 @@ def char_name(character):
         character_name = character_name + ' '
 
         # last name:
-        for letter_idx in range(random.randrange(5, 9)):
+        for letter_idx in range(random.randrange(4, 8)):
             if letter_idx % 2 == 0:
                 letter = consonants[random.randrange(len(consonants))]
             else:
@@ -310,7 +310,7 @@ def char_name(character):
             (character['type'] == 'Mutant Plant')):
 
         # one name, but longer
-        for letter_idx in range(random.randrange(5, 10)):
+        for letter_idx in range(random.randrange(5, 8)):
             if letter_idx % 2 == 0:
                 letter = consonants[random.randrange(len(consonants))]
             else:
