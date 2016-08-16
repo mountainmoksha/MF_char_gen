@@ -63,13 +63,17 @@ class ScreenFormatter():
         ret_str = ret_str + '</select><br>'
         ret_str = ret_str + '<input type="checkbox" id="sub" value="sub_spec" checked="checked"/>'
         ret_str = ret_str + 'Assign sub-species for animals and plants<br>'
+        ret_str = ret_str + '<input type="checkbox" id="name" value="assign_name" checked="checked"/>'
+        ret_str = ret_str + 'Assign randomized name<br>'
         ret_str = ret_str + '<button type="button" onclick="generate_character()">Generate</button><br>'
         ret_str = ret_str + '</form>'
         ret_str = ret_str + '<script>'
         ret_str = ret_str + 'function generate_character() {'
         ret_str = ret_str + '     window.location = document.getElementById("class_select").value '
         ret_str = ret_str + '+ "?" + document.getElementById("sub").value + "=" + '
-        ret_str = ret_str + 'document.getElementById("sub").checked;'
+        ret_str = ret_str + 'document.getElementById("sub").checked'
+        ret_str = ret_str + '+ "?" + document.getElementById("name").value'
+        ret_str = ret_str + '+ "=" + document.getElementById("name").checked;'
         ret_str = ret_str + '}'
         ret_str = ret_str + '</script>'
         ret_str = ret_str + '<a href="/">Home</a>'
@@ -167,6 +171,7 @@ class CharacterHandler(tornado.web.RequestHandler):
     def create_body(self):
 
         sub_spec = False
+        assign_name = False
 
         for section in self.request.uri.split('?'):
             this_section = section.split('=')
@@ -176,25 +181,31 @@ class CharacterHandler(tornado.web.RequestHandler):
                 if this_section[0] == 'sub_spec':
                     if section.split('=')[1] == 'true':
                         sub_spec = True
+                if this_section[0] == 'assign_name':
+                    if section.split('=')[1] == 'true':
+                        assign_name = True
 
         if base_url == '/BASIC_ANDROID':
-            character = gen_char.char('Basic Android')
+            character = gen_char.char('Basic Android', sub_spec, assign_name)
         elif base_url == '/SYNTHETIC_ANDROID':
-            character = gen_char.char('Synthetic Android')
+            character = gen_char.char('Synthetic Android', sub_spec, assign_name)
         elif base_url == '/REPLICANT':
-            character = gen_char.char('Replicant')
+            character = gen_char.char('Replicant', sub_spec, assign_name)
         elif base_url == '/MUTANT_HUMAN':
-            character = gen_char.char('Mutant Human')
+            character = gen_char.char('Mutant Human', sub_spec, assign_name)
         elif base_url == '/MUTANT_ANIMAL':
-            character = gen_char.char('Mutant Animal', sub_spec)
+            character = gen_char.char('Mutant Animal', sub_spec, assign_name)
         elif base_url == '/MUTANT_PLANT':
-            character = gen_char.char('Mutant Plant', sub_spec)
+            character = gen_char.char('Mutant Plant', sub_spec, assign_name)
         elif base_url == '/PURE_HUMAN':
-            character = gen_char.char('Pure Human')
+            character = gen_char.char('Pure Human', sub_spec, assign_name)
         else: # random
-            character = gen_char.char(None, sub_spec)
+            character = gen_char.char(None, sub_spec, assign_name)
 
-        self.write('<b>Name:</b><br>')
+        if 'name' in character:
+            self.write('<b>Name: </b>' + character['name'] + '<br>')
+        else:
+            self.write('<b>Name:</b><br>')
         self.write('<br>')
         self.write('<b>Type: </b>' + character['type'])
         if 'sub_type' in character:
