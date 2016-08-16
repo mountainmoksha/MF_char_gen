@@ -266,7 +266,69 @@ def char_hit_points(character):
         character['HP'] = 50
 
 
-def char(char_type=None, sub_type=False):
+def char_name(character):
+
+    consonants = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+                  'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+    vowels = ['a', 'e', 'i', 'o', 'u']
+
+    character_name = ''
+
+    if ((character['type'] == 'Pure Human') or
+        (character['type'] == 'Mutant Human')):
+
+        # first name:
+        for letter_idx in range(random.randrange(5, 8)):
+            if letter_idx % 2 == 0:
+                letter = consonants[random.randrange(len(consonants))]
+            else:
+                letter = vowels[random.randrange(len(vowels))]
+
+            if letter_idx == 0:
+                character_name = character_name + letter.upper()
+            else:
+                character_name = character_name + letter.lower()
+
+        character_name = character_name + ' '
+
+        # last name:
+        for letter_idx in range(random.randrange(5, 10)):
+            if letter_idx % 2 == 0:
+                letter = consonants[random.randrange(len(consonants))]
+            else:
+                letter = vowels[random.randrange(len(vowels))]
+
+            if letter_idx == 0:
+                character_name = character_name + letter.upper()
+            else:
+                character_name = character_name + letter.lower()
+
+
+        print(character_name)
+
+#    elif character['type'] == 'Mutant Human':
+#        for _ in range((character['attributes'])['Constitution']):
+#            hit_points = hit_points + random.randrange(1, 7)
+#        character['HP'] = hit_points
+#
+#    elif character['type'] == 'Mutant Animal':
+#        for _ in range((character['attributes'])['Constitution']):
+#            hit_points = hit_points + random.randrange(1, 7)
+#        character['HP'] = hit_points
+#
+#    elif character['type'] == 'Mutant Plant':
+#        for _ in range((character['attributes'])['Constitution']):
+#            hit_points = hit_points + random.randrange(1, 7)
+#        character['HP'] = hit_points
+#
+#    else: # androids
+#        character['HP'] = 50
+
+    return character_name
+
+
+def char(char_type=None, sub_type=False, gen_name=False):
     """obtain fully-populated character"""
 
     with open('MF_classes.txt', 'r') as classes_file:
@@ -282,6 +344,8 @@ def char(char_type=None, sub_type=False):
     # Gen basics of all characters
     character = {}
     character['type'] = char_type
+    if gen_name:
+        character['name'] = char_name(character)
     character['attributes'] = gen_attrs.attrs()
 
     # optional sub-species for plants and animals
