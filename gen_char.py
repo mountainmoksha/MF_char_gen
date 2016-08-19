@@ -335,13 +335,20 @@ def char_name(character):
     return character_name
 
 
-def char(char_type=None, sub_type=False, gen_name=False):
+def char(char_type=None, sub_type=True, gen_name=True, rand_synth=False, rand_repl=False):
     """obtain fully-populated character"""
 
     with open('MF_classes.txt', 'r') as classes_file:
         types = classes_file.read().splitlines()
 
     if char_type is None:
+
+        if not rand_synth:
+            types.remove('Synthetic Android')
+
+        if not rand_repl:
+            types.remove('Replicant')
+
         char_type = types[random.randrange(len(types))]
 
     if char_type not in types:
@@ -385,5 +392,5 @@ def char(char_type=None, sub_type=False, gen_name=False):
 
 if __name__ == '__main__':
 
-    CHARACTER = char(None, True, True)
+    CHARACTER = char(None, True, True, False, False)
     print(CHARACTER)

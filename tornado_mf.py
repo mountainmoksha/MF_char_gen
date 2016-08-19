@@ -56,19 +56,23 @@ class ScreenFormatter():
         ret_str = ret_str + '<b>Class:</b><br>'
         ret_str = ret_str + '<form>'
         ret_str = ret_str + '<select id="class_select">'
+        ret_str = ret_str + '<option value="RANDOM">Random</option>'
         ret_str = ret_str + '<option value="BASIC_ANDROID">Basic Android</option>'
-        ret_str = ret_str + '<option value="SYNTHETIC_ANDROID">Synthetic Android</option>'
-        ret_str = ret_str + '<option value="REPLICANT">Replicant</option>'
         ret_str = ret_str + '<option value="MUTANT_HUMAN">Mutant Human</option>'
         ret_str = ret_str + '<option value="MUTANT_ANIMAL">Mutant Animal</option>'
         ret_str = ret_str + '<option value="MUTANT_PLANT">Mutant Plant</option>'
         ret_str = ret_str + '<option value="PURE_HUMAN">Pure Human</option>'
-        ret_str = ret_str + '<option value="RANDOM">Random</option>'
+        ret_str = ret_str + '<option value="SYNTHETIC_ANDROID">Synthetic Android</option>'
+        ret_str = ret_str + '<option value="REPLICANT">Replicant</option>'
         ret_str = ret_str + '</select><br>'
         ret_str = ret_str + '<input type="checkbox" id="sub" value="sub_spec" checked="checked"/>'
         ret_str = ret_str + 'Assign sub-species for animals and plants<br>'
         ret_str = ret_str + '<input type="checkbox" id="name" value="assign_name" checked="checked"/>'
         ret_str = ret_str + 'Assign randomized name<br>'
+        ret_str = ret_str + '<input type="checkbox" id="synth" value="rand_synth"/>'
+        ret_str = ret_str + 'Include synthetic androids in randomized results<br>'
+        ret_str = ret_str + '<input type="checkbox" id="repl" value="rand_repl"/>'
+        ret_str = ret_str + 'Include replicants in randomized results<br>'
         ret_str = ret_str + '<button type="button" onclick="generate_character()">Generate</button><br>'
         ret_str = ret_str + '</form>'
         ret_str = ret_str + '<script>'
@@ -76,6 +80,10 @@ class ScreenFormatter():
         ret_str = ret_str + '     window.location = document.getElementById("class_select").value '
         ret_str = ret_str + '+ "?" + document.getElementById("sub").value + "=" + '
         ret_str = ret_str + 'document.getElementById("sub").checked'
+        ret_str = ret_str + '+ "?" + document.getElementById("synth").value'
+        ret_str = ret_str + '+ "=" + document.getElementById("synth").checked'
+        ret_str = ret_str + '+ "?" + document.getElementById("repl").value'
+        ret_str = ret_str + '+ "=" + document.getElementById("repl").checked'
         ret_str = ret_str + '+ "?" + document.getElementById("name").value'
         ret_str = ret_str + '+ "=" + document.getElementById("name").checked;'
         ret_str = ret_str + '}'
@@ -176,18 +184,27 @@ class CharacterHandler(tornado.web.RequestHandler):
 
         sub_spec = False
         assign_name = False
+        rand_synth = False
+        rand_repl = False
 
         for section in self.request.uri.split('?'):
             this_section = section.split('=')
             if len(this_section) == 1:
                 base_url = this_section[0]
             else:
+                print(this_section[0])
                 if this_section[0] == 'sub_spec':
                     if section.split('=')[1] == 'true':
                         sub_spec = True
                 if this_section[0] == 'assign_name':
                     if section.split('=')[1] == 'true':
                         assign_name = True
+                if this_section[0] == 'rand_synth':
+                    if section.split('=')[1] == 'true':
+                        rand_synth = True
+                if this_section[0] == 'rand_repl':
+                    if section.split('=')[1] == 'true':
+                        rand_repl = True
 
         if base_url == '/BASIC_ANDROID':
             character = gen_char.char('Basic Android', sub_spec, assign_name)
@@ -204,7 +221,7 @@ class CharacterHandler(tornado.web.RequestHandler):
         elif base_url == '/PURE_HUMAN':
             character = gen_char.char('Pure Human', sub_spec, assign_name)
         else: # random
-            character = gen_char.char(None, sub_spec, assign_name)
+            character = gen_char.char(None, sub_spec, assign_name, rand_synth, rand_repl)
 
         if 'name' in character:
             self.write('<b>Name: </b>' + character['name'] + '<br>')
