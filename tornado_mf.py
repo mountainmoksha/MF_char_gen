@@ -10,7 +10,10 @@ class ScreenFormatter():
     def create_style_sheet(self):
         """create style sheet for page"""
 
-        ret_str = '<html><head><style>'
+        ret_str = '<html><head>'
+        ret_str = ret_str + '<meta name="keywords" content="Mutant Future Character Generator,'
+        ret_str = ret_str + 'Mutant Future, Goblinoid Games, Labyrinth Lord">'
+        ret_str = ret_str + '<style>'
         ret_str = ret_str + 'header {'
         ret_str = ret_str + '    background-color:blue;'
         ret_str = ret_str + '    color:white;'
