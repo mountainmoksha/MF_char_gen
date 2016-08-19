@@ -192,7 +192,6 @@ class CharacterHandler(tornado.web.RequestHandler):
             if len(this_section) == 1:
                 base_url = this_section[0]
             else:
-                print(this_section[0])
                 if this_section[0] == 'sub_spec':
                     if section.split('=')[1] == 'true':
                         sub_spec = True
