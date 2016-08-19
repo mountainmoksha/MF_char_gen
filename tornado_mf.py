@@ -53,9 +53,9 @@ class ScreenFormatter():
         """create navigation section"""
 
         ret_str = '<nav>'
+        ret_str = ret_str + '<form>'
         ret_str = ret_str + '<b>Create a character</b><br>'
         ret_str = ret_str + '<b>Class:</b><br>'
-        ret_str = ret_str + '<form>'
         ret_str = ret_str + '<select id="class_select">'
         ret_str = ret_str + '<option value="RANDOM">Random</option>'
         ret_str = ret_str + '<option value="BASIC_ANDROID">Basic Android</option>'
@@ -65,6 +65,20 @@ class ScreenFormatter():
         ret_str = ret_str + '<option value="PURE_HUMAN">Pure Human</option>'
         ret_str = ret_str + '<option value="SYNTHETIC_ANDROID">Synthetic Android</option>'
         ret_str = ret_str + '<option value="REPLICANT">Replicant</option>'
+        ret_str = ret_str + '</select><br>'
+        ret_str = ret_str + '<b>Level:</b><br>'
+        ret_str = ret_str + '<select id="level_select">'
+        ret_str = ret_str + '<option value=1>1</option>'
+        ret_str = ret_str + '<option value=2>2</option>'
+        ret_str = ret_str + '<option value=3>3</option>'
+        ret_str = ret_str + '<option value=4>4</option>'
+        ret_str = ret_str + '<option value=5>5</option>'
+        ret_str = ret_str + '<option value=6>6</option>'
+        ret_str = ret_str + '<option value=7>7</option>'
+        ret_str = ret_str + '<option value=8>8</option>'
+        ret_str = ret_str + '<option value=9>9</option>'
+        ret_str = ret_str + '<option value=10>10</option>'
+        ret_str = ret_str + '<option value="Random">Random</option>'
         ret_str = ret_str + '</select><br>'
         ret_str = ret_str + '<input type="checkbox" id="sub" value="sub_spec" checked="checked"/>'
         ret_str = ret_str + 'Assign sub-species for animals and plants<br>'
@@ -81,6 +95,8 @@ class ScreenFormatter():
         ret_str = ret_str + '     window.location = document.getElementById("class_select").value '
         ret_str = ret_str + '+ "?" + document.getElementById("sub").value + "=" + '
         ret_str = ret_str + 'document.getElementById("sub").checked'
+        ret_str = ret_str + '+ "?" + document.getElementById("level_select").id'
+        ret_str = ret_str + '+ "=" + document.getElementById("level_select").value'
         ret_str = ret_str + '+ "?" + document.getElementById("synth").value'
         ret_str = ret_str + '+ "=" + document.getElementById("synth").checked'
         ret_str = ret_str + '+ "?" + document.getElementById("repl").value'
@@ -187,6 +203,7 @@ class CharacterHandler(tornado.web.RequestHandler):
         assign_name = False
         rand_synth = False
         rand_repl = False
+        level_select = 1
 
         for section in self.request.uri.split('?'):
             this_section = section.split('=')
@@ -205,23 +222,29 @@ class CharacterHandler(tornado.web.RequestHandler):
                 if this_section[0] == 'rand_repl':
                     if section.split('=')[1] == 'true':
                         rand_repl = True
+                if this_section[0] == 'level_select':
+                    if section.split('=')[1] == 'Random':
+                        level_select = None
+                    else:
+                        level_select = int(section.split('=')[1])
 
         if base_url == '/BASIC_ANDROID':
-            character = gen_char.char('Basic Android', sub_spec, assign_name)
+            character = gen_char.char('Basic Android', level_select, sub_spec, assign_name)
         elif base_url == '/SYNTHETIC_ANDROID':
-            character = gen_char.char('Synthetic Android', sub_spec, assign_name)
+            character = gen_char.char('Synthetic Android', level_select, sub_spec, assign_name)
         elif base_url == '/REPLICANT':
-            character = gen_char.char('Replicant', sub_spec, assign_name)
+            character = gen_char.char('Replicant', level_select, sub_spec, assign_name)
         elif base_url == '/MUTANT_HUMAN':
-            character = gen_char.char('Mutant Human', sub_spec, assign_name)
+            character = gen_char.char('Mutant Human', level_select, sub_spec, assign_name)
         elif base_url == '/MUTANT_ANIMAL':
-            character = gen_char.char('Mutant Animal', sub_spec, assign_name)
+            character = gen_char.char('Mutant Animal', level_select, sub_spec, assign_name)
         elif base_url == '/MUTANT_PLANT':
-            character = gen_char.char('Mutant Plant', sub_spec, assign_name)
+            character = gen_char.char('Mutant Plant', level_select, sub_spec, assign_name)
         elif base_url == '/PURE_HUMAN':
-            character = gen_char.char('Pure Human', sub_spec, assign_name)
+            character = gen_char.char('Pure Human', level_select, sub_spec, assign_name)
         else: # random
-            character = gen_char.char(None, sub_spec, assign_name, rand_synth, rand_repl)
+            character = gen_char.char(None, level_select, sub_spec, assign_name, rand_synth,
+                                      rand_repl)
 
         if 'name' in character:
             self.write('<b>Name: </b>' + character['name'] + '<br>')
@@ -232,6 +255,7 @@ class CharacterHandler(tornado.web.RequestHandler):
         if 'sub_type' in character:
             self.write(' (' + character['sub_type'] +')')
         self.write('<br>')
+        self.write('<b>Level: </b>' + str(character['level']))
         self.write('<br>')
         for attribute in character['attributes']:
             self.write('<b>' + attribute + ' : </b>' +
