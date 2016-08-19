@@ -224,8 +224,7 @@ def char(char_type=None, level=1, sub_type=True, gen_name=True, rand_synth=False
     else:
         character['level'] = level
 
-    if character['level'] > 1:
-        gen_level_mods(character)
+    gen_level_mods(character)
 
     # optional sub-species for plants and animals
     if sub_type:
