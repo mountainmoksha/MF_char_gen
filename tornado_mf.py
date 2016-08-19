@@ -287,6 +287,11 @@ class CharacterHandler(tornado.web.RequestHandler):
         for modifier in character['modifiers']:
             self.write(modifier + '<br>')
         self.write('<br>')
+        self.write('<b>Level Modifiers:</b><br>')
+        self.write('<br>')
+        for key in character['level_modifiers']:
+            self.write((character['level_modifiers'])[key] + '<br>')
+        self.write('<br>')
 
 
 
