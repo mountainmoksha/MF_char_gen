@@ -6,6 +6,52 @@ import read_muts
 import gen_attrs
 import gen_mods
 
+def gen_level_mods(character):
+    """custom leveling system.  MF rules p. 14"""
+
+    level_modifiers = {}
+
+    for level_idx in range(2, character['level']+1):
+
+        level_roll = random.randrange(100)
+
+        if ((level_roll > 0) and
+            (level_roll < 11)):
+            level_modifiers['level' + str(level_idx)] = str('+1 melee damage from level ' +
+                                                            str(level_idx) + ' advancement')
+        elif ((level_roll > 10) and
+            (level_roll < 21)):
+            level_modifiers['level' + str(level_idx)] = str('+1 attack/round from level ' +
+                                                            str(level_idx) + ' advancement')
+        else:
+            ability_roll = random.randrange(1, 7)
+            if ability_roll == 1:
+                strn = (character['attributes'])['Strength']
+                strn = strn + 1
+                (character['attributes'])['Strength'] = strn
+            elif ability_roll == 2:
+                dex = (character['attributes'])['Dexterity']
+                dex = dex + 1
+                (character['attributes'])['Dexterity'] = dex
+            elif ability_roll == 3:
+                con = (character['attributes'])['Constitution']
+                con = con + 1
+                (character['attributes'])['Constitution'] = con
+            elif ability_roll == 4:
+                intel = (character['attributes'])['Intelligence']
+                intel = intel + 1
+                (character['attributes'])['Intelligence'] = intel
+            elif ability_roll == 5:
+                wil = (character['attributes'])['Willpower']
+                wil = wil + 1
+                (character['attributes'])['Willpower'] = wil
+            elif ability_roll == 6:
+                char = (character['attributes'])['Charisma']
+                char = char + 1
+                (character['attributes'])['Charisma'] = char
+
+    character['level_modifiers'] = level_modifiers
+
 
 def char_mutations(character):
     """assign physical, mental and plant mutations"""
@@ -171,12 +217,15 @@ def char(char_type=None, level=1, sub_type=True, gen_name=True, rand_synth=False
     if gen_name:
         character['name'] = char_name(character)
 
+    character['attributes'] = gen_attrs.attrs()
+
     if level is None:
         character['level'] = random.randrange(1, 11)
     else:
         character['level'] = level
 
-    character['attributes'] = gen_attrs.attrs()
+    if character['level'] > 1:
+        gen_level_mods(character)
 
     # optional sub-species for plants and animals
     if sub_type:
