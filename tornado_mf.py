@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import tornado.ioloop
 import tornado.web
 import gen_char
@@ -10,7 +11,7 @@ class ScreenFormatter():
     def create_style_sheet(self):
         """create style sheet for page"""
 
-        ret_str = '<html><head>'
+        ret_str = '<!DOCTYPE html><html><head>'
         ret_str = ret_str + '<meta name="keywords" content="Mutant Future Character Generator,'
         ret_str = ret_str + 'Mutant Future, Goblinoid Games, Labyrinth Lord">'
         ret_str = ret_str + '<style>'
@@ -86,7 +87,7 @@ class ScreenFormatter():
 
     def create_head(self):
         
-        ret_str = '<body><header><h1>Mutant Future Character Generator</h1></header>'
+        ret_str = '<body><header><img src="MF_logo_color.png" alt="MF_logo_color.png"></header>'
 
         return ret_str
 
@@ -251,6 +252,10 @@ class CharacterHandler(tornado.web.RequestHandler):
 def make_app():
     """Assemble all available functions for MF char gen"""
 
+    settings = {
+        "image_path": os.path.join(os.path.dirname(__file__), "images")
+    }
+
     return tornado.web.Application([
         (r"/", MainHandler),
         (r"/BASIC_ANDROID", CharacterHandler),
@@ -261,7 +266,9 @@ def make_app():
         (r"/MUTANT_PLANT", CharacterHandler),
         (r"/PURE_HUMAN", CharacterHandler),
         (r"/RANDOM", CharacterHandler),
-    ])
+        (r"/(MF_logo_color\.png)", tornado.web.StaticFileHandler,
+         dict(path=settings['image_path'])),
+    ], **settings)
 
 
 if __name__ == "__main__":
