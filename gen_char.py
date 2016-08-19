@@ -312,9 +312,9 @@ def char_name(character):
         # one name, but longer
         for letter_idx in range(random.randrange(5, 8)):
             if letter_idx % 2 == 0:
-                letter = consonants[random.randrange(len(consonants))]
-            else:
                 letter = vowels[random.randrange(len(vowels))]
+            else:
+                letter = consonants[random.randrange(len(consonants))]
 
             if letter_idx == 0:
                 character_name = character_name + letter.upper()
