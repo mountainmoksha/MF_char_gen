@@ -161,8 +161,7 @@ def char_name(character):
             else:
                 character_name = character_name + letter.lower()
 
-    elif ((character['type'] == 'Mutant Animal') or
-            (character['type'] == 'Mutant Plant')):
+    elif (character['type'] == 'Mutant Animal'):
 
         # one name, but longer
         for letter_idx in range(random.randrange(5, 8)):
@@ -170,6 +169,17 @@ def char_name(character):
                 letter = vowels[random.randrange(len(vowels))]
             else:
                 letter = consonants[random.randrange(len(consonants))]
+
+            if letter_idx == 0:
+                character_name = character_name + letter.upper()
+            else:
+                character_name = character_name + letter.lower()
+
+    elif (character['type'] == 'Mutant Plant'):
+
+        # one name, but longer
+        for letter_idx in range(random.randrange(5, 8)):
+            letter = vowels[random.randrange(len(vowels))]
 
             if letter_idx == 0:
                 character_name = character_name + letter.upper()
