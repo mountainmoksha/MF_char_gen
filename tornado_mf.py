@@ -169,12 +169,51 @@ class MainHandler(tornado.web.RequestHandler):
         self.write('Please submit bugs and feature requests at ' +
                    '<a href=\"https://github.com/exit0/MF_char_gen/issues/\">' +
                    'https://github.com/exit0/MF_char_gen/issues/<a><br>')
+        self.write('<br>')
+        self.write('Out <a href=\"/VIEW_ANIMALS\">current list</a> of animals was lifted from ')
+        self.write('<a href=\"http://lib.colostate.edu/wildlife/atoz.php?letter=ALL\"> ')
+        self.write('http://lib.colostate.edu/wildlife/atoz.php?letter=ALL</a> ')
+        self.write('please contact us on github for suggestions re: additions, ')
+        self.write('subtractions and improvements ')
         self.write('</body_text>')
 
 
 
+class AnimalViewHandler(tornado.web.RequestHandler):
+    """view the animals currently in the generator"""
+
+    def data_received(self, chunk):
+        print('chunk is', chunk)
+
+    def get(self):
+        """respond to HTTP get method"""
+
+        screen_formatter = ScreenFormatter()
+
+        self.write(screen_formatter.create_style_sheet())
+        self.write('<body>')
+        self.write(screen_formatter.create_head())
+        self.write('<font size="2">')
+        self.write(screen_formatter.create_nav())
+        self.write('</font>')
+        self.write('<font size="2">')
+        self.create_body()
+        self.write('</font>')
+        self.write(screen_formatter.create_foot())
+        self.write('</body></html>')
+
+    def create_body(self):
+        """create the specific body for this handler"""
+
+        with open('MF_animals.txt', 'r') as animals_file:
+            animals = animals_file.read().splitlines()
+
+        for animal in animals:
+            self.write(animal + '<br>')
+
+
 class CharacterHandler(tornado.web.RequestHandler):
-    """Handler Purely for Humans"""
+    """Handler For all Characters"""
 
     def data_received(self, chunk):
         print('chunk is', chunk)
@@ -312,6 +351,7 @@ def make_app():
         (r"/MUTANT_PLANT", CharacterHandler),
         (r"/PURE_HUMAN", CharacterHandler),
         (r"/RANDOM", CharacterHandler),
+        (r"/VIEW_ANIMALS", AnimalViewHandler),
         (r"/(MF_logo_color\.png)", tornado.web.StaticFileHandler,
          dict(path=settings['image_path'])),
     ], **settings)
