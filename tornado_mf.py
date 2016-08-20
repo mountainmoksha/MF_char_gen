@@ -170,11 +170,12 @@ class MainHandler(tornado.web.RequestHandler):
                    '<a href=\"https://github.com/exit0/MF_char_gen/issues/\">' +
                    'https://github.com/exit0/MF_char_gen/issues/<a><br>')
         self.write('<br>')
-        self.write('Out <a href=\"/VIEW_ANIMALS\">current list</a> of animals was lifted from ')
+        self.write('Our <a href=\"/VIEW_ANIMALS\">current list</a> of animals was lifted from ')
         self.write('<a href=\"http://lib.colostate.edu/wildlife/atoz.php?letter=ALL\"> ')
         self.write('http://lib.colostate.edu/wildlife/atoz.php?letter=ALL</a> ')
         self.write('please contact us on github for suggestions re: additions, ')
-        self.write('subtractions and improvements ')
+        self.write('subtractions and improvements<br>')
+        self.write('Much the same goes for <a href=\"/VIEW_PLANTS\">our plants</a>')
         self.write('</body_text>')
 
 
@@ -210,6 +211,39 @@ class AnimalViewHandler(tornado.web.RequestHandler):
 
         for animal in animals:
             self.write(animal + '<br>')
+
+
+class PlantViewHandler(tornado.web.RequestHandler):
+    """view the plants currently in the generator"""
+
+    def data_received(self, chunk):
+        print('chunk is', chunk)
+
+    def get(self):
+        """respond to HTTP get method"""
+
+        screen_formatter = ScreenFormatter()
+
+        self.write(screen_formatter.create_style_sheet())
+        self.write('<body>')
+        self.write(screen_formatter.create_head())
+        self.write('<font size="2">')
+        self.write(screen_formatter.create_nav())
+        self.write('</font>')
+        self.write('<font size="2">')
+        self.create_body()
+        self.write('</font>')
+        self.write(screen_formatter.create_foot())
+        self.write('</body></html>')
+
+    def create_body(self):
+        """create the specific body for this handler"""
+
+        with open('MF_plants.txt', 'r') as plants_file:
+            plants = plants_file.read().splitlines()
+
+        for plant in plants:
+            self.write(plant + '<br>')
 
 
 class CharacterHandler(tornado.web.RequestHandler):
@@ -352,6 +386,7 @@ def make_app():
         (r"/PURE_HUMAN", CharacterHandler),
         (r"/RANDOM", CharacterHandler),
         (r"/VIEW_ANIMALS", AnimalViewHandler),
+        (r"/VIEW_PLANTS", PlantViewHandler),
         (r"/(MF_logo_color\.png)", tornado.web.StaticFileHandler,
          dict(path=settings['image_path'])),
     ], **settings)
