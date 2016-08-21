@@ -45,6 +45,12 @@ def gen_char_pdf(character):
     if 'name' in character:
         character_canvas.drawString(246, 683, str(character['name']))
 
+    if 'sub_type' in character:
+        character_canvas.drawString(446, 700, str(character['type']))
+        character_canvas.drawString(446, 683, '(' + str(character['sub_type']) + ')')
+    else:
+        character_canvas.drawString(446, 683, str(character['type']))
+
     character_canvas.showPage()
     character_canvas.save()
 
