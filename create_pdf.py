@@ -8,7 +8,7 @@ import gen_char
 
 def combine_pdfs(overlay_file_name):
 
-    base_file_name = 'char_pdfs/mfcharsheet.pdf'
+    base_file_name = 'pdf/mfcharsheet.pdf'
     final_file_name = overlay_file_name.replace('_blank', '')
 
     overlay_1 = PageMerge().add(PdfReader(overlay_file_name).pages[0])[0]
@@ -33,11 +33,20 @@ def combine_pdfs(overlay_file_name):
 def gen_char_pdf(character):
 
     file_name = 'char_pdfs/' + character['name'].replace(' ', '_') + '_blank.pdf'
-    c = canvas.Canvas(file_name)
-    c.drawString(100, 100, "Hello World")
-    c.drawString(200, 200, str(1))
-    c.showPage()
-    c.save()
+    character_canvas = canvas.Canvas(file_name)
+
+    character_canvas.drawString(77, 528, str((character['attributes'])['Strength']))
+    character_canvas.drawString(77, 488, str((character['attributes'])['Dexterity']))
+    character_canvas.drawString(77, 446, str((character['attributes'])['Constitution']))
+    character_canvas.drawString(77, 402, str((character['attributes'])['Intelligence']))
+    character_canvas.drawString(77, 360, str((character['attributes'])['Willpower']))
+    character_canvas.drawString(77, 318, str((character['attributes'])['Charisma']))
+
+    if 'name' in character:
+        character_canvas.drawString(246, 683, str(character['name']))
+
+    character_canvas.showPage()
+    character_canvas.save()
 
     return file_name
 
@@ -47,4 +56,4 @@ if __name__ == '__main__':
 
     FILE_NAME = gen_char_pdf(CHARACTER)
 
-    print('created ' + combine_pdfs(FILE_NAME))
+    print(combine_pdfs(FILE_NAME))
