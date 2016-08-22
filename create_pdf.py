@@ -67,6 +67,29 @@ def gen_char_pdf(character):
 
     character_canvas.drawString(221, 330, str(character['reaction_mod']))
 
+    mutations_current_height = 250
+
+    if (character['plant'])[0] != '':
+        character_canvas.drawString(75, mutations_current_height, 'Plant Mutations:')
+        mutations_current_height = mutations_current_height - 13
+        for mutation in character['plant']:
+            character_canvas.drawString(85, mutations_current_height, mutation)
+            mutations_current_height = mutations_current_height - 13
+
+    if (character['physical'])[0] != '':
+        character_canvas.drawString(75, mutations_current_height, 'Physical Mutations:')
+        mutations_current_height = mutations_current_height - 13
+        for mutation in character['physical']:
+            character_canvas.drawString(85, mutations_current_height, mutation)
+            mutations_current_height = mutations_current_height - 13
+
+    if (character['mental'])[0] != '':
+        character_canvas.drawString(75, mutations_current_height, 'Mental Mutations:')
+        mutations_current_height = mutations_current_height - 13
+        for mutation in character['mental']:
+            character_canvas.drawString(85, mutations_current_height, mutation)
+            mutations_current_height = mutations_current_height - 13
+
     character_canvas.showPage()
     character_canvas.save()
 
