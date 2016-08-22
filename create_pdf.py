@@ -55,7 +55,8 @@ def gen_char_pdf(character):
     else:
         character_canvas.drawString(446, 683, str(character['type']))
 
-    character_canvas.drawString(370, 647, str(character['level']))
+    character_canvas.drawString(373, 647, str(character['level']))
+    character_canvas.drawString(480, 647, str(character['XP']))
     character_canvas.drawString(413, 575, str(character['HP']))
     character_canvas.drawString(508, 575, str(character['AC']))
 
