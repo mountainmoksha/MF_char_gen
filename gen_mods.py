@@ -126,25 +126,39 @@ def gen_modifiers(character):
 
     if (character['attributes'])['Constitution'] < 4:
         poison_mod = str(poison_mod + '-2')
+        character['poison_mod'] = '-2'
         rad_mod = str(rad_mod + '-3')
+        character['rad_mod'] = '-3'
     elif (character['attributes'])['Constitution'] < 6:
         poison_mod = str(poison_mod + '-1')
+        character['poison_mod'] = '-1'
         rad_mod = str(rad_mod + '-2')
+        character['rad_mod'] = '-2'
     elif (character['attributes'])['Constitution'] < 9:
         poison_mod = str(poison_mod + '0')
+        character['poison_mod'] = '0'
         rad_mod = str(rad_mod + '-1')
+        character['rad_mod'] = '-1'
     elif (character['attributes'])['Constitution'] < 19:
         poison_mod = str(poison_mod + '0')
+        character['poison_mod'] = '0'
+        character['rad_mod'] = '0'
         rad_mod = str(rad_mod + '0')
     elif (character['attributes'])['Constitution'] < 20:
         poison_mod = str(poison_mod + '+1')
+        character['poison_mod'] = '+1'
+        character['rad_mod'] = '0'
         rad_mod = str(rad_mod + '0')
     elif (character['attributes'])['Constitution'] < 21:
         poison_mod = str(poison_mod + '+2')
+        character['poison_mod'] = '+2'
         rad_mod = str(rad_mod + '+1')
+        character['rad_mod'] = '+1'
     elif (character['attributes'])['Constitution'] < 22:
         poison_mod = str(poison_mod + '+3')
+        character['poison_mod'] = '+3'
         rad_mod = str(rad_mod + '+2')
+        character['rad_mod'] = '+2'
 
     mods.append(poison_mod)
     mods.append(rad_mod)
