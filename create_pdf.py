@@ -59,6 +59,11 @@ def gen_char_pdf(character):
     character_canvas.drawString(413, 575, str(character['HP']))
     character_canvas.drawString(508, 575, str(character['AC']))
 
+    character_canvas.drawString(408, 483, str(character['energy_save']))
+    character_canvas.drawString(408, 439, str(character['poison_death_save']))
+    character_canvas.drawString(408, 393, str(character['stun_save']))
+    character_canvas.drawString(408, 347, str(character['rad_save']))
+
     character_canvas.drawString(222, 538, str(character['str_mod']))
 
     character_canvas.drawString(222, 498, str(character['ac_mod']))
