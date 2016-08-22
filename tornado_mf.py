@@ -333,6 +333,8 @@ class CharacterHandler(tornado.web.RequestHandler):
         self.write('<br>')
         self.write('<b>Level: </b>' + str(character['level']))
         self.write('<br>')
+        self.write('<b>XP: </b>' + str(character['XP']))
+        self.write('<br>')
         for attribute in character['attributes']:
             self.write('<b>' + attribute + ' : </b>' +
                        str((character['attributes'])[attribute]) + '<br>')
@@ -342,6 +344,12 @@ class CharacterHandler(tornado.web.RequestHandler):
         self.write('<b>HP: </b>' + str(character['HP']) + '<br>')
         self.write('<br>')
         self.write('<b>GP: </b>' + str(character['GP']) + '<br>')
+        self.write('<br>')
+        self.write('<b>Saving Throws: </b><br><br>')
+        self.write('<b>Energy Attacks: </b>' + str(character['energy_save']) + '<br>')
+        self.write('<b>Poison or Death: </b>' + str(character['poison_death_save']) + '<br>')
+        self.write('<b>Stun Attacks: </b>' + str(character['stun_save']) + '<br>')
+        self.write('<b>Radiation: </b>' + str(character['rad_save']) + '<br>')
         self.write('<br>')
         self.write('<b>Physical Mutations:</b><br>')
         self.write('<br>')
