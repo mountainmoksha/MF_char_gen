@@ -6,6 +6,36 @@ import read_muts
 import gen_attrs
 import gen_mods
 
+def gen_xp(character):
+    """assign minimum XP to character for given level"""
+
+    character['XP'] = 0
+
+    if character['level'] == 2:
+        character['XP'] = 3001
+    elif character['level'] == 3:
+        character['XP'] = 6001
+    elif character['level'] == 4:
+        character['XP'] = 12001
+    elif character['level'] == 5:
+        character['XP'] = 24001
+    elif character['level'] == 6:
+        character['XP'] = 48001
+    elif character['level'] == 7:
+        character['XP'] = 96001
+    elif character['level'] == 8:
+        character['XP'] = 192001
+    elif character['level'] == 9:
+        character['XP'] = 492001
+    elif character['level'] == 10:
+        character['XP'] = 892001
+    elif character['level'] == 11:
+        character['XP'] = 1392001
+    elif character['level'] == 12:
+        character['XP'] = 2392001
+
+
+
 def gen_saves(character):
     """produce modified saving throws by level"""
 
@@ -306,6 +336,8 @@ def char(char_type=None, level=1, sub_type=True, gen_name=True, rand_synth=False
     gen_mods.gen_modifiers(character)
 
     gen_saves(character)
+
+    gen_xp(character)
 
     return character
 
