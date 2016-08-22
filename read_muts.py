@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
+"""returns randomized mutations from ASCII files"""
 
 import random
 
 def muts(mutation_type='physical', num_muts=None):
+    """returns randomized mutations from ASCII files"""
 
     if mutation_type == 'physical':
         mutations_text = open('MF_physical.txt', 'r')
@@ -25,7 +27,7 @@ def muts(mutation_type='physical', num_muts=None):
         mut_range_start = int(mutation.rstrip()[0:2])
         mut_range_end = int(mutation.rstrip()[3:5])
 
-        for mut_idx in range(mut_range_start, mut_range_end + 1):
+        for _ in range(mut_range_start, mut_range_end + 1):
             mutations.append(mut_name)
 
     for _ in range(num_muts):

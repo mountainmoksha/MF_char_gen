@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
+"""web server for Mutant Future character generator"""
 
-import os
 import tornado.ioloop
 import tornado.web
 import gen_char
@@ -8,6 +8,7 @@ import create_pdf
 
 
 class ScreenFormatter():
+    """object that generates html for masthead, nav and footer"""
 
     def create_style_sheet(self):
         """create style sheet for page"""
@@ -83,13 +84,15 @@ class ScreenFormatter():
         ret_str = ret_str + '</select><br>'
         ret_str = ret_str + '<input type="checkbox" id="sub" value="sub_spec" checked="checked"/>'
         ret_str = ret_str + 'Assign sub-species for animals and plants<br>'
-        ret_str = ret_str + '<input type="checkbox" id="name" value="assign_name" checked="checked"/>'
+        ret_str = ret_str + str('<input type="checkbox" id="name" ' +
+                                'value="assign_name" checked="checked"/>')
         ret_str = ret_str + 'Assign randomized name<br>'
         ret_str = ret_str + '<input type="checkbox" id="synth" value="rand_synth"/>'
         ret_str = ret_str + 'Include synthetic androids in randomized results<br>'
         ret_str = ret_str + '<input type="checkbox" id="repl" value="rand_repl"/>'
         ret_str = ret_str + 'Include replicants in randomized results<br>'
-        ret_str = ret_str + '<button type="button" onclick="generate_character()">Generate</button><br>'
+        ret_str = ret_str + str('<button type="button" onclick="generate_character()">' +
+                                'Generate</button><br>')
         ret_str = ret_str + '</form>'
         ret_str = ret_str + '<script>'
         ret_str = ret_str + 'function generate_character() {'
@@ -112,13 +115,15 @@ class ScreenFormatter():
         return ret_str
 
     def create_head(self):
-        
+        """create header for MF char gen"""
+
         ret_str = '<body><header><img src="MF_logo_color.png" alt="MF_logo_color.png"></header>'
 
         return ret_str
 
 
     def create_foot(self):
+        """create footer for MF char gen"""
 
         ret_str = '<footer>Mutant Future</footer>'
 
@@ -272,6 +277,7 @@ class CharacterHandler(tornado.web.RequestHandler):
 
 
     def create_body(self):
+        """return html for MF character for web interface"""
 
         sub_spec = False
         assign_name = False
@@ -322,7 +328,8 @@ class CharacterHandler(tornado.web.RequestHandler):
 
         create_pdf.combine_pdfs(create_pdf.gen_char_pdf(character))
 
-        self.write('<a href="' + character['name'].replace(' ', '_') +'.pdf">View PDF</a>')
+        self.write(str('<a href="/char_pdfs/' +
+                       character['name'].replace(' ', '_') + '.pdf">View PDF</a>'))
         self.write('<br><br>')
 
         if 'name' in character:
@@ -385,11 +392,6 @@ class CharacterHandler(tornado.web.RequestHandler):
 def make_app():
     """Assemble all available functions for MF char gen"""
 
-    settings = {
-        "image_path": os.path.join(os.path.dirname(__file__), "images"),
-        "pdf_path": os.path.join(os.path.dirname(__file__), "char_pdfs")
-    }
-
     return tornado.web.Application([
         (r"/", MainHandler),
         (r"/BASIC_ANDROID", CharacterHandler),
@@ -402,11 +404,9 @@ def make_app():
         (r"/RANDOM", CharacterHandler),
         (r"/VIEW_ANIMALS", AnimalViewHandler),
         (r"/VIEW_PLANTS", PlantViewHandler),
-        (r"/(MF_logo_color\.png)", tornado.web.StaticFileHandler,
-         dict(path=settings['image_path'])),
-        (r"/(\*\.pdf)", tornado.web.StaticFileHandler,
-         dict(path=settings['pdf_path'])),
-    ], **settings)
+        (r"/(MF_logo_color\.png)", tornado.web.StaticFileHandler, {"path": "./images"}),
+        (r"/char_pdfs/(.*)", tornado.web.StaticFileHandler, {"path": "./char_pdfs"},),
+    ])
 
 
 if __name__ == "__main__":

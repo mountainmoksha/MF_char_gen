@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """main module: Mutant Future low-level char gen"""
 
-import random
-
 def gen_modifiers(character):
     """assign modifiers given a set of character attributes"""
 

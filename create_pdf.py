@@ -1,4 +1,5 @@
-#!/usr/bin/env python3    
+#!/usr/bin/env python3
+"""take a character dict, and make a filled-in pdf character sheet from it"""
 
 import os
 from reportlab.pdfgen import canvas
@@ -7,6 +8,8 @@ import gen_char
 
 
 def combine_pdfs(overlay_file_name):
+    """add the previously-created, filled pdf to
+       Goblinoid games's stock sheet"""
 
     base_file_name = 'pdf/mfcharsheet.pdf'
     final_file_name = overlay_file_name.replace('_blank', '')
@@ -35,6 +38,8 @@ def combine_pdfs(overlay_file_name):
     return final_file_name
 
 def gen_char_pdf(character):
+    """put the numbers and words from a character on a "blank" sheet
+       to be added to the stock sheet"""
 
     file_name = 'char_pdfs/' + character['name'].replace(' ', '_') + '_blank.pdf'
     character_canvas = canvas.Canvas(file_name)
