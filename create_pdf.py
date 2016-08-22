@@ -57,6 +57,8 @@ def gen_char_pdf(character):
 
     character_canvas.drawString(222, 538, str(character['str_mod']))
 
+    character_canvas.drawString(222, 498, str(character['ac_mod']))
+
     character_canvas.showPage()
     character_canvas.save()
 

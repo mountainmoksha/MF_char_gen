@@ -49,50 +49,60 @@ def gen_modifiers(character):
 
     if (character['attributes'])['Dexterity'] < 4:
         ac_mod = str(ac_mod + '+3')
+        character['ac_mod'] = '+3'
         character['AC'] = character['AC'] + 3
         missile_mod = str(missile_mod + '-3')
         init_mod = str(init_mod + '-2')
     elif (character['attributes'])['Dexterity'] < 6:
         character['AC'] = character['AC'] + 2
+        character['ac_mod'] = '+2'
         ac_mod = str(ac_mod + '+2')
         missile_mod = str(missile_mod + '-2')
         init_mod = str(init_mod + '-1')
     elif (character['attributes'])['Dexterity'] < 9:
         character['AC'] = character['AC'] + 1
+        character['ac_mod'] = '+1'
         ac_mod = str(ac_mod + '+1')
         missile_mod = str(missile_mod + '-1')
         init_mod = str(init_mod + '-1')
     elif (character['attributes'])['Dexterity'] < 13:
         ac_mod = str(ac_mod + '0')
+        character['ac_mod'] = '0'
         missile_mod = str(missile_mod + '0')
         init_mod = str(init_mod + '0')
     elif (character['attributes'])['Dexterity'] < 16:
         character['AC'] = character['AC'] - 1
+        character['ac_mod'] = '-1'
         ac_mod = str(ac_mod + '-1')
         missile_mod = str(missile_mod + '+1')
         init_mod = str(init_mod + '+1')
     elif (character['attributes'])['Dexterity'] < 18:
         character['AC'] = character['AC'] - 2
+        character['ac_mod'] = '-2'
         ac_mod = str(ac_mod + '-2')
         missile_mod = str(missile_mod + '+2')
         init_mod = str(init_mod + '+1')
     elif (character['attributes'])['Dexterity'] < 19:
         character['AC'] = character['AC'] - 3
+        character['ac_mod'] = '-3'
         ac_mod = str(ac_mod + '-3')
         missile_mod = str(missile_mod + '+3')
         init_mod = str(init_mod + '+2')
     elif (character['attributes'])['Dexterity'] < 20:
         character['AC'] = character['AC'] - 4
+        character['ac_mod'] = '-4'
         ac_mod = str(ac_mod + '-4')
         missile_mod = str(missile_mod + '+3')
         init_mod = str(init_mod + '+2')
     elif (character['attributes'])['Dexterity'] < 21:
         character['AC'] = character['AC'] - 4
+        character['ac_mod'] = '-4'
         ac_mod = str(ac_mod + '-4')
         missile_mod = str(missile_mod + '+4')
         init_mod = str(init_mod + '+3')
     elif (character['attributes'])['Dexterity'] < 22:
         character['AC'] = character['AC'] - 5
+        character['ac_mod'] = '-5'
         ac_mod = str(ac_mod + '-5')
         missile_mod = str(missile_mod + '+4')
         init_mod = str(init_mod + '+3')
