@@ -11,7 +11,8 @@ def combine_pdfs(overlay_file_name):
     base_file_name = 'pdf/mfcharsheet.pdf'
     final_file_name = overlay_file_name.replace('_blank', '')
 
-    overlay_1 = PageMerge().add(PdfReader(overlay_file_name).pages[0])[0]
+    overlay_0 = PageMerge().add(PdfReader(overlay_file_name).pages[0])[0]
+    overlay_1 = PageMerge().add(PdfReader(overlay_file_name).pages[1])[0]
 
     trailer = PdfReader(base_file_name)
 
@@ -20,6 +21,9 @@ def combine_pdfs(overlay_file_name):
     for page in trailer.pages:
 
         if page_idx == 0:
+            PageMerge(page).add(overlay_0).render()
+
+        if page_idx == 1:
             PageMerge(page).add(overlay_1).render()
 
         page_idx = page_idx + 1
@@ -90,7 +94,11 @@ def gen_char_pdf(character):
             character_canvas.drawString(85, mutations_current_height, mutation)
             mutations_current_height = mutations_current_height - 13
 
+    # this advances us to page 2:
     character_canvas.showPage()
+
+    character_canvas.drawString(360, 270, str(character['GP']) + ' GP')
+
     character_canvas.save()
 
     return file_name
