@@ -12,24 +12,34 @@ def gen_modifiers(character):
 
     if (character['attributes'])['Strength'] < 4:
         str_mod = str(str_mod + '-3')
+        character['str_mod'] = '-3'
     elif (character['attributes'])['Strength'] < 6:
         str_mod = str(str_mod + '-2')
+        character['str_mod'] = '-2'
     elif (character['attributes'])['Strength'] < 9:
         str_mod = str(str_mod + '-1')
+        character['str_mod'] = '-1'
     elif (character['attributes'])['Strength'] < 13:
         str_mod = str(str_mod + '0')
+        character['str_mod'] = '0'
     elif (character['attributes'])['Strength'] < 16:
         str_mod = str(str_mod + '+1')
+        character['str_mod'] = '+1'
     elif (character['attributes'])['Strength'] < 18:
         str_mod = str(str_mod + '+2')
+        character['str_mod'] = '+2'
     elif (character['attributes'])['Strength'] < 19:
         str_mod = str(str_mod + '+3')
+        character['str_mod'] = '+3'
     elif (character['attributes'])['Strength'] < 20:
         str_mod = str(str_mod + '+3 (+4 damage)')
+        character['str_mod'] = '+3 (+4 damage)'
     elif (character['attributes'])['Strength'] < 21:
         str_mod = str(str_mod + '+4')
+        character['str_mod'] = '+4'
     else:
         str_mod = str(str_mod + '+4 (+5 damage)')
+        character['str_mod'] = '+4 (+5 damage)'
 
     mods.append(str_mod)
 
