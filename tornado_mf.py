@@ -319,6 +319,9 @@ class CharacterHandler(tornado.web.RequestHandler):
             character = gen_char.char(None, level_select, sub_spec, assign_name, rand_synth,
                                       rand_repl)
 
+        self.write('<a href="/' + character['name'].replace(' ', '_') +'.pdf">Export to PDF</a>')
+        self.write('<br><br>')
+
         if 'name' in character:
             self.write('<b>Name: </b>' + character['name'] + '<br>')
         else:
@@ -372,7 +375,8 @@ def make_app():
     """Assemble all available functions for MF char gen"""
 
     settings = {
-        "image_path": os.path.join(os.path.dirname(__file__), "images")
+        "image_path": os.path.join(os.path.dirname(__file__), "images"),
+        "pdf_path": os.path.join(os.path.dirname(__file__), "char_pdfs")
     }
 
     return tornado.web.Application([
@@ -389,6 +393,8 @@ def make_app():
         (r"/VIEW_PLANTS", PlantViewHandler),
         (r"/(MF_logo_color\.png)", tornado.web.StaticFileHandler,
          dict(path=settings['image_path'])),
+#        (r"/(\*\.pdf)", tornado.web.StaticFileHandler,
+#         dict(path=settings['pdf_path'])),
     ], **settings)
 
 
