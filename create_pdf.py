@@ -63,6 +63,8 @@ def gen_char_pdf(character):
     character_canvas.drawString(222, 455, str(character['poison_mod']))
     character_canvas.drawString(292, 455, str(character['rad_mod']))
 
+    character_canvas.drawString(217, 410, str(character['tech_mod']))
+
     character_canvas.showPage()
     character_canvas.save()
 

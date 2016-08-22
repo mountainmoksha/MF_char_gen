@@ -167,24 +167,34 @@ def gen_modifiers(character):
 
     if (character['attributes'])['Intelligence'] < 4:
         tech_mod = str(tech_mod + '-15%')
+        character['tech_mod'] = '-15%'
     elif (character['attributes'])['Intelligence'] < 6:
         tech_mod = str(tech_mod + '-10%')
+        character['tech_mod'] = '-10%'
     elif (character['attributes'])['Intelligence'] < 9:
         tech_mod = str(tech_mod + '-5%')
+        character['tech_mod'] = '-5%'
     elif (character['attributes'])['Intelligence'] < 13:
         tech_mod = str(tech_mod + '0%')
+        character['tech_mod'] = '0%'
     elif (character['attributes'])['Intelligence'] < 16:
         tech_mod = str(tech_mod + '+5%')
+        character['tech_mod'] = '+5%'
     elif (character['attributes'])['Intelligence'] < 18:
         tech_mod = str(tech_mod + '+10%')
+        character['tech_mod'] = '+10%'
     elif (character['attributes'])['Intelligence'] < 19:
         tech_mod = str(tech_mod + '+15%')
+        character['tech_mod'] = '+15%'
     elif (character['attributes'])['Intelligence'] < 20:
         tech_mod = str(tech_mod + '+20%')
+        character['tech_mod'] = '+20%'
     elif (character['attributes'])['Intelligence'] < 21:
         tech_mod = str(tech_mod + '+25%')
+        character['tech_mod'] = '+25%'
     elif (character['attributes'])['Intelligence'] < 22:
         tech_mod = str(tech_mod + '+30%')
+        character['tech_mod'] = '+30%'
 
     mods.append(tech_mod)
 
