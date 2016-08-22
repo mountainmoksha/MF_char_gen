@@ -4,6 +4,7 @@ import os
 import tornado.ioloop
 import tornado.web
 import gen_char
+import create_pdf
 
 
 class ScreenFormatter():
@@ -319,7 +320,9 @@ class CharacterHandler(tornado.web.RequestHandler):
             character = gen_char.char(None, level_select, sub_spec, assign_name, rand_synth,
                                       rand_repl)
 
-        self.write('<a href="/' + character['name'].replace(' ', '_') +'.pdf">Export to PDF</a>')
+        create_pdf.combine_pdfs(create_pdf.gen_char_pdf(character))
+
+        self.write('<a href="' + character['name'].replace(' ', '_') +'.pdf">View PDF</a>')
         self.write('<br><br>')
 
         if 'name' in character:
@@ -401,8 +404,8 @@ def make_app():
         (r"/VIEW_PLANTS", PlantViewHandler),
         (r"/(MF_logo_color\.png)", tornado.web.StaticFileHandler,
          dict(path=settings['image_path'])),
-#        (r"/(\*\.pdf)", tornado.web.StaticFileHandler,
-#         dict(path=settings['pdf_path'])),
+        (r"/(\*\.pdf)", tornado.web.StaticFileHandler,
+         dict(path=settings['pdf_path'])),
     ], **settings)
 
 
