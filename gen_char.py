@@ -6,6 +6,49 @@ import read_muts
 import gen_attrs
 import gen_mods
 
+def gen_saves(character):
+    """produce modified saving throws by level"""
+
+    if character['level'] < 4:
+        character['energy_save'] = 17
+        character['poison_death_save'] = 14
+        character['stun_save'] = 16
+        character['rad_save'] = 15
+    elif character['level'] < 7:
+        character['energy_save'] = 15
+        character['poison_death_save'] = 12
+        character['stun_save'] = 14
+        character['rad_save'] = 13
+    elif character['level'] < 10:
+        character['energy_save'] = 9
+        character['poison_death_save'] = 8
+        character['stun_save'] = 10
+        character['rad_save'] = 9
+    elif character['level'] < 13:
+        character['energy_save'] = 7
+        character['poison_death_save'] = 6
+        character['stun_save'] = 8
+        character['rad_save'] = 7
+    elif character['level'] < 16:
+        character['energy_save'] = 5
+        character['poison_death_save'] = 4
+        character['stun_save'] = 6
+        character['rad_save'] = 5
+    elif character['level'] < 19:
+        character['energy_save'] = 4
+        character['poison_death_save'] = 4
+        character['stun_save'] = 5
+        character['rad_save'] = 4
+    else:
+        character['energy_save'] = 4
+        character['poison_death_save'] = 3
+        character['stun_save'] = 4
+        character['rad_save'] = 3
+
+    character['poison_death_save'] = character['poison_death_save'] + int(character['poison_mod'])
+    character['rad_save'] = character['rad_save'] + int(character['rad_mod'])
+
+
 def gen_level_mods(character):
     """custom leveling system.  MF rules p. 14"""
 
@@ -261,6 +304,8 @@ def char(char_type=None, level=1, sub_type=True, gen_name=True, rand_synth=False
     char_mutations(character)
 
     gen_mods.gen_modifiers(character)
+
+    gen_saves(character)
 
     return character
 
