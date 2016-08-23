@@ -41,7 +41,11 @@ def gen_char_pdf(character):
     """put the numbers and words from a character on a "blank" sheet
        to be added to the stock sheet"""
 
-    file_name = 'char_pdfs/' + character['name'].replace(' ', '_') + '_blank.pdf'
+    if 'name' in character:
+        file_name = 'char_pdfs/' + character['name'].replace(' ', '_') + '_blank.pdf'
+    else:
+        file_name = 'char_pdfs/' + character['alt-name'].replace(' ', '_') + '_blank.pdf'
+
     character_canvas = canvas.Canvas(file_name)
 
     character_canvas.drawString(77, 528, str((character['attributes'])['Strength']))

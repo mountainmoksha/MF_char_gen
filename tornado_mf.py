@@ -338,8 +338,12 @@ class CharacterHandler(tornado.web.RequestHandler):
         create_pdf.combine_pdfs(create_pdf.gen_char_pdf(character))
 
         self.write('<body_col0>')
-        self.write(str('<a href="/char_pdfs/' +
-                       character['name'].replace(' ', '_') + '.pdf">View PDF</a>'))
+        if 'name' in character:
+            self.write(str('<a href="/char_pdfs/' +
+                           character['name'].replace(' ', '_') + '.pdf">View PDF</a>'))
+        else:
+            self.write(str('<a href="/char_pdfs/' +
+                           character['alt-name'].replace(' ', '_') + '.pdf">View PDF</a>'))
         self.write('<br><br>')
 
         if 'name' in character:

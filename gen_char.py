@@ -299,6 +299,8 @@ def char(char_type=None, level=1, sub_type=True, gen_name=True, rand_synth=False
 
     if gen_name:
         character['name'] = char_name(character)
+    else:
+        character['alt-name'] = char_name(character)
 
     character['attributes'] = gen_attrs.attrs()
 
