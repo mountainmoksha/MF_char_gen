@@ -22,18 +22,26 @@ class ScreenFormatter():
         ret_str = ret_str + '    background-color:blue;'
         ret_str = ret_str + '    color:white;'
         ret_str = ret_str + '    text-align:center;'
+        ret_str = ret_str + '    height:15%;'
         ret_str = ret_str + '    padding:5px;	 '
         ret_str = ret_str + '}'
         ret_str = ret_str + 'nav {'
         ret_str = ret_str + '    line-height:20px;'
         ret_str = ret_str + '    background-color:#eeeeee;'
         ret_str = ret_str + '    float:left;'
-        ret_str = ret_str + '    height:100%;'
+        ret_str = ret_str + '    height:80%;'
         ret_str = ret_str + '    padding:5px;	      '
         ret_str = ret_str + '}'
-        ret_str = ret_str + 'body_text {'
-        ret_str = ret_str + '    width:800px;'
+        ret_str = ret_str + 'body_col0 {'
+        ret_str = ret_str + '    width:400px;'
         ret_str = ret_str + '    float:left;'
+        ret_str = ret_str + '    height:80%;'
+        ret_str = ret_str + '    padding:10px;	 	 '
+        ret_str = ret_str + '}'
+        ret_str = ret_str + 'body_col1 {'
+        ret_str = ret_str + '    width:400px;'
+        ret_str = ret_str + '    float:left;'
+        ret_str = ret_str + '    height:80%;'
         ret_str = ret_str + '    padding:10px;	 	 '
         ret_str = ret_str + '}'
         ret_str = ret_str + 'footer {'
@@ -41,6 +49,7 @@ class ScreenFormatter():
         ret_str = ret_str + '    color:white;'
         ret_str = ret_str + '    clear:both;'
         ret_str = ret_str + '    text-align:center;'
+        ret_str = ret_str + '    height:5%;'
         ret_str = ret_str + '    padding:5px;	 	 '
         ret_str = ret_str + '}'
         ret_str = ret_str + '</style>'
@@ -148,16 +157,16 @@ class MainHandler(tornado.web.RequestHandler):
         self.write(screen_formatter.create_nav())
         self.write('</font>')
         self.write('<font size="2">')
-        self.create_body()
+        self.create_body0()
         self.write('</font>')
         self.write(screen_formatter.create_foot())
         self.write('</body></html>')
 
 
-    def create_body(self):
+    def create_body0(self):
         """create body section"""
 
-        self.write('<body_text>')
+        self.write('<body_col0>')
         self.write('Mutant Future was created by ' +
                    '<a href=\"http://www.goblinoidgames.com/\">' +
                    'Goblinoid Games<a> ' +
@@ -182,7 +191,7 @@ class MainHandler(tornado.web.RequestHandler):
         self.write('please contact us on github for suggestions re: additions, ')
         self.write('subtractions and improvements<br>')
         self.write('Much the same goes for <a href=\"/VIEW_PLANTS\">our plants</a>')
-        self.write('</body_text>')
+        self.write('</body_col0>')
 
 
 
@@ -204,12 +213,12 @@ class AnimalViewHandler(tornado.web.RequestHandler):
         self.write(screen_formatter.create_nav())
         self.write('</font>')
         self.write('<font size="2">')
-        self.create_body()
+        self.create_body0()
         self.write('</font>')
         self.write(screen_formatter.create_foot())
         self.write('</body></html>')
 
-    def create_body(self):
+    def create_body0(self):
         """create the specific body for this handler"""
 
         with open('MF_animals.txt', 'r') as animals_file:
@@ -237,12 +246,12 @@ class PlantViewHandler(tornado.web.RequestHandler):
         self.write(screen_formatter.create_nav())
         self.write('</font>')
         self.write('<font size="2">')
-        self.create_body()
+        self.create_body0()
         self.write('</font>')
         self.write(screen_formatter.create_foot())
         self.write('</body></html>')
 
-    def create_body(self):
+    def create_body0(self):
         """create the specific body for this handler"""
 
         with open('MF_plants.txt', 'r') as plants_file:
@@ -328,6 +337,7 @@ class CharacterHandler(tornado.web.RequestHandler):
 
         create_pdf.combine_pdfs(create_pdf.gen_char_pdf(character))
 
+        self.write('<body_col0>')
         self.write(str('<a href="/char_pdfs/' +
                        character['name'].replace(' ', '_') + '.pdf">View PDF</a>'))
         self.write('<br><br>')
@@ -375,6 +385,8 @@ class CharacterHandler(tornado.web.RequestHandler):
         self.write('<br>')
         for mutation in character['plant']:
             self.write(mutation + '<br>')
+        self.write('</body_col0>')
+        self.write('<body_col1>')
         self.write('<br>')
         self.write('<b>Modifiers:</b><br>')
         self.write('<br>')
@@ -385,8 +397,7 @@ class CharacterHandler(tornado.web.RequestHandler):
         self.write('<br>')
         for key in character['level_modifiers']:
             self.write((character['level_modifiers'])[key] + '<br>')
-        self.write('<br>')
-
+        self.write('</body_col1>')
 
 
 def make_app():
