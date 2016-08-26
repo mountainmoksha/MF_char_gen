@@ -342,14 +342,14 @@ class CharacterHandler(tornado.web.RequestHandler):
         self.write('<body_col0>')
         if 'name' in character:
             self.write(str('<a href="/char_pdfs/' +
-                           character['name'].replace(' ', '_') + '.pdf">View PDF</a>     '))
+                           character['name'].replace(' ', '_') + '.pdf">Export PDF</a>     '))
             self.write(str('<a href="/char_xmls/' +
-                           character['name'].replace(' ', '_') + '.xml">View XML</a>'))
+                           character['name'].replace(' ', '_') + '.xml">Export XML</a>'))
         else:
             self.write(str('<a href="/char_pdfs/' +
-                           character['alt-name'].replace(' ', '_') + '.pdf">View PDF</a>     '))
+                           character['alt-name'].replace(' ', '_') + '.pdf">Export PDF</a>     '))
             self.write(str('<a href="/char_xmls/' +
-                           character['alt-name'].replace(' ', '_') + '.xml">View XML</a>'))
+                           character['alt-name'].replace(' ', '_') + '.xml">Export XML</a>'))
         self.write('<br><br>')
 
         if 'name' in character:
