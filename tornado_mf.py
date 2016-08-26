@@ -179,18 +179,19 @@ class MainHandler(tornado.web.RequestHandler):
         self.write('It was created by ' +
                    '<a href=\"https://amutatedpumanamedgrrr.wordpress.com/\">' +
                    'A Mutated Puma Named Grrr<a><br>')
+        self.write('<br>')
         self.write('Check out the source Code at ' +
                    '<a href=\"https://github.com/exit0/MF_char_gen/\">' +
                    'https://github.com/exit0/MF_char_gen/<a><br>')
-        self.write('Please submit bugs and feature requests at ' +
-                   '<a href=\"https://github.com/exit0/MF_char_gen/issues/\">' +
-                   'https://github.com/exit0/MF_char_gen/issues/<a><br>')
+        self.write('<br>')
+        self.write(str('Please <a href="mailto:mfchargen@gmail.com?Subject=mfchargen%20impreovements"' +
+                       'target="_top">email us</a> with ideas for improvements<br>'))
         self.write('<br>')
         self.write('Our <a href=\"/VIEW_ANIMALS\">current list</a> of animals was lifted from ')
         self.write('<a href=\"http://lib.colostate.edu/wildlife/atoz.php?letter=ALL\"> ')
         self.write('http://lib.colostate.edu/wildlife/atoz.php?letter=ALL</a> ')
-        self.write('please contact us on github for suggestions re: additions, ')
-        self.write('subtractions and improvements<br>')
+        self.write('please email us with suggestions<br>')
+        self.write('<br>')
         self.write('Much the same goes for <a href=\"/VIEW_PLANTS\">our plants</a>')
         self.write('</body_col0>')
 
