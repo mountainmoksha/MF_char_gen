@@ -5,6 +5,7 @@ import tornado.ioloop
 import tornado.web
 import gen_char
 import create_pdf
+import create_xml
 
 
 class ScreenFormatter():
@@ -336,14 +337,19 @@ class CharacterHandler(tornado.web.RequestHandler):
                                       rand_repl)
 
         create_pdf.combine_pdfs(create_pdf.gen_char_pdf(character))
+        create_xml.gen_char_xml(character)
 
         self.write('<body_col0>')
         if 'name' in character:
             self.write(str('<a href="/char_pdfs/' +
-                           character['name'].replace(' ', '_') + '.pdf">View PDF</a>'))
+                           character['name'].replace(' ', '_') + '.pdf">View PDF</a>     '))
+            self.write(str('<a href="/char_xmls/' +
+                           character['name'].replace(' ', '_') + '.xml">View XML</a>'))
         else:
             self.write(str('<a href="/char_pdfs/' +
-                           character['alt-name'].replace(' ', '_') + '.pdf">View PDF</a>'))
+                           character['alt-name'].replace(' ', '_') + '.pdf">View PDF</a>     '))
+            self.write(str('<a href="/char_xmls/' +
+                           character['alt-name'].replace(' ', '_') + '.xml">View XML</a>'))
         self.write('<br><br>')
 
         if 'name' in character:
@@ -421,6 +427,7 @@ def make_app():
         (r"/VIEW_PLANTS", PlantViewHandler),
         (r"/(MF_logo_color\.png)", tornado.web.StaticFileHandler, {"path": "./images"}),
         (r"/char_pdfs/(.*)", tornado.web.StaticFileHandler, {"path": "./char_pdfs"},),
+        (r"/char_xmls/(.*)", tornado.web.StaticFileHandler, {"path": "./char_xmls"},),
     ])
 
 
