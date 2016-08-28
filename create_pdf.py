@@ -99,14 +99,29 @@ def gen_char_pdf(character):
         character_canvas.drawString(75, mutations_current_height, 'Physical Mutations:')
         mutations_current_height = mutations_current_height - 13
         for mutation in character['physical']:
-            character_canvas.drawString(85, mutations_current_height, mutation)
+            if mutation[:4] == 'Pick':
+                character_canvas.drawString(85, mutations_current_height, 'Pick')
+            else:
+                character_canvas.drawString(85, mutations_current_height, mutation)
             mutations_current_height = mutations_current_height - 13
 
     if (character['mental'])[0] != '':
         character_canvas.drawString(75, mutations_current_height, 'Mental Mutations:')
         mutations_current_height = mutations_current_height - 13
         for mutation in character['mental']:
-            character_canvas.drawString(85, mutations_current_height, mutation)
+            if mutation[:4] == 'Pick':
+                character_canvas.drawString(85, mutations_current_height, 'Pick')
+            else:
+                character_canvas.drawString(85, mutations_current_height, mutation)
+            mutations_current_height = mutations_current_height - 13
+
+    mutations_current_height = 250
+
+    if 'level_modifiers' in character:
+        character_canvas.drawString(300, mutations_current_height, 'Level Modifiers:')
+        mutations_current_height = mutations_current_height - 13
+        for level_mod_key in character['level_modifiers']:
+            character_canvas.drawString(310, mutations_current_height, (character['level_modifiers'])[level_mod_key])
             mutations_current_height = mutations_current_height - 13
 
     # this advances us to page 2:
@@ -120,7 +135,7 @@ def gen_char_pdf(character):
 
 if __name__ == '__main__':
 
-    CHARACTER = gen_char.char()
+    CHARACTER = gen_char.char(None, 10)
 
     FILE_NAME = gen_char_pdf(CHARACTER)
 
