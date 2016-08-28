@@ -16,6 +16,7 @@ class ScreenFormatter():
         """create style sheet for page"""
 
         ret_str = '<html><head>'
+        ret_str = ret_str + '<title>Mutant Future Character Generator</title>'
         ret_str = ret_str + '<meta name="keywords" '
         ret_str = ret_str + 'content="Mutant Future Character Generator, '
         ret_str = ret_str + 'Mutant Future, Labyrinth Lord">'
@@ -55,8 +56,6 @@ class ScreenFormatter():
         ret_str = ret_str + '    padding:5px;	 	 '
         ret_str = ret_str + '}'
         ret_str = ret_str + '</style>'
-        ret_str = ret_str + '<head></head>'
-        ret_str = ret_str + '<title>Mutant Future Character Generator</title>'
         ret_str = ret_str + '</style></head>'
 
         return ret_str
