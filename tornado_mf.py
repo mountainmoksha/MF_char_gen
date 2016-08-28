@@ -6,6 +6,7 @@ import tornado.web
 import gen_char
 import create_pdf
 import create_xml
+import char_xml_parser
 
 
 class ScreenFormatter():
@@ -118,11 +119,20 @@ class ScreenFormatter():
         ret_str = ret_str + '+ "?" + document.getElementById("name").value'
         ret_str = ret_str + '+ "=" + document.getElementById("name").checked;'
         ret_str = ret_str + '}'
-        ret_str = ret_str + '</script>'
+        ret_str = ret_str + '</script><br>'
+        if 1 == 0:
+            ret_str = ret_str + '--------------------------------------<br>'
+            ret_str = ret_str + '<b>Upload character xml:</b><br>'
+            ret_str = ret_str + '<form action="DISPLAY_XML">'
+            ret_str = ret_str + '  <input type="file" name="user_xml" accept="xml">'
+            ret_str = ret_str + '  <input type="submit">'
+            ret_str = ret_str + '</form>'
+            ret_str = ret_str + '--------------------------------------<br>'
         ret_str = ret_str + '<a href="/">Home</a>'
         ret_str = ret_str + '</nav>'
 
         return ret_str
+
 
     def create_head(self):
         """create header for MF char gen"""
@@ -278,7 +288,6 @@ class MainHandler(tornado.web.RequestHandler):
         self.write('</body_col0>')
 
 
-
 class AnimalViewHandler(tornado.web.RequestHandler):
     """view the animals currently in the generator"""
 
@@ -372,8 +381,22 @@ class DisplayXMLHandler(tornado.web.RequestHandler):
     def create_body(self):
         """return html for MF character for web interface"""
 
-        file_name = 'Bog_Pibiviz.xml'
-        self.write(file_name)
+        screen_formatter = ScreenFormatter()
+
+        file_name = 'char_xmls/'
+
+        for section in self.request.uri.split('?'):
+            this_section = section.split('=')
+            if len(this_section) == 1:
+                base_url = this_section[0]
+            else:
+                if this_section[0] == 'user_xml':
+                    file_name = file_name + section.split('=')[1]
+
+        character = char_xml_parser.parse_char_xml(file_name)
+        self.write(screen_formatter.create_char_display(character))
+
+        return
 
 class CharacterHandler(tornado.web.RequestHandler):
     """Handler For all Characters"""
