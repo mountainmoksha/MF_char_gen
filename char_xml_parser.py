@@ -29,7 +29,8 @@ def parse_char_xml(file_name):
             for sub_key in root_dict[root_key]:
                 if 'item' in root_dict[root_key]:
                     for item_key in (root_dict[root_key])['item']:
-                        if '#text' in item_key:
+                        if (('#text' in item_key) and
+                            (item_key != '#text')):
                             this_entry = item_key['#text']
                             if this_entry not in this_list:
                                 this_list.append(this_entry)
