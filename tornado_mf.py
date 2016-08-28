@@ -140,6 +140,87 @@ class ScreenFormatter():
         return ret_str
 
 
+    def create_char_display(self, character):
+        """display details of character to the right of the nav pane"""
+
+        ret_str = str('<body_col0>')
+        if 'name' in character:
+            ret_str = ret_str + str(str('<a href="/char_pdfs/' +
+                                        character['name'].replace(' ', '_') +
+                                        '.pdf">Export PDF</a>     '))
+            ret_str = ret_str + str(str('<a href="/char_xmls/' +
+                                        character['name'].replace(' ', '_') +
+                                        '.xml">Export XML</a>'))
+        else:
+            ret_str = ret_str + str(str('<a href="/char_pdfs/' +
+                                        character['alt-name'].replace(' ', '_') +
+                                        '.pdf">Export PDF</a>     '))
+            ret_str = ret_str + str(str('<a href="/char_xmls/' +
+                                        character['alt-name'].replace(' ', '_') +
+                                        '.xml">Export XML</a>'))
+        ret_str = ret_str + str('<br><br>')
+
+        if 'name' in character:
+            ret_str = ret_str + str('<b>Name: </b>' + character['name'] + '<br>')
+        else:
+            ret_str = ret_str + str('<b>Name:</b><br>')
+        ret_str = ret_str + str('<br>')
+        ret_str = ret_str + str('<b>Type: </b>' + character['type'])
+        if 'sub_type' in character:
+            ret_str = ret_str + str(' (' + character['sub_type'] +')')
+        ret_str = ret_str + str('<br>')
+        ret_str = ret_str + str('<b>Level: </b>' + str(character['level']))
+        ret_str = ret_str + str('<br>')
+        ret_str = ret_str + str('<b>XP: </b>' + str(character['XP']))
+        ret_str = ret_str + str('<br>')
+        for attribute in character['attributes']:
+            ret_str = ret_str + str('<b>' + attribute + ' : </b>' +
+                                    str((character['attributes'])[attribute]) + '<br>')
+        ret_str = ret_str + str('<br>')
+        ret_str = ret_str + str('<b>AC: </b>' + str(character['AC']) + '<br>')
+        ret_str = ret_str + str('<br>')
+        ret_str = ret_str + str('<b>HP: </b>' + str(character['HP']) + '<br>')
+        ret_str = ret_str + str('<br>')
+        ret_str = ret_str + str('<b>GP: </b>' + str(character['GP']) + '<br>')
+        ret_str = ret_str + str('<br>')
+        ret_str = ret_str + str('<b>Saving Throws: </b><br><br>')
+        ret_str = ret_str + str('<b>Energy Attacks: </b>' + str(character['energy_save']) + '<br>')
+        ret_str = ret_str + str('<b>Poison or Death: </b>' +
+                                str(character['poison_death_save']) + '<br>')
+        ret_str = ret_str + str('<b>Stun Attacks: </b>' + str(character['stun_save']) + '<br>')
+        ret_str = ret_str + str('<b>Radiation: </b>' + str(character['rad_save']) + '<br>')
+        ret_str = ret_str + str('<br>')
+        ret_str = ret_str + str('<b>Physical Mutations:</b><br>')
+        ret_str = ret_str + str('<br>')
+        for mutation in character['physical']:
+            ret_str = ret_str + str(mutation + '<br>')
+        ret_str = ret_str + str('<br>')
+        ret_str = ret_str + str('<b>Mental Mutations:</b><br>')
+        ret_str = ret_str + str('<br>')
+        for mutation in character['mental']:
+            ret_str = ret_str + str(mutation + '<br>')
+        ret_str = ret_str + str('<br>')
+        ret_str = ret_str + str('<b>Plant Mutations:</b><br>')
+        ret_str = ret_str + str('<br>')
+        for mutation in character['plant']:
+            ret_str = ret_str + str(mutation + '<br>')
+        ret_str = ret_str + str('</body_col0>')
+        ret_str = ret_str + str('<body_col1>')
+        ret_str = ret_str + str('<br>')
+        ret_str = ret_str + str('<b>Modifiers:</b><br>')
+        ret_str = ret_str + str('<br>')
+        for modifier in character['modifiers']:
+            ret_str = ret_str + str(modifier + '<br>')
+        ret_str = ret_str + str('<br>')
+        ret_str = ret_str + str('<b>Level Modifiers:</b><br>')
+        ret_str = ret_str + str('<br>')
+        for key in character['level_modifiers']:
+            ret_str = ret_str + str((character['level_modifiers'])[key] + '<br>')
+        ret_str = ret_str + str('</body_col1>')
+
+        return ret_str
+
+
 class MainHandler(tornado.web.RequestHandler):
     """Handler for main page of MF char gen"""
 
@@ -184,7 +265,8 @@ class MainHandler(tornado.web.RequestHandler):
                    '<a href=\"https://github.com/exit0/MF_char_gen/\">' +
                    'https://github.com/exit0/MF_char_gen/<a><br>')
         self.write('<br>')
-        self.write(str('Please <a href="mailto:mfchargen@gmail.com?Subject=mfchargen%20impreovements"' +
+        self.write(str('Please <a href="mailto:' +
+                       'mfchargen@gmail.com?Subject=mfchargen%20impreovements"' +
                        'target="_top">email us</a> with ideas for improvements<br>'))
         self.write('<br>')
         self.write('Our <a href=\"/VIEW_ANIMALS\">current list</a> of animals was lifted from ')
@@ -370,75 +452,10 @@ class CharacterHandler(tornado.web.RequestHandler):
         create_pdf.combine_pdfs(create_pdf.gen_char_pdf(character))
         create_xml.gen_char_xml(character)
 
-        self.write('<body_col0>')
-        if 'name' in character:
-            self.write(str('<a href="/char_pdfs/' +
-                           character['name'].replace(' ', '_') + '.pdf">Export PDF</a>     '))
-            self.write(str('<a href="/char_xmls/' +
-                           character['name'].replace(' ', '_') + '.xml">Export XML</a>'))
-        else:
-            self.write(str('<a href="/char_pdfs/' +
-                           character['alt-name'].replace(' ', '_') + '.pdf">Export PDF</a>     '))
-            self.write(str('<a href="/char_xmls/' +
-                           character['alt-name'].replace(' ', '_') + '.xml">Export XML</a>'))
-        self.write('<br><br>')
+        screen_formatter = ScreenFormatter()
+        self.write(screen_formatter.create_char_display(character))
 
-        if 'name' in character:
-            self.write('<b>Name: </b>' + character['name'] + '<br>')
-        else:
-            self.write('<b>Name:</b><br>')
-        self.write('<br>')
-        self.write('<b>Type: </b>' + character['type'])
-        if 'sub_type' in character:
-            self.write(' (' + character['sub_type'] +')')
-        self.write('<br>')
-        self.write('<b>Level: </b>' + str(character['level']))
-        self.write('<br>')
-        self.write('<b>XP: </b>' + str(character['XP']))
-        self.write('<br>')
-        for attribute in character['attributes']:
-            self.write('<b>' + attribute + ' : </b>' +
-                       str((character['attributes'])[attribute]) + '<br>')
-        self.write('<br>')
-        self.write('<b>AC: </b>' + str(character['AC']) + '<br>')
-        self.write('<br>')
-        self.write('<b>HP: </b>' + str(character['HP']) + '<br>')
-        self.write('<br>')
-        self.write('<b>GP: </b>' + str(character['GP']) + '<br>')
-        self.write('<br>')
-        self.write('<b>Saving Throws: </b><br><br>')
-        self.write('<b>Energy Attacks: </b>' + str(character['energy_save']) + '<br>')
-        self.write('<b>Poison or Death: </b>' + str(character['poison_death_save']) + '<br>')
-        self.write('<b>Stun Attacks: </b>' + str(character['stun_save']) + '<br>')
-        self.write('<b>Radiation: </b>' + str(character['rad_save']) + '<br>')
-        self.write('<br>')
-        self.write('<b>Physical Mutations:</b><br>')
-        self.write('<br>')
-        for mutation in character['physical']:
-            self.write(mutation + '<br>')
-        self.write('<br>')
-        self.write('<b>Mental Mutations:</b><br>')
-        self.write('<br>')
-        for mutation in character['mental']:
-            self.write(mutation + '<br>')
-        self.write('<br>')
-        self.write('<b>Plant Mutations:</b><br>')
-        self.write('<br>')
-        for mutation in character['plant']:
-            self.write(mutation + '<br>')
-        self.write('</body_col0>')
-        self.write('<body_col1>')
-        self.write('<br>')
-        self.write('<b>Modifiers:</b><br>')
-        self.write('<br>')
-        for modifier in character['modifiers']:
-            self.write(modifier + '<br>')
-        self.write('<br>')
-        self.write('<b>Level Modifiers:</b><br>')
-        self.write('<br>')
-        for key in character['level_modifiers']:
-            self.write((character['level_modifiers'])[key] + '<br>')
-        self.write('</body_col1>')
+        return
 
 
 def make_app():
