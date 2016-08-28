@@ -35,16 +35,21 @@ def parse_char_xml(file_name):
             character[root_key] = this_list
 
         if (root_dict[root_key])['@type'] == 'dict':
+
+            this_dict = {}
+
             for dict_key in root_dict[root_key]:
                 if dict_key != '@type':
 
                     if ((root_dict[root_key])[dict_key])['@type'] == 'str':
                         val_str = str(((root_dict[root_key])[dict_key])['#text'])
-                        character[dict_key] = val_str
+                        this_dict[dict_key] = val_str
 
                     if ((root_dict[root_key])[dict_key])['@type'] == 'int':
-                        val_str = int(((root_dict[root_key])[dict_key])['#text'])
-                        character[dict_key] = val_str
+                        val_int = int(((root_dict[root_key])[dict_key])['#text'])
+                        this_dict[dict_key] = val_int
+
+            character[root_key] = this_dict
 
     return character
 
