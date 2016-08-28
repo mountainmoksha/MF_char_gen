@@ -263,6 +263,36 @@ class PlantViewHandler(tornado.web.RequestHandler):
             self.write(plant + '<br>')
 
 
+class DisplayXMLHandler(tornado.web.RequestHandler):
+    """Handler For all Characters"""
+
+    def data_received(self, chunk):
+        print('chunk is', chunk)
+
+    def get(self):
+        """respond to HTTP get method"""
+
+        screen_formatter = ScreenFormatter()
+
+        self.write(screen_formatter.create_style_sheet())
+        self.write('<body>')
+        self.write(screen_formatter.create_head())
+        self.write('<font size="2">')
+        self.write(screen_formatter.create_nav())
+        self.write('</font>')
+        self.write('<font size="2">')
+        self.create_body()
+        self.write('</font>')
+        self.write(screen_formatter.create_foot())
+        self.write('</body></html>')
+
+
+    def create_body(self):
+        """return html for MF character for web interface"""
+
+        file_name = 'Bog_Pibiviz.xml'
+        self.write(file_name)
+
 class CharacterHandler(tornado.web.RequestHandler):
     """Handler For all Characters"""
 
@@ -424,6 +454,7 @@ def make_app():
         (r"/MUTANT_PLANT", CharacterHandler),
         (r"/PURE_HUMAN", CharacterHandler),
         (r"/RANDOM", CharacterHandler),
+        (r"/DISPLAY_XML", DisplayXMLHandler),
         (r"/VIEW_ANIMALS", AnimalViewHandler),
         (r"/VIEW_PLANTS", PlantViewHandler),
         (r"/(MF_logo_color\.png)", tornado.web.StaticFileHandler, {"path": "./images"}),
