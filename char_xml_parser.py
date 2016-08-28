@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import sys
 import xmltodict
 import gen_char
 import create_xml
@@ -59,14 +60,22 @@ def parse_char_xml(file_name):
 
 if __name__ == '__main__':
 
-    CHARACTER = gen_char.char()
-    FILE_NAME = create_xml.gen_char_xml(CHARACTER)
-    CHARACTER_RETURNED = parse_char_xml(FILE_NAME)
+    if len(sys.argv) > 1:
 
-    print('match:')
-    print()
-    print(CHARACTER)
-    print()
-    print('to:')
-    print()
-    print(CHARACTER_RETURNED)
+        for arg_idx in range(1, len(sys.argv)):
+            CHARACTER_RETURNED = parse_char_xml(sys.argv[arg_idx])
+            print(CHARACTER_RETURNED)
+
+    else:
+
+        CHARACTER = gen_char.char()
+        FILE_NAME = create_xml.gen_char_xml(CHARACTER)
+        CHARACTER_RETURNED = parse_char_xml(FILE_NAME)
+
+        print('match:')
+        print()
+        print(CHARACTER)
+        print()
+        print('to:')
+        print()
+        print(CHARACTER_RETURNED)
