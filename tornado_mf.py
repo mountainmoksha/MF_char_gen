@@ -15,8 +15,17 @@ class ScreenFormatter():
     def create_style_sheet(self):
         """create style sheet for page"""
 
-        ret_str = '<html><head>'
-        ret_str = ret_str + '<title>Mutant Future Character Generator</title>'
+        ret_str = '<html>'
+        # Google Analytics
+        ret_str = ret_str +'<script>'
+        ret_str = ret_str +'  (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){'
+        ret_str = ret_str +'(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),'
+        ret_str = ret_str +'m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)'
+        ret_str = ret_str +'})(window,document,\'script\',\'https://www.google-analytics.com/analytics.js\',\'ga\');'
+        ret_str = ret_str + 'ga(\'create\', \'UA-83215397-1\', \'auto\');'
+        ret_str = ret_str + 'ga(\'send\', \'pageview\');'
+        ret_str = ret_str + '</script>'
+        ret_str = ret_str + '<head><title>Mutant Future Character Generator</title>'
         ret_str = ret_str + '<meta name="keywords" '
         ret_str = ret_str + 'content="Mutant Future Character Generator, '
         ret_str = ret_str + 'Mutant Future, Labyrinth Lord">'
