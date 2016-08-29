@@ -508,6 +508,7 @@ def make_app():
         (r"/(MF_logo_color\.png)", tornado.web.StaticFileHandler, {"path": "./images"}),
         (r"/char_pdfs/(.*)", tornado.web.StaticFileHandler, {"path": "./char_pdfs"},),
         (r"/char_xmls/(.*)", tornado.web.StaticFileHandler, {"path": "./char_xmls"},),
+        (r"/(.*)", tornado.web.StaticFileHandler, {"path": "./"},),
     ])
 
 
