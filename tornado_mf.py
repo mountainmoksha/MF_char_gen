@@ -12,7 +12,7 @@ import char_xml_parser
 class ScreenFormatter():
     """object that generates html for masthead, nav and footer"""
 
-    def create_style_sheet(self):
+    def create_style_sheet(self, title):
         """create style sheet for page"""
 
         ret_str = '<html>'
@@ -25,7 +25,7 @@ class ScreenFormatter():
         ret_str = ret_str + 'ga(\'create\', \'UA-83215397-1\', \'auto\');'
         ret_str = ret_str + 'ga(\'send\', \'pageview\');'
         ret_str = ret_str + '</script>'
-        ret_str = ret_str + '<head><title>Mutant Future Character Generator</title>'
+        ret_str = ret_str + '<head><title>' + title + '</title>'
         ret_str = ret_str + '<meta name="keywords" '
         ret_str = ret_str + 'content="Mutant Future Character Generator, '
         ret_str = ret_str + 'Mutant Future, Labyrinth Lord">'
@@ -250,7 +250,7 @@ class MainHandler(tornado.web.RequestHandler):
 
         screen_formatter = ScreenFormatter()
 
-        self.write(screen_formatter.create_style_sheet())
+        self.write(screen_formatter.create_style_sheet("Mutant Future Character Generator"))
         self.write('<body>')
         self.write(screen_formatter.create_head())
         self.write('<font size="2">')
@@ -307,7 +307,7 @@ class AnimalViewHandler(tornado.web.RequestHandler):
 
         screen_formatter = ScreenFormatter()
 
-        self.write(screen_formatter.create_style_sheet())
+        self.write(screen_formatter.create_style_sheet("Animals Viewer"))
         self.write('<body>')
         self.write(screen_formatter.create_head())
         self.write('<font size="2">')
@@ -340,7 +340,7 @@ class PlantViewHandler(tornado.web.RequestHandler):
 
         screen_formatter = ScreenFormatter()
 
-        self.write(screen_formatter.create_style_sheet())
+        self.write(screen_formatter.create_style_sheet("Plants Viewer"))
         self.write('<body>')
         self.write(screen_formatter.create_head())
         self.write('<font size="2">')
@@ -373,7 +373,7 @@ class DisplayXMLHandler(tornado.web.RequestHandler):
 
         screen_formatter = ScreenFormatter()
 
-        self.write(screen_formatter.create_style_sheet())
+        self.write(screen_formatter.create_style_sheet("XML Viewer"))
         self.write('<body>')
         self.write(screen_formatter.create_head())
         self.write('<font size="2">')
@@ -415,9 +415,11 @@ class CharacterHandler(tornado.web.RequestHandler):
     def get(self):
         """respond to HTTP get method"""
 
+        app_name = (self.request.uri.split('?')[0])[1:]
+
         screen_formatter = ScreenFormatter()
 
-        self.write(screen_formatter.create_style_sheet())
+        self.write(screen_formatter.create_style_sheet(app_name))
         self.write('<body>')
         self.write(screen_formatter.create_head())
         self.write('<font size="2">')
