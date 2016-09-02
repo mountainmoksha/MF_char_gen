@@ -267,6 +267,7 @@ class MainHandler(tornado.web.RequestHandler):
         """create body section"""
 
         self.write('<body_col0>')
+        self.write('<b>This is a Mutant Future Character Generator!</b><br><br>')
         self.write('Mutant Future was created by ' +
                    '<a href=\"http://www.goblinoidgames.com/\">' +
                    'Goblinoid Games<a> ' +
