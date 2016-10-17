@@ -39,16 +39,21 @@ def gen_xp(character):
 def gen_saves(character):
     """produce modified saving throws by level"""
 
-    if character['level'] < 4:
+    if character['level'] < 1:
         character['energy_save'] = 17
         character['poison_death_save'] = 14
         character['stun_save'] = 16
         character['rad_save'] = 15
-    elif character['level'] < 7:
+    elif character['level'] < 4:
         character['energy_save'] = 15
         character['poison_death_save'] = 12
         character['stun_save'] = 14
         character['rad_save'] = 13
+    elif character['level'] < 7:
+        character['energy_save'] = 13
+        character['poison_death_save'] = 10
+        character['stun_save'] = 12
+        character['rad_save'] = 11
     elif character['level'] < 10:
         character['energy_save'] = 9
         character['poison_death_save'] = 8
