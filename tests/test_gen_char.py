@@ -18,10 +18,56 @@ class SimpleTestCase(unittest.TestCase):
         os.chdir(self.tests_path)
 
     def test_char_name(self):
+        """test the proper operation of name generator"""
 
         character = gen_char.char()
 
         self.assertTrue(isinstance(gen_char.char_name(character), str))
+
+    def test_char_mutations(self):
+        """test the proper operation of mutation generator"""
+
+        character = gen_char.char()
+
+        gen_char.char_mutations(character)
+
+        # TODO: test return value
+
+    def test_gen_xp(self):
+        """test the proper operation of XP generator"""
+
+        character = gen_char.char()
+
+        gen_char.gen_xp(character)
+
+        # TODO: test return value
+
+    def test_gen_saves(self):
+        """test the proper operation of saves generator"""
+
+        character = gen_char.char()
+
+        gen_char.gen_saves(character)
+
+        # TODO: test return value
+
+    def test_gen_level_mods(self):
+        """test the proper operation of level mods generator"""
+
+        character = gen_char.char()
+
+        gen_char.gen_level_mods(character)
+
+        # TODO: test return value
+
+    def test_char_hit_points(self):
+        """test the proper operation of level mods generator"""
+
+        character = gen_char.char()
+
+        gen_char.char_hit_points(character)
+
+        # TODO: test return value
 
     def test_char(self):
         """test the proper operation of character generator"""
