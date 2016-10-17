@@ -18,7 +18,7 @@ class SimpleTestCase(unittest.TestCase):
         """Call after every test case."""
         os.chdir(self.tests_path)
 
-    def test_attrs(self):
+    def test_gen_char_xml(self):
         """unit test for attribute generator"""
 
         character = gen_char.char()
