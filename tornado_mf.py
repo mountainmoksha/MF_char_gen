@@ -34,7 +34,8 @@ class ScreenFormatter():
         ret_str = ret_str + '    background-color:blue;'
         ret_str = ret_str + '    color:white;'
         ret_str = ret_str + '    text-align:center;'
-        ret_str = ret_str + '    height:15%;'
+#        ret_str = ret_str + '    height:15%;'
+        ret_str = ret_str + '    height:152;'
         ret_str = ret_str + '    padding:5px;	 '
         ret_str = ret_str + '}'
         ret_str = ret_str + 'nav {'
@@ -145,7 +146,7 @@ class ScreenFormatter():
     def create_head(self):
         """create header for MF char gen"""
 
-        ret_str = '<body><header><img src="MF_logo_color.png" alt="MF_logo_color.png"></header>'
+        ret_str = '<body><header><img src="MF_logo_color.png" alt="MF_logo_color.png" height="150" width="600"></header>'
 
         return ret_str
 
