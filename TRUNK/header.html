@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Solid State by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">Solid State</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+                                <form>
+                                    <!--
+								<li><a href="/">Home</a></li>
+								<li><a href="/BASIC_ANDROID">Basic Android</a></li>
+								<li><a href="/SYNTHETIC_ANDROID">Synthetic Android</a></li>
+								<li><a href="/REPLICANT">Replicant</a></li>
+								<li><a href="/MUTANT_HUMAN">Mutant Human</a></li>
+								<li><a href="/MUTANT_ANIMAL">Mutant Animal</a></li>
+								<li><a href="/RANDOM">Random</a></li>
+                                    -->
+                                <b>Create a character</b><br>
+                                <b>Class:</b><br>
+                                <select id="class_select">
+                                <option value="RANDOM">Random</option>
+                                <option value="BASIC_ANDROID">Basic Android</option>
+                                <option value="MUTANT_HUMAN">Mutant Human</option>
+                                <option value="MUTANT_ANIMAL">Mutant Animal</option>
+                                <option value="MUTANT_PLANT">Mutant Plant</option>
+                                <option value="PURE_HUMAN">Pure Human</option>
+                                <option value="SYNTHETIC_ANDROID">Synthetic Android</option>
+                                <option value="REPLICANT">Replicant</option>
+                                </select><br>
+                                <b>Level:</b><br>
+                                <select id="level_select">
+                                <option value=1>1</option>
+                                <option value=2>2</option>
+                                <option value=3>3</option>
+                                <option value=4>4</option>
+                                <option value=5>5</option>
+                                <option value=6>6</option>
+                                <option value=7>7</option>
+                                <option value=8>8</option>
+                                <option value=9>9</option>
+                                <option value=10>10</option>
+                                <option value="Random">Random</option>
+                                </select><br>
+                                <input type="checkbox" id="sub" value="sub_spec" checked="checked"/>
+                                Assign sub-species for animals and plants<br>
+                                <input type="checkbox" id="name"
+                                   value="assign_name" checked="checked"/>
+                                Assign randomized name<br>
+                                <input type="checkbox" id="synth" value="rand_synth"/>
+                                Include synthetic androids in randomized results<br>
+                                <input type="checkbox" id="repl" value="rand_repl"/>
+                                Include replicants in randomized results<br>
+                                <button type="button" onclick="generate_character()">
+                                   Generate</button><br>
+                                </form>
+                                <script>
+                                function generate_character() {
+                                     window.location = document.getElementById("class_select").value 
+                                + "?" + document.getElementById("sub").value + "=" + 
+                                document.getElementById("sub").checked
+                                + "?" + document.getElementById("level_select").id
+                                + "=" + document.getElementById("level_select").value
+                                + "?" + document.getElementById("synth").value
+                                + "=" + document.getElementById("synth").checked
+                                + "?" + document.getElementById("repl").value
+                                + "=" + document.getElementById("repl").checked
+                                + "?" + document.getElementById("name").value
+                                + "=" + document.getElementById("name").checked;
+                                }
+                                </script><br>
+                                </form>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav

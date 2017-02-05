@@ -249,26 +249,27 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self):
         """respond to HTTP get method"""
 
-        screen_formatter = ScreenFormatter()
+        header_f = open('header.html', 'r')
+        footer_f = open('footer.html', 'r')
+        self.write(header_f.read())
 
-        self.write(screen_formatter.create_style_sheet("Mutant Future Character Generator"))
-        self.write('<body>')
-        self.write(screen_formatter.create_head())
-        self.write('<font size="2">')
-        self.write(screen_formatter.create_nav())
-        self.write('</font>')
-        self.write('<font size="2">')
+        self.write('<!-- Banner -->')
+        self.write('<section id="banner">')
+        self.write('<div class="inner">')
+        self.write('<div class="logo"><span class="icon fa-diamond"></span></div>')
+        self.write('<h2>This is a Mutant Future Character Generator!</h2>')
         self.create_body0()
-        self.write('</font>')
-        self.write(screen_formatter.create_foot())
-        self.write('</body></html>')
+        self.write('</div>')
+        self.write('</section>')
+
+        self.write(footer_f.read())
+        return
 
 
     def create_body0(self):
         """create body section"""
 
         self.write('<body_col0>')
-        self.write('<b>This is a Mutant Future Character Generator!</b><br><br>')
         self.write('Mutant Future was created by ' +
                    '<a href=\"http://www.goblinoidgames.com/\">' +
                    'Goblinoid Games<a> ' +
@@ -276,7 +277,7 @@ class MainHandler(tornado.web.RequestHandler):
         self.write('<br>')
         self.write('This character generator is ' +
                    '<a href=\"http://www.gnu.org/copyleft/gpl.html\">' +
-                   'free software<a><br>')
+                   'free software<a><br><br>')
         self.write('It was created by ' +
                    '<a href=\"https://amutatedpumanamedgrrr.wordpress.com/\">' +
                    'A Mutated Puma Named Grrr<a><br>')
@@ -285,10 +286,10 @@ class MainHandler(tornado.web.RequestHandler):
                    '<a href=\"https://github.com/exit0/MF_char_gen/\">' +
                    'https://github.com/exit0/MF_char_gen/<a><br>')
         self.write('<br>')
-        self.write(str('Please <a href="mailto:' +
-                       'mfchargen@gmail.com?Subject=mfchargen%20impreovements"' +
-                       'target="_top">email us</a> with ideas for improvements<br>'))
-        self.write('<br>')
+#        self.write(str('Please <a href="mailto:' +
+#                       'mfchargen@gmail.com?Subject=mfchargen%20impreovements"' +
+#                       'target="_top">email us</a> with ideas for improvements<br>'))
+#        self.write('<br>')
         self.write('Our <a href=\"/VIEW_ANIMALS\">current list</a> of animals was lifted from ')
         self.write('<a href=\"http://lib.colostate.edu/wildlife/atoz.php?letter=ALL\"> ')
         self.write('http://lib.colostate.edu/wildlife/atoz.php?letter=ALL</a> ')
@@ -421,17 +422,32 @@ class CharacterHandler(tornado.web.RequestHandler):
 
         screen_formatter = ScreenFormatter()
 
-        self.write(screen_formatter.create_style_sheet(app_name))
-        self.write('<body>')
-        self.write(screen_formatter.create_head())
-        self.write('<font size="2">')
-        self.write(screen_formatter.create_nav())
-        self.write('</font>')
-        self.write('<font size="2">')
+#        self.write(screen_formatter.create_style_sheet(app_name))
+#        self.write('<body>')
+#        self.write(screen_formatter.create_head())
+#        self.write('<font size="2">')
+#        self.write(screen_formatter.create_nav())
+#        self.write('</font>')
+#        self.write('<font size="2">')
+#        self.create_body()
+#        self.write('</font>')
+#        self.write(screen_formatter.create_foot())
+#        self.write('</body></html>')
+        header_f = open('header.html', 'r')
+        footer_f = open('footer.html', 'r')
+        self.write(header_f.read())
+
+        self.write('<!-- Banner -->')
+        self.write('<section id="banner">')
+        self.write('<div class="inner">')
+        self.write('<div class="logo"><span class="icon fa-diamond"></span></div>')
+        self.write('<h2>This is a Mutant Future Character Generator!</h2>')
         self.create_body()
-        self.write('</font>')
-        self.write(screen_formatter.create_foot())
-        self.write('</body></html>')
+        self.write('</div>')
+        self.write('</section>')
+
+        self.write(footer_f.read())
+        return
 
 
     def create_body(self):
@@ -512,6 +528,7 @@ def make_app():
         (r"/(MF_logo_color\.png)", tornado.web.StaticFileHandler, {"path": "./images"}),
         (r"/char_pdfs/(.*)", tornado.web.StaticFileHandler, {"path": "./char_pdfs"},),
         (r"/char_xmls/(.*)", tornado.web.StaticFileHandler, {"path": "./char_xmls"},),
+        (r"/html/images/(.*)", tornado.web.StaticFileHandler, {"path": "./html/images"},),
         (r"/(.*)", tornado.web.StaticFileHandler, {"path": "./"},),
     ])
 
