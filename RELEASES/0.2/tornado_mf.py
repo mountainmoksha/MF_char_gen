@@ -115,9 +115,11 @@ class ScreenFormatter():
         ret_str = ret_str + 'Include replicants in randomized results<br>'
         ret_str = ret_str + '<br>'
         ret_str = ret_str + '<b>Attribute generation method:</b><br>'
-        ret_str = ret_str + '<input type="radio" name="method" value="3d6" checked="checked"/>3d6<br>'
-        ret_str = ret_str + '<input type="radio" name="method" value="4d6-L"/>4d6-L<br>'
-        ret_str = ret_str + '<br>'
+        ret_str = ret_str + '<select id="method">'
+        ret_str = ret_str + '<option value="3d6">3d6</option>'
+        ret_str = ret_str + '<option value="4d6-L">4d6-L</option>'
+        ret_str = ret_str + '</select><br>'
+        ret_str = ret_str + '<br><br>'
         ret_str = ret_str + str('<button type="button" onclick="generate_character()">' +
                                 'Generate</button><br>')
         ret_str = ret_str + '</form>'
@@ -126,6 +128,8 @@ class ScreenFormatter():
         ret_str = ret_str + '     window.location = document.getElementById("class_select").value '
         ret_str = ret_str + '+ "?" + document.getElementById("sub").value + "=" + '
         ret_str = ret_str + 'document.getElementById("sub").checked'
+        ret_str = ret_str + '+ "?" + document.getElementById("method").id'
+        ret_str = ret_str + '+ "=" + document.getElementById("method").value'
         ret_str = ret_str + '+ "?" + document.getElementById("level_select").id'
         ret_str = ret_str + '+ "=" + document.getElementById("level_select").value'
         ret_str = ret_str + '+ "?" + document.getElementById("synth").value'
