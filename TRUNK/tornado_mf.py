@@ -459,6 +459,8 @@ class CharacterHandler(tornado.web.RequestHandler):
             if len(this_section) == 1:
                 base_url = this_section[0]
             else:
+                if this_section[0] == 'method':
+                    method = section.split('=')[1]
                 if this_section[0] == 'sub_spec':
                     if section.split('=')[1] == 'true':
                         sub_spec = True
@@ -478,22 +480,29 @@ class CharacterHandler(tornado.web.RequestHandler):
                         level_select = int(section.split('=')[1])
 
         if base_url == '/BASIC_ANDROID':
-            character = gen_char.char('Basic Android', level_select, sub_spec, assign_name)
+            character = gen_char.char('Basic Android', level_select, sub_spec, assign_name,
+                                      False, False, method)
         elif base_url == '/SYNTHETIC_ANDROID':
-            character = gen_char.char('Synthetic Android', level_select, sub_spec, assign_name)
+            character = gen_char.char('Synthetic Android', level_select, sub_spec, assign_name,
+                                      False, False, method)
         elif base_url == '/REPLICANT':
-            character = gen_char.char('Replicant', level_select, sub_spec, assign_name)
+            character = gen_char.char('Replicant', level_select, sub_spec, assign_name,
+                                      False, False, method)
         elif base_url == '/MUTANT_HUMAN':
-            character = gen_char.char('Mutant Human', level_select, sub_spec, assign_name)
+            character = gen_char.char('Mutant Human', level_select, sub_spec, assign_name,
+                                      False, False, method)
         elif base_url == '/MUTANT_ANIMAL':
-            character = gen_char.char('Mutant Animal', level_select, sub_spec, assign_name)
+            character = gen_char.char('Mutant Animal', level_select, sub_spec, assign_name,
+                                      False, False, method)
         elif base_url == '/MUTANT_PLANT':
-            character = gen_char.char('Mutant Plant', level_select, sub_spec, assign_name)
+            character = gen_char.char('Mutant Plant', level_select, sub_spec, assign_name,
+                                      False, False, method)
         elif base_url == '/PURE_HUMAN':
-            character = gen_char.char('Pure Human', level_select, sub_spec, assign_name)
+            character = gen_char.char('Pure Human', level_select, sub_spec, assign_name,
+                                      False, False, method)
         else: # random
             character = gen_char.char(None, level_select, sub_spec, assign_name, rand_synth,
-                                      rand_repl)
+                                      rand_repl, method)
 
         create_pdf.combine_pdfs(create_pdf.gen_char_pdf(character))
         create_xml.gen_char_xml(character)
