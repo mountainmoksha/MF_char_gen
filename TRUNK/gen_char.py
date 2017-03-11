@@ -278,7 +278,8 @@ def char_name(character):
     return character_name
 
 
-def char(char_type=None, level=1, sub_type=True, gen_name=True, rand_synth=False, rand_repl=False):
+def char(char_type=None, level=1, sub_type=True, gen_name=True, rand_synth=False,
+         rand_repl=False, method='3d6'):
     """obtain fully-populated character"""
 
     with open('MF_classes.txt', 'r') as classes_file:
@@ -307,7 +308,7 @@ def char(char_type=None, level=1, sub_type=True, gen_name=True, rand_synth=False
     else:
         character['alt-name'] = char_name(character)
 
-    character['attributes'] = gen_attrs.attrs()
+    character['attributes'] = gen_attrs.attrs(method)
 
     if level is None:
         character['level'] = random.randrange(1, 11)
