@@ -77,6 +77,7 @@ class ScreenFormatter():
         ret_str = '<nav>'
         ret_str = ret_str + '<form>'
         ret_str = ret_str + '<b>Create a character</b><br>'
+        ret_str = ret_str + '<br>'
         ret_str = ret_str + '<b>Class:</b><br>'
         ret_str = ret_str + '<select id="class_select">'
         ret_str = ret_str + '<option value="RANDOM">Random</option>'
@@ -102,6 +103,7 @@ class ScreenFormatter():
         ret_str = ret_str + '<option value=10>10</option>'
         ret_str = ret_str + '<option value="Random">Random</option>'
         ret_str = ret_str + '</select><br>'
+        ret_str = ret_str + '<br>'
         ret_str = ret_str + '<input type="checkbox" id="sub" value="sub_spec" checked="checked"/>'
         ret_str = ret_str + 'Assign sub-species for animals and plants<br>'
         ret_str = ret_str + str('<input type="checkbox" id="name" ' +
@@ -111,6 +113,11 @@ class ScreenFormatter():
         ret_str = ret_str + 'Include synthetic androids in randomized results<br>'
         ret_str = ret_str + '<input type="checkbox" id="repl" value="rand_repl"/>'
         ret_str = ret_str + 'Include replicants in randomized results<br>'
+        ret_str = ret_str + '<br>'
+        ret_str = ret_str + '<b>Attribute generation method:</b><br>'
+        ret_str = ret_str + '<input type="radio" name="method" value="3d6" checked="checked"/>3d6<br>'
+        ret_str = ret_str + '<input type="radio" name="method" value="4d6-L"/>4d6-L<br>'
+        ret_str = ret_str + '<br>'
         ret_str = ret_str + str('<button type="button" onclick="generate_character()">' +
                                 'Generate</button><br>')
         ret_str = ret_str + '</form>'
