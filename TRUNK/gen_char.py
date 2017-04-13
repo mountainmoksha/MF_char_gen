@@ -156,6 +156,10 @@ def char_mutations(character):
                 while phys_mut in character['mental']:
                     phys_mut = read_muts.muts('mental')[0]
                 character['mental'].append(phys_mut)
+        if len(character['physical']) == 0:
+            character['physical'].append('')
+        if len(character['mental']) == 0:
+            character['mental'].append('')
 
     elif character['type'] == 'Pure Human':
         character['physical'] = ['']
