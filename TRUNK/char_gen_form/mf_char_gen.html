@@ -14,7 +14,7 @@
 <!--<form class="formoid-biz-red" style="background-color:#1A2223;font-size:14px;font-family:'Open Sans','Helvetica Neue', 'Helvetica', Arial, Verdana, sans-serif;color:#ECECEC;max-width:480px;min-width:150px" method="post"><div class="title"><h2>Mutant Future Character Generator</h2></div>-->
 <form class="formoid-biz-red" style="background-color:#1A2223;font-size:14px;font-family:'Open Sans','Helvetica Neue', 'Helvetica', Arial, Verdana, sans-serif;color:#ECECEC;max-width:480px;min-width:150px">
     <div class="title"><h2>Mutant Future Character Generator</h2></div>
-	<div class="element-select"><label class="title"></label><div class="large"><span><select name="select" >
+	<div class="element-select"><label class="title"></label><div class="large"><span><select name="select" id="class_select">
 
 		<option value="Pure Human">Pure Human</option>
 		<option value="Mutant Human">Mutant Human</option></select><i></i></span></div></div>
@@ -27,7 +27,9 @@ Attribute generation method:</label>		<div class="column column1"><label><input 
 </form>
 <script>
 function generate_character() {
-    window.open("VIEW_PDF")
+    view_url = "VIEW_PDF"
+    view_url = view_url + "?thing1=thing2"
+    window.open(view_url)
 }
 </script><br>
 <!-- Stop Formoid form-->
