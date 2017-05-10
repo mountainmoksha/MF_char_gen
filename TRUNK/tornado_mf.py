@@ -260,19 +260,23 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self):
         """respond to HTTP get method"""
 
-        screen_formatter = ScreenFormatter()
+#        screen_formatter = ScreenFormatter()
+#
+#        self.write(screen_formatter.create_style_sheet("Mutant Future Character Generator"))
+#        self.write('<body>')
+#        self.write(screen_formatter.create_head())
+#        self.write('<font size="2">')
+#        self.write(screen_formatter.create_nav())
+#        self.write('</font>')
+#        self.write('<font size="2">')
+#        self.create_body0()
+#        self.write('</font>')
+#        self.write(screen_formatter.create_foot())
+#        self.write('</body></html>')
 
-        self.write(screen_formatter.create_style_sheet("Mutant Future Character Generator"))
-        self.write('<body>')
-        self.write(screen_formatter.create_head())
-        self.write('<font size="2">')
-        self.write(screen_formatter.create_nav())
-        self.write('</font>')
-        self.write('<font size="2">')
-        self.create_body0()
-        self.write('</font>')
-        self.write(screen_formatter.create_foot())
-        self.write('</body></html>')
+        form_file_p = open('char_gen_form/mf_char_gen.html', 'r')
+        for form_line in form_file_p:
+            self.write(form_line)
 
 
     def create_body0(self):
@@ -373,6 +377,29 @@ class PlantViewHandler(tornado.web.RequestHandler):
 
         for plant in plants:
             self.write(plant + '<br>')
+
+
+class PDFViewHandler(tornado.web.RequestHandler):
+    """generate a character and view the PDF"""
+
+    def data_received(self, chunk):
+        print('chunk is', chunk)
+
+    def get(self):
+        """respond to HTTP get method"""
+
+        character = gen_char.char()
+
+        file_name = create_pdf.gen_char_pdf(character)
+
+        file_name = create_pdf.combine_pdfs(file_name)
+
+        redir_location = '<html><head>'
+#        redir_location += '<meta http-equiv="refresh" content="0; url=http://example.com/" />'
+        redir_location += '<meta http-equiv="refresh" content="0; '
+        redir_location += file_name + '" />'
+        redir_location += '</head></html>'
+        self.write(redir_location)
 
 
 class DisplayXMLHandler(tornado.web.RequestHandler):
@@ -529,9 +556,12 @@ def make_app():
         (r"/DISPLAY_XML", DisplayXMLHandler),
         (r"/VIEW_ANIMALS", AnimalViewHandler),
         (r"/VIEW_PLANTS", PlantViewHandler),
+        (r"/VIEW_PDF", PDFViewHandler),
         (r"/(MF_logo_color\.png)", tornado.web.StaticFileHandler, {"path": "./images"}),
         (r"/char_pdfs/(.*)", tornado.web.StaticFileHandler, {"path": "./char_pdfs"},),
         (r"/char_xmls/(.*)", tornado.web.StaticFileHandler, {"path": "./char_xmls"},),
+        (r"/mf_char_gen_files/formoid1/(.*)", tornado.web.StaticFileHandler,
+            {"path": "./char_gen_form/mf_char_gen_files/formoid1"},),
         (r"/(.*)", tornado.web.StaticFileHandler, {"path": "./"},),
     ])
 

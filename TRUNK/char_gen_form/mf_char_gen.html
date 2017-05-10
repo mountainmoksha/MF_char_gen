@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Mutant Future Character Generator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="blurBg-false" style="background-color:#EBEBEB">
+
+
+
+<!-- Start Formoid form-->
+<link rel="stylesheet" href="mf_char_gen_files/formoid1/formoid-biz-red.css" type="text/css" />
+<!--<form class="formoid-biz-red" style="background-color:#1A2223;font-size:14px;font-family:'Open Sans','Helvetica Neue', 'Helvetica', Arial, Verdana, sans-serif;color:#ECECEC;max-width:480px;min-width:150px" method="post"><div class="title"><h2>Mutant Future Character Generator</h2></div>-->
+<form class="formoid-biz-red" style="background-color:#1A2223;font-size:14px;font-family:'Open Sans','Helvetica Neue', 'Helvetica', Arial, Verdana, sans-serif;color:#ECECEC;max-width:480px;min-width:150px">
+    <div class="title"><h2>Mutant Future Character Generator</h2></div>
+	<div class="element-select"><label class="title"></label><div class="large"><span><select name="select" >
+
+		<option value="Pure Human">Pure Human</option>
+		<option value="Mutant Human">Mutant Human</option></select><i></i></span></div></div>
+	<div class="element-checkbox"><label class="title">Options</label>		<div class="column column1"><label><input type="checkbox" name="checkbox[]" value="Assign sub-species for animals and plants"/ ><span>Assign sub-species for animals and plants</span></label><label><input type="checkbox" name="checkbox[]" value="Assign randomized name"/ ><span>Assign randomized name</span></label></div><span class="clearfix"></span>
+</div>
+	<div class="element-radio"><label class="title">
+Attribute generation method:</label>		<div class="column column1"><label><input type="radio" name="radio" value="3d6" /><span>3d6</span></label><label><input type="radio" name="radio" value="4d6-L" /><span>4d6-L</span></label></div><span class="clearfix"></span>
+</div>
+<div class="submit"><input type="submit" value="Generate" onclick="generate_character()"></div>
+</form>
+<script>
+function generate_character() {
+    window.open("VIEW_PDF")
+}
+</script><br>
+<!-- Stop Formoid form-->
+
+<!--
+     window.location = document.getElementById("class_select").value 
++ "?" + document.getElementById("sub").value + "=" + 
+document.getElementById("sub").checked
++ "?" + document.getElementById("method").id
++ "=" + document.getElementById("method").value
++ "?" + document.getElementById("level_select").id
++ "=" + document.getElementById("level_select").value
++ "?" + document.getElementById("synth").value
++ "=" + document.getElementById("synth").checked
++ "?" + document.getElementById("repl").value
++ "=" + document.getElementById("repl").checked
++ "?" + document.getElementById("name").value
++ "=" + document.getElementById("name").checked;
+-->
+
+
+</body>
+</html>
