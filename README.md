@@ -9,3 +9,7 @@ This character generator is written in python3
 This project currently requires a working python3 installation containing the following libraries:
 
 python3 -m pip install tornado pdfrw reportlab dicttoxml xmltodict
+
+As a general style guide, please run your python source through pylint and correct any obvious errors such as unused variables and poor spacing.  Please do not feel the need to slavishly answer every issue raised by this tool.  It's there to help.
+
+Please also consider running html through a beautification tool for at-least-minimal readability.
