@@ -423,7 +423,8 @@ class PDFViewHandler(tornado.web.RequestHandler):
                 else:
                     level_select = int(section.split('=')[1])
 
-        character = gen_char.char(class_select)
+        character = gen_char.char(class_select, level_select, sub_spec,
+                                  assign_name, rand_synth, rand_repl)
 
         file_name = create_pdf.gen_char_pdf(character)
 
