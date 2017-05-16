@@ -1,103 +1,115 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8" />
-	<title>Mutant Future Character Generator</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body class="blurBg-false" style="background-color:#EBEBEB">
-
-
-
-<!-- Start Formoid form-->
-<link rel="stylesheet" href="mf_char_gen_files/formoid1/formoid-biz-red.css" type="text/css" />
-<!--<form class="formoid-biz-red" style="background-color:#1A2223;font-size:14px;font-family:'Open Sans','Helvetica Neue', 'Helvetica', Arial, Verdana, sans-serif;color:#ECECEC;max-width:480px;min-width:150px" method="post"><div class="title"><h2>Mutant Future Character Generator</h2></div>-->
-<form class="formoid-biz-red" style="background-color:#1A2223;font-size:14px;font-family:'Open Sans','Helvetica Neue', 'Helvetica', Arial, Verdana, sans-serif;color:#ECECEC;max-width:480px;min-width:150px">
-<img src="MF_logo_color.png" alt="MF_logo_color.png" width="480">
-    <div class="title"><h2>Mutant Future Character Generator</h2></div>
-    <br>
-	<div class="element-select"><label class="title">Class</label><div class="large"><span>
-        <select name="select" id="class_select">
-    		<option value="Random">Random</option>
-    		<option value="Pure Human">Pure Human</option>
-    		<option value="Mutant Human">Mutant Human</option>
-    		<option value="Mutant Animal">Mutant Animal</option>
-    		<option value="Mutant Plant">Mutant Plant</option>
-    		<option value="Basic Android">Basic Android</option>
-    		<option value="Synthetic Android">Synthetic Android</option>
-    		<option value="Replicant">Replicant</option>
-        </select><i></i></span>
-    </div></div>
-
-	<div class="element-select"><label class="title">Level</label><div class="large"><span>
-        <select name="select" id="level_select">
-    		<option value="1">1</option>
-    		<option value="2">2</option>
-    		<option value="3">3</option>
-    		<option value="4">4</option>
-    		<option value="5">5</option>
-    		<option value="6">6</option>
-    		<option value="7">7</option>
-    		<option value="8">8</option>
-    		<option value="9">9</option>
-    		<option value="10">10</option>
-    		<option value="Random">Random</option>
-        </select><i></i></span>
-    </div></div>
-
-	<div class="element-checkbox"><label class="title">Options</label>
-        <div class="column column1">
-            <label><input id="sub_spec" type="checkbox" name="checkbox[]" checked="checked" value="Assign sub-species for animals and plants"/ ><span>Assign sub-species for animals and plants</span></label>
-            <label><input type="checkbox" name="checkbox[]" checked="checked" id="assign_name" value="Assign randomized name"/ ><span>Assign randomized name</span></label>
-            <label><input type="checkbox" name="checkbox[]" id="rand_synth" value="Include synthetic androids in randomized results"/ ><span>Include synthetic androids in randomized results</span></label>
-            <label><input type="checkbox" name="checkbox[]" id="rand_repl" value="Include replicants in randomized results"/ ><span>Include replicants in randomized results</span></label>
-        </div><span class="clearfix"></span>
-    </div>
-
-	<div class="element-select"><label class="title">Attribute Generation Method</label><div class="large"><span>
-        <select name="select" id="method">
-    		<option value="3d6">3d6</option>
-    		<option value="4d6-L">4d6-L</option>
-        </select><i></i></span>
-    </div></div>
-
-<div class="submit"><input type="submit" value="Generate" onclick="generate_character()"></div>
-<br>
-<img src="MF_logo_color.png" alt="MF_logo_color.png" width="480">
-</form>
-
-<script>
-function generate_character() {
-    view_url = "VIEW_PDF"
-    view_url += "?"
-    view_url += document.getElementById("class_select").id
-    view_url += "="
-    view_url += document.getElementById("class_select").value
-    view_url += "?"
-    view_url += document.getElementById("level_select").id
-    view_url += "="
-    view_url += document.getElementById("level_select").value
-    view_url += "?"
-    view_url += document.getElementById("sub_spec").id
-    view_url += "="
-    view_url += document.getElementById("sub_spec").checked
-    view_url += "?"
-    view_url += document.getElementById("assign_name").id
-    view_url += "="
-    view_url += document.getElementById("assign_name").checked
-    view_url += "?"
-    view_url += document.getElementById("rand_synth").id
-    view_url += "="
-    view_url += document.getElementById("rand_synth").checked
-    view_url += "?"
-    view_url += document.getElementById("rand_repl").id
-    view_url += "="
-    view_url += document.getElementById("rand_repl").checked
-    view_url += "?"
-    view_url += document.getElementById("method").id
-    view_url += "="
-    view_url += document.getElementById("method").value
-    window.open(view_url)
-    
-}
-</script><br>
+   <head>
+      <meta charset="utf-8" />
+      <title>Mutant Future Character Generator</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body class="blurBg-false" style="background-color:#EBEBEB">
+      <link rel="stylesheet" href="mf_char_gen_files/formoid1/formoid-biz-red.css" type="text/css" />
+      <form class="formoid-biz-red" style="background-color:#1A2223;font-size:14px;font-family:'Open Sans','Helvetica Neue', 'Helvetica', Arial, Verdana, sans-serif;color:#ECECEC;max-width:480px;min-width:150px">
+         <img src="MF_logo_color.png" alt="MF_logo_color.png" width="100%">
+         <div class="title">
+            <h2>Mutant Future Character Generator</h2>
+         </div>
+         <br>
+         <div class="element-select">
+            <label class="title">Class</label>
+            <div class="large">
+               <span>
+                  <select name="select" id="class_select">
+                     <option value="Random">Random</option>
+                     <option value="Pure Human">Pure Human</option>
+                     <option value="Mutant Human">Mutant Human</option>
+                     <option value="Mutant Animal">Mutant Animal</option>
+                     <option value="Mutant Plant">Mutant Plant</option>
+                     <option value="Basic Android">Basic Android</option>
+                     <option value="Synthetic Android">Synthetic Android</option>
+                     <option value="Replicant">Replicant</option>
+                  </select>
+                  <i></i>
+               </span>
+            </div>
+         </div>
+         <div class="element-select">
+            <label class="title">Level</label>
+            <div class="large">
+               <span>
+                  <select name="select" id="level_select">
+                     <option value="1">1</option>
+                     <option value="2">2</option>
+                     <option value="3">3</option>
+                     <option value="4">4</option>
+                     <option value="5">5</option>
+                     <option value="6">6</option>
+                     <option value="7">7</option>
+                     <option value="8">8</option>
+                     <option value="9">9</option>
+                     <option value="10">10</option>
+                     <option value="Random">Random</option>
+                  </select>
+                  <i></i>
+               </span>
+            </div>
+         </div>
+         <div class="element-checkbox">
+            <label class="title">Options</label>
+            <div class="column column1">
+               <label><input id="sub_spec" type="checkbox" name="checkbox[]" checked="checked" value="Assign sub-species for animals and plants"/ ><span>Assign sub-species for animals and plants</span></label>
+               <label><input type="checkbox" name="checkbox[]" checked="checked" id="assign_name" value="Assign randomized name"/ ><span>Assign randomized name</span></label>
+               <label><input type="checkbox" name="checkbox[]" id="rand_synth" value="Include synthetic androids in randomized results"/ ><span>Include synthetic androids in randomized results</span></label>
+               <label><input type="checkbox" name="checkbox[]" id="rand_repl" value="Include replicants in randomized results"/ ><span>Include replicants in randomized results</span></label>
+            </div>
+            <span class="clearfix"></span>
+         </div>
+         <div class="element-select">
+            <label class="title">Attribute Generation Method</label>
+            <div class="large">
+               <span>
+                  <select name="select" id="method">
+                     <option value="3d6">3d6</option>
+                     <option value="4d6-L">4d6-L</option>
+                  </select>
+                  <i></i>
+               </span>
+            </div>
+         </div>
+         <div class="submit"><input type="submit" value="Generate" onclick="generate_character()"></div>
+         <br>
+         <img src="MF_logo_color.png" alt="MF_logo_color.png" width="100%">
+      </form>
+      <script>
+         function generate_character() {
+             view_url = "VIEW_PDF"
+             view_url += "?"
+             view_url += document.getElementById("class_select").id
+             view_url += "="
+             view_url += document.getElementById("class_select").value
+             view_url += "?"
+             view_url += document.getElementById("level_select").id
+             view_url += "="
+             view_url += document.getElementById("level_select").value
+             view_url += "?"
+             view_url += document.getElementById("sub_spec").id
+             view_url += "="
+             view_url += document.getElementById("sub_spec").checked
+             view_url += "?"
+             view_url += document.getElementById("assign_name").id
+             view_url += "="
+             view_url += document.getElementById("assign_name").checked
+             view_url += "?"
+             view_url += document.getElementById("rand_synth").id
+             view_url += "="
+             view_url += document.getElementById("rand_synth").checked
+             view_url += "?"
+             view_url += document.getElementById("rand_repl").id
+             view_url += "="
+             view_url += document.getElementById("rand_repl").checked
+             view_url += "?"
+             view_url += document.getElementById("method").id
+             view_url += "="
+             view_url += document.getElementById("method").value
+             window.open(view_url)
+             
+         }
+      </script><br>
