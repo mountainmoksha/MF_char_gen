@@ -14,10 +14,19 @@
 <!--<form class="formoid-biz-red" style="background-color:#1A2223;font-size:14px;font-family:'Open Sans','Helvetica Neue', 'Helvetica', Arial, Verdana, sans-serif;color:#ECECEC;max-width:480px;min-width:150px" method="post"><div class="title"><h2>Mutant Future Character Generator</h2></div>-->
 <form class="formoid-biz-red" style="background-color:#1A2223;font-size:14px;font-family:'Open Sans','Helvetica Neue', 'Helvetica', Arial, Verdana, sans-serif;color:#ECECEC;max-width:480px;min-width:150px">
     <div class="title"><h2>Mutant Future Character Generator</h2></div>
-	<div class="element-select"><label class="title"></label><div class="large"><span><select name="select" id="class_select">
 
-		<option value="Pure Human">Pure Human</option>
-		<option value="Mutant Human">Mutant Human</option></select><i></i></span></div></div>
+	<div class="element-select"><label class="title"></label><div class="large"><span>
+        <select name="select" id="class_select">
+    		<option value="Random">Random</option>
+    		<option value="Pure Human">Pure Human</option>
+    		<option value="Mutant Human">Mutant Human</option>
+    		<option value="Mutant Animal">Mutant Animal</option>
+    		<option value="Mutant Plant">Mutant Plant</option>
+    		<option value="Basic Android">Basic Android</option>
+    		<option value="Synthetic Android">Synthetic Android</option>
+    		<option value="Replicant">Replicant</option>
+        </select><i></i></span></div></div>
+
 	<div class="element-checkbox"><label class="title">Options</label>		<div class="column column1"><label><input type="checkbox" name="checkbox[]" value="Assign sub-species for animals and plants"/ ><span>Assign sub-species for animals and plants</span></label><label><input type="checkbox" name="checkbox[]" value="Assign randomized name"/ ><span>Assign randomized name</span></label></div><span class="clearfix"></span>
 </div>
 	<div class="element-radio"><label class="title">
@@ -28,8 +37,12 @@ Attribute generation method:</label>		<div class="column column1"><label><input 
 <script>
 function generate_character() {
     view_url = "VIEW_PDF"
-    view_url = view_url + "?thing1=thing2"
+    view_url += "?"
+    view_url += document.getElementById("class_select").id
+    view_url += "="
+    view_url += document.getElementById("class_select").value
     window.open(view_url)
+    
 }
 </script><br>
 <!-- Stop Formoid form-->

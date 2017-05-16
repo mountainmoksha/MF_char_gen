@@ -388,14 +388,48 @@ class PDFViewHandler(tornado.web.RequestHandler):
     def get(self):
         """respond to HTTP get method"""
 
-        character = gen_char.char()
+        class_select = None
+        sub_spec = False
+        assign_name = False
+        rand_synth = False
+        rand_repl = False
+        level_select = 1
+
+        for section in self.request.uri.split('?'):
+            this_section = section.split('=')
+            if this_section[0] == 'class_select':
+                class_select = section.split('=')[1]
+                if class_select == 'Random':
+                    class_select = None
+                else:
+                    class_select = class_select.replace("%20", " ")
+            if this_section[0] == 'method':
+                method = section.split('=')[1]
+            if this_section[0] == 'sub_spec':
+                if section.split('=')[1] == 'true':
+                    sub_spec = True
+            if this_section[0] == 'assign_name':
+                if section.split('=')[1] == 'true':
+                    assign_name = True
+            if this_section[0] == 'rand_synth':
+                if section.split('=')[1] == 'true':
+                    rand_synth = True
+            if this_section[0] == 'rand_repl':
+                if section.split('=')[1] == 'true':
+                    rand_repl = True
+            if this_section[0] == 'level_select':
+                if section.split('=')[1] == 'Random':
+                    level_select = None
+                else:
+                    level_select = int(section.split('=')[1])
+
+        character = gen_char.char(class_select)
 
         file_name = create_pdf.gen_char_pdf(character)
 
         file_name = create_pdf.combine_pdfs(file_name)
 
         redir_location = '<html><head>'
-#        redir_location += '<meta http-equiv="refresh" content="0; url=http://example.com/" />'
         redir_location += '<meta http-equiv="refresh" content="0; '
         redir_location += file_name + '" />'
         redir_location += '</head></html>'
