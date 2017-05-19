@@ -1,0 +1,5 @@
+This mutation makes the mutant much quicker in all
+respects. Movement speed is doubled, mental tasks take
+half as long to accomplish, and the character may attack
+two times per round in physical combat (not mental
+combat).

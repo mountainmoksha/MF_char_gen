@@ -1,0 +1,6 @@
+Whenever the character falls ill, whether it is from infection
+caused by combat/misadventure, or airborne infectious
+diseases, the character suffers an extra 10 hp of damage
+per day. If using the optional Disease rules characters with
+this mutation suffer a -4 saving throw adjustment against
+diseases, and the duration is doubled.

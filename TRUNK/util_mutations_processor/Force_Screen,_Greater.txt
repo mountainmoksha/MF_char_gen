@@ -1,0 +1,6 @@
+This force screen can be used at a range of 4’, and is
+capable of enclosing other creatures. It can take 5d6 hp
+worth of damage before it collapses (the ML determines
+this secretly each time the power is used), and can be used
+once per day. It can also be employed in the same
+manner as the regular force screen.

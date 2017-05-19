@@ -1,0 +1,5 @@
+The plant can change color or shape in order to look like
+any other kind of plant, but the mass of the plant is
+unchanged. If the plant has a level of intelligence it can
+alter the color to benefit it in other ways as well (see
+chameleon epidermis).

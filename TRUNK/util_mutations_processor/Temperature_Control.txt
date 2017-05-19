@@ -1,0 +1,9 @@
+With this mutation, the character can raise or lower the
+temperature of a visible object within a range of 90 feet.
+The specific form of the power must be determined at
+character generation (50% heat, 50% cold). The mental
+nature of this mutation requires concentration, and the
+effect is a graduated level of damage equaling 1d6 per
+round. The maximum amount of damage that can be
+dealt is 10d6 per round. The ML will decide when an
+object or being combusts or freezes completely.

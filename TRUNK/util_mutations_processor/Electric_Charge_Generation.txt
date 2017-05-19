@@ -1,0 +1,8 @@
+The plant can use some of the excess energy not converted
+to food into a stored electrical charge capable of
+damaging creatures that come in contact with it. This
+electrical weapon does 4d6 hp damage, and must be
+recharged. The plant will be fully charged again after four
+rounds, and may deliver smaller shocks (non-damaging,
+but uncomfortable) every round if under constant
+harassment by predators or opponents.

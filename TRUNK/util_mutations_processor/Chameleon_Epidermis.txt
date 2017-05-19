@@ -1,0 +1,12 @@
+The mutant’s outer cellular structure has been mutated,
+allowing the cells to actually alter their lucidness,
+appearance, and color. In effect, this allows the mutant to
+subtly change colors on a cellular level. The being may
+hide, if stationary, almost as if invisible. The color change
+takes place immediately, and requires no concentration by
+the mutant. The Mutant Lord should assign a percentage
+chance, based on the situation, that the mutant will not be
+noticed when using this camouflage. In complete darkness
+or thick cover, the percentage could be 95%, while in
+daylight if the character is unmoving it might be 50%.|
+Characters wearing heavy armor or fully garbed receive no benefit from Chameleon Epidermis.
