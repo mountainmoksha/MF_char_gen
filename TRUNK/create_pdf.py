@@ -126,6 +126,8 @@ def gen_char_pdf(character):
 
     # this advances us to page 2:
     character_canvas.showPage()
+    # this advances us to page 3:
+    character_canvas.showPage()
 
     character_canvas.drawString(360, 270, str(character['GP']) + ' GP')
 
