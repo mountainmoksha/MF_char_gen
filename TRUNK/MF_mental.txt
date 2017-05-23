@@ -12,7 +12,7 @@
 26-27 Disintegration
 28-30 Dual Cerebellum
 31-33 Empathy
-34-35 Flight, Psionic
+34-35 Psionic Flight
 36-38 Force Screen
 39-40 Greater Force Screen
 41-42 Increased Willpower
