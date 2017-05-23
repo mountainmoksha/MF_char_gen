@@ -1,5 +1,431 @@
 <?xml version="1.0" ?>
 <root>
+	<Abnormal_Size type="str">The plant is either much larger than normal or much
+smaller than the average specimen. Roll 1d20 and
+multiply or divide the plant’s normal size by that number to
+arrive at the new abnormal size. See dwarfism and
+gigantism for potential size effects on combat.
+</Abnormal_Size>
+	<Night_Vision type="str">Individuals with this mutation can see in complete
+darkness to a range of 60 feet by utilizing minute amounts
+of available light. Vision is in black and white only, and
+does not function in utter darkness underground, since
+some small light must be present (starlight, moonlight),
+even if it is so dim normal sight does not perceive it.
+</Night_Vision>
+	<Poison_Susceptibility type="str">This mutation makes all poisons much more dangerous to
+the character. All saving throws versus poison are made
+with a penalty of -4.
+</Poison_Susceptibility>
+	<Reflective_Epidermis type="str">The character’s skin is essentially impenetrable to a
+particular form of energy. At character creation, roll 1d8.
+A roll result of 1-2 is electricity, 3-4 is heat, 5-6 is cold,
+and 7-8 is radiation. The mutant will never suffer damage
+from this energy source.
+</Reflective_Epidermis>
+	<Neural_Telekinesis type="str">With this mutation the character can lift or move WILx10
+pounds using only the power of his mind. This ability does
+not extend to lifting the mutant, however. To the mutant,
+using this power feels like lifting the object with his
+strength, and so requires some concentration. This ability
+has a range of 50 feet, and can only be used to hold
+things for 5 rounds before the mutant becomes tired and
+must set the objects down. The mutant must rest for 5
+rounds before using the power again.
+
+Any use of this mutation on another creature, or objects
+carried by another creature, is considered a mental attack
+and must be handled accordingly.
+</Neural_Telekinesis>
+	<Plant_Accumulated_Resistance type="str">With this mutation, the plant has learned to change its
+structure to gain complete immunity to any energy-based
+attack that it has experienced in the past, including heat,
+cold, electricity, radiation, or energy weapons.
+</Plant_Accumulated_Resistance>
+	<Dwarfism type="str">Mutated genes have altered the mutant’s
+physical size, an effect either related to a
+pituitary defect or a change in the genetic
+program during the years of body
+growth and development. With this
+mutation, the mutant is a dwarf, a
+mutant with substantially decreased
+size and body weight.
+
+To figure out the character’s size, start
+with a base of 6 feet. Roll 1d4+1
+and subtract the result from 6 to get
+the height of the character in feet.
+This will give a range from 1 and 4
+feet.
+
+The character’s diminutive size makes
+it harder to damage opponents, but
+also makes it more difficult for opponents to land
+successful blows on the mutant, since he presents such a
+small target. A dwarf mutant has a +1 to hit targets of
+human sized or larger with a non-powered hand weapon.
+He does -1 to damage for every 1’ shorter than he is from
+3 feet, with an equal reduction (improvement) of AC for
+each foot he is shorter than 3’.
+</Dwarfism>
+	<Vegetal_Parasite type="str">If the plant can attack and latch onto another creature for
+3 rounds (one successful attack roll for three consecutive
+rounds), it will maintain control over the creature as long
+as the two are in physical contact. Plants will usually use
+these controlled bodies for protection or food, and a plant
+may control as many creatures as it has limbs to touch
+them.
+</Vegetal_Parasite>
+	<Carnivore type="str">The plant has mouths that are capable of inflicting 1d8
+damage with a bite. Roll 1d12 to determine how many
+mouths are on the plant.
+</Carnivore>
+	<Phobia type="str">The mutant has an irrational fear of some creature or
+object. Whenever he comes face to face with the object of
+his fear, he flees immediately, throwing anything in his
+hands at the feared object/creature in an effort to distract
+or harm it. He will flee in the opposite direction at full
+movement for 1d4 rounds.
+
+Roll 1d6 to find out what category his fear falls into. The
+ML will flesh out the specifics.
+
+1. Other technological (robots, vehicles)
+
+2. Weaponry (energy weapons, other)
+
+3. Animal
+
+4. Plant
+
+5. Ordinary object
+
+6. Insect
+
+</Phobia>
+	<Accumulated_Resistance type="str">Through years of exposure to a certain substance
+(chemicals or radiation, for instance), or concentrated
+form of energy (such as heat, cold, or light) in the mutant’s
+environment, a resistance against said source has been
+accumulated, allowing the mutant to take more damage
+from one of these sources.
+
+This mutation gives the mutant a hit point reserve equal to
+his total hit points. This hit point reserve is used to take
+damage from the substance he is resistant to before it
+begins to affect his regular pool of hit points. This separate
+pool heals in the same manner and at the same time as
+the character’s hit point pool, even if that rate is changed
+by other mutations such as acute hyper healing or body
+adjustment.
+</Accumulated_Resistance>
+	<Intellectual_Affinity type="str">Thanks to advanced thinking capabilities, the mutant gains
+one of the following abilities (roll 1d6):
+
+1-2 Martial Affinity: +4 to hit in combat and +1d6
+damage.
+
+3-4 Tinkerer Affinity: Bonus of 20% to technology rolls.
+The character may also make weapons that do extra
+damage, up to +4. These weapons take extra long to
+build.
+
+5-6 Bartering Affinity: +3 Charisma when trying to sell an
+object, and any object sold will yield up to a multiple of
+1d4+1 in profits if the person being bartered with can
+afford it.
+</Intellectual_Affinity>
+	<Animate_Seeds type="str">This mutation allows the seeds of a plant to maneuver
+once away from the plant. The seeds can have their own
+plant mutations, but will grow up to have the same
+mutations as the adult plant that spawned them.
+</Animate_Seeds>
+	<Complete_Wing_Development type="str">The mutant has developed a complete set of wings, either in the
+form of fleshy membranes, feathery wings, bat-like
+extremities, or even scaly or insect-like versions. With these
+wings the character can fly with a movement of 120’. The
+mutant may fly while carrying only 25% of his body weight.
+Creatures over 150 pounds cannot use these wings for
+flight, but they leap to a distance of 120’, with a maximum
+height of 80’.
+</Complete_Wing_Development>
+	<Reduced_Fertility type="str">Very few of these plants will exist in one localized area.
+With human intervention, this trait can be bred out of a
+plant type in a number of generations through the
+application of advanced horticulture practices.
+</Reduced_Fertility>
+	<Spiny_Growth type="str">rts of the mutant’s body are covered with prickly spines,
+which may be small, medium, or large. Roll 1d6 at
+character generation to determine the size. Small spines
+(1-2) inflict 1d4 damage, medium spines (3-4) inflict 1d6,
+and large spines (5-6) are capable of inflicting 1d8
+damage. Any type can be removed and thrown as a
+dagger. With a little effort, the small spines are capable of
+being hidden beneath normal clothing, but the medium
+and large spines are virtually impossible to conceal
+because of their size.
+</Spiny_Growth>
+	<Negative_Empathy type="str">The mutant sends out waves of negative mental energy,
+causing anyone with less than 17 Intelligence within a 90’
+radius to have a 15% probability of attacking the mutant.
+Only one check is necessary per person until they leave
+the field and reenter it.
+</Negative_Empathy>
+	<Mental_Phantasm type="str">With this power, the mutant is capable of creating a
+realistic, illusory environment in the mind of another
+conscious creature. These visions are realistic to all senses
+but touch. Once the target tries to make physical contact
+with any element of the phantasm it dissolves into reality.
+</Mental_Phantasm>
+	<Gigantism type="str">Mutated genes have altered the mutant’s physical size, an
+effect either related to a pituitary defect or a change in the
+genetic program during the years of body growth and
+development. While this serves to increase strength and
+size potential substantially, the mutant is nonetheless
+noticeably different than others of his species.
+
+The original size is based on a 6 foot height. Roll 3d6,
+adding that many feet to the size of the mutant, achieving
+sizes between 9 and 24 feet. The mutant gets a bonus to
+damage, based on his height. Note that all mutants with
+gigantism suffer a -1 penalty to hit creatures 3’ tall or
+smaller.
+
+Damage Dice Bonus: Height 9’ = +1, 12’ = +2, 18’ = +3, 24’ = +4
+
+*The Damage Dice Bonus is only applicable to non-powered
+hand weapons.
+</Gigantism>
+	<Force_Screen type="str">This mutation allows the character to create an invisible
+field of energy that is difficult to penetrate. The force
+screen is close to the mutant’s body, extending only a few
+inches from his skin. It is capable of taking 5d6 hp worth
+of damage (the ML determines this secretly each time the
+power is used) before it collapses, leaving the mutant
+unprotected. The power may only be used once per day.
+</Force_Screen>
+	<Sensory_Deficiency type="str">This mutation indicates that the character suffers from
+either blindness or deafness (50%).
+</Sensory_Deficiency>
+	<Grenade-like_Fruit type="str">Plants with this mutation have pods that are explosive and
+deal 2d6 hp damage to creatures within 10’. Upon
+exploding, the pod may also release radiation (50%) of a
+randomly determined class. The range for this mutation
+varies based on the size of the plant, and whether or not it
+is capable of moving under its own power. If the plant is
+incapable of movement, the pods simply drop near the
+base. If the plant is small (1’-2’), there is a 25% chance a
+dropped pod will explode. If it is a medium sized plant (3’-
+5’) there is a 45% chance, and if it is a tree-sized plant (6
+ft. or beyond), there is an 80% chance of detonation when
+dropped. Extremely tall plants may have a 100% chance,
+or the ML may declare that any size plant has a higher
+chance because of the chemical makeup of the pods.
+
+Plants that are capable of movement can throw their own
+pods at a range determined by multiplying the plant’s
+height x 10 feet.
+</Grenade-like_Fruit>
+	<Control_Light_Waves type="str">The character can control light, creating a number of
+interesting effects. He can bend light around himself,
+becoming invisible, or he may remove all light from a
+small area (10’ radius) at a range of 30 feet. He may also
+completely dissipate laser fire anywhere within this 30’
+range. All of these effects require concentration, such that
+the mutant may move at full speed but not attack when
+concentrating on using this mutation.
+</Control_Light_Waves>
+	<Dermal_Poison_Sap type="str">The sap of the plant is poisonous to creatures that come in
+contact with it or ingest it. The poison effects should be
+determined with a roll on the poison table.
+</Dermal_Poison_Sap>
+	<Epidermal_Photosynthesis type="str">Characters with this mutation get energy from the sun,
+processing it through their bodies as though it were food.
+If they spend long periods of inactivity in direct sunlight,
+they will be able to heal wounds more quickly (4x) than the
+regular healing rate (1d3 per day of complete rest). When
+they are out of the sun (i.e. at night or in a dark cave) they
+are forced to move more slowly in order to conserve their
+rapidly depleting energy. This reduces their movement to
+50% of the normal rate. Such characters are also more
+susceptible to cold and heat, and they suffer a –2 penalty
+to saving throws versus cold or heat based energy attacks.
+</Epidermal_Photosynthesis>
+	<Killing_Sphere type="str">This powerful mutation allows the mutant to generate a
+25’ radius sphere of deadly mental energy centered on the
+mutant. Within this sphere of energy all creatures except
+the mutant (friend or foe!) have their hit points reduced to
+1 point, and must save versus stun attacks or be knocked
+unconscious for 1d10 rounds. After using this mutation,
+the mutant is exhausted from the force of the mental
+exertion and may move at full rate but not attack for 2d10
+rounds.
+</Killing_Sphere>
+	<Prey_Scent type="str">The mutant’s body sends out waves of scent that will
+attract predators. The ML may increase the occurrence of
+wandering monsters, at his discretion.
+</Prey_Scent>
+	<Psionic_Flight type="str">The character may fly through the air with a movement of
+up to WIL x 10. Any encumbrance will hinder the
+movement by reducing the speed at a level set by the ML.
+</Psionic_Flight>
+	<Animal_Limbs_or_Organs type="str">This mutation gives the plant any kind of organs or limbs
+normally found in humans or animals. The player and
+Mutant Lord will determine the exact nature of the new
+limbs or organs.
+</Animal_Limbs_or_Organs>
+	<Slow_Mutant type="str">This mutation makes the mutant much slower in all
+respects. Movement speed is halved, mental tasks take
+twice as long to accomplish, and the character may attack
+once every other round.
+</Slow_Mutant>
+	<Mind_Reflection type="str">The mutant may reflect any mental attack he experiences
+back at the attacker, but he still suffers the effects of the
+attack. He may only reflect a power that he has been
+successfully stricken by, and only as many times as he has
+been stricken by it. The reflected power strikes the mind of
+the attacker, and it can never target any other creature.
+</Mind_Reflection>
+	<Natural_Vegetal_Weapons type="str">his mutation covers all types of aspects of a plant that
+could generally be considered “natural”. This includes
+things like large thorns (up to 12 inches), or sharp leaves
+capable of cutting into flesh or clothing. While dangerous
+on their own, these will generally only affect characters
+that blunder into the plant unaware of its danger. When
+such weapons are attached to plants that are capable of
+attacking or moving their vines or limbs about, however,
+they become very dangerous indeed.
+
+The types of weapons covered by Natural Vegetal
+Weapons can do 1d4, 1d6, or 1d8 damage. Determine
+randomly for PCs by rolling 1d6; 1-2 1d4; 3-4 1d6; 5-6
+1d8. These weapons may have other effects decided by
+the ML. They may be passive, or attached to mobile vines.
+</Natural_Vegetal_Weapons>
+	<Hemophilia type="str">The mutant’s white blood cells are diminished in count, 
+preventing him from healing as quickly as a normal 
+specimen of his kind. This mutant may only heal 1d3 hp 
+every other day. Once the character is injured, he begins 
+to bleed profusely, losing 2 hit points per round until the 
+wounds can be properly bandaged. 
+</Hemophilia>
+	<Thermal_Vision type="str">The character can see the heat generated by living beings,
+heat-emitting weapons, or other natural heat sources. This
+vision functions to a distance of 60’ if the mutant has
+ordinary vision as well, or to 90’ if thermal vision is the
+only form of sight the mutant possesses (the eyes emit
+infrared radiation to boost the distance). If a mutant has
+ordinary vision and thermal vision, the thermal vision is
+only usable in darkness, and it takes 1 round to transition
+between them. Immense flashes of heat or those coming
+from close proximity to the character can be
+overwhelming, blinding the character for 2d4 rounds.
+</Thermal_Vision>
+	<Frailty type="str">This is a highly variable mutation, and can be used to 
+create any number of body weaknesses. Examples include 
+brittle bones or susceptibility to bruising. These would 
+increase damage by falls or other blunt force trauma by a 
+degree decided on by the ML. However, damage should 
+usually be increased no more than by +3 per die of 
+damage. 
+</Frailty>
+	<Dual_Headed type="str">The mutant has developed a second head next
+to the first. He can only be surprised on a roll
+of 1 on 1d6. Roll one die for each head
+whenever using senses (listening, looking for
+traps), choosing the best result.
+</Dual_Headed>
+	<Quick_Mind type="str">The mutant is capable of learning how to use technology
+at a much higher rate of speed than other characters (in
+1/3 the time), and receives a bonus of 30% to technology
+rolls. When confronted with a mental attack, an attacker
+must roll to attack three times, succeeding each time (roll
+three times for the one attack). Because of his incredible
+leaps of logic, a mutant with this ability has a 100%
+chance of figuring out whether someone is telling the truth.
+</Quick_Mind>
+	<Nocturnal type="str">The plant is completely motionless during daylight hours.
+As soon as the sun dips below the horizon or the plant is in
+full shadow for 1d4 rounds, however, it will begin to move
+or otherwise act if it is able.
+</Nocturnal>
+	<Weak_Will type="str">The WIL of the mutant is reduced to 3.
+</Weak_Will>
+	<Prehensile_Tail type="str">The mutant has developed a special tail. The tail is not
+necessarily a balancing tool, but more of an “additional
+limb”.
+
+The tail can grapple objects like a hand (much like a new
+world monkey’s tail), allowing the mutant to hang from
+tree limbs, for instance, leaving the arms and legs free to
+perform other actions of a more complex and agile
+nature. Some typical bonuses granted by the mutation
+might be a +2 bonus to Dexterity checks when climbing or
+balancing (+4 if climbing trees), etc. The tail can also be
+used in more mundane ways, such as holding a light
+source, so the character can employ both hands to fight.
+The tail cannot use weapons or hold a shield, however, as
+it is not quite that dexterous.
+</Prehensile_Tail>
+	<Thermal_Sensitivity type="str">The plant is susceptible to heat or cold (50%). Such energy
+based attacks deal 2 extra points per die of damage in
+addition to the regular damage inflicted.
+</Thermal_Sensitivity>
+	<Bizarre_Appearance type="str">This mutation can take a number of forms. The character’s
+hair color, eye color, skin color (or any combination) can
+be a color not normally found in humans. Odd hair colors
+might be light red, unusually fair blond, white, platinum,
+or silvery gray. Skin hues might include extensive freckling,
+melanin blotches, irregularly livid tones, etc. Eye colors
+could be red, pink, white, unusual flecked combinations
+etc. Other mutations are possible, such as scales instead
+of skin, general cosmetic deformity, or general animal-like
+deformity. Whatever the abnormal condition, it is clear
+that the character is not a normal human or animal.
+</Bizarre_Appearance>
+	<Tripping_Tendrils type="str">These tendrils have a very low strength (1d4), and are
+capable of only very slow movement. Given enough time,
+however, they can crush a small or weakened creature in
+their grasp. Once in position, without resistance, they may
+inflict 1d6 hp damage per round. The plant usually grows
+a large patch (2d10 feet in diameter) of these vines to trip
+victims. Victims who fall unconscious on vines such as
+these are not likely to waken.
+</Tripping_Tendrils>
+	<Free_Movement type="str">The plant is capable of maneuvering on its own at
+standard movement. This may be through the use of leg-
+like protrusions or by pulling itself along the ground with
+vines or other branches.
+</Free_Movement>
+	<Dermal_Poison_Slime type="str">The mutant is covered in a thick gooey slime (like a frog)
+that is poisonous to those who touch or attempt to ingest
+the mutant. Roll on the poison table (see Adventuring
+Rules) at character creation for the class of the poison in
+the slime. Successful bare-hand attacks and bite attacks
+against the mutant require the attacker to attempt a saving
+throw versus poison. Bare-hand attacks made by the
+mutant have the same effect.
+</Dermal_Poison_Slime>
+	<Pain_Sensitivity type="str">The character’s nervous system is very susceptible to injury,
+resulting in all damage to the character being doubled.
+</Pain_Sensitivity>
+	<Defective_Dual_Cerebellum type="str">The character has a second brain that hinders his thought
+processes. This brain has 1d4 mental mutations of its own
+(half of which should be defects, round up), which should
+be kept secret from the player until an opportunity to
+discover them comes about during play. This second brain
+may have an entirely different personality and motives than
+the character, and may try to foil the character’s actions at
+inconvenient times. This is up to the ML’s discretion. This
+“Hyde” brain may attempt to take over the mutant’s body,
+as the mutation possession, once per month for a duration
+of 24 hours.
+</Defective_Dual_Cerebellum>
+	<Phantasmal_Damage type="str">When the mutant is damaged, his mind radiates waves of
+negative energy in a feedback loop through his nervous
+system that causes the effective damage from an attack to
+be doubled.
+</Phantasmal_Damage>
 	<Vampiric_Field type="str">This mutation grants the mutant the ability to absorb the
 life essence (hit points) from all creatures (friend or foe)
 within a foot radius equal to 30+WIL. This power absorbs
@@ -10,21 +436,27 @@ reserved points until they are gone; after this point the
 mutant’s regular hp begin to be affected. Stored hp will
 disappear after 24 hours.
 </Vampiric_Field>
-	<Metaconcert type="str">This ability allows the mutant to link its mind with other
-mutants of a similar type or those who have the same
-mental mutation. These include those with the
-Metaconcert mutation, or other mental mutations that
-facilitate control between the minds of two beings. The
-mutant may combine his WIL with the WIL of other mutants
-for conducting a mental attack, or some other joint
-purpose.
-</Metaconcert>
-	<Chameleon_Metamorph type="str">The plant can change color or shape in order to look like
-any other kind of plant, but the mass of the plant is
-unchanged. If the plant has a level of intelligence it can
-alter the color to benefit it in other ways as well (see
-chameleon epidermis).
-</Chameleon_Metamorph>
+	<Greater_Force_Screen type="str">This force screen can be used at a range of 4’, and is
+capable of enclosing other creatures. It can take 5d6 hp
+worth of damage before it collapses (the ML determines
+this secretly each time the power is used), and can be used
+once per day. It can also be employed in the same
+manner as the regular force screen.
+</Greater_Force_Screen>
+	<Ancestral_Form type="str">This mental mutation can reduce an opponent’s
+mutational capabilities, eventually removing all forms of
+mutation and returning it to its original, unadulterated
+form. On each round after a successful mental attack with
+this mutation, the target has one mutation removed
+permanently (randomly determined), until none are left.
+Rarely (5%), this power allows a powerful mutant to
+regress a pure specimen further down the evolutionary
+line, to a previous stage of its evolution. For example, a
+pure human might become a dimmer-witted Homo
+erectus, and onward. This attack may only be attempted
+for the duration of one encounter, whether it succeeds or
+not, and cannot be used again for 1 week.
+</Ancestral_Form>
 	<Increased_Sense type="str">One or more senses is very acute, allowing the mutant to
 sense things others may not. Roll 1d10 to determine the
 sense.
@@ -56,17 +488,168 @@ but it ensures that a character cannot be poisoned and will
 always be able to tell by tasting whether something is
 capable of being eaten for nourishment.
 </Increased_Sense>
-	<Dermal_Acid_Sap type="str">The plant’s sap is a concentrated acid that will inflict 3d6
-hp damage every round to creatures that come in contact
-with it.
-</Dermal_Acid_Sap>
-	<Pain_Sensitivity type="str">The character’s nervous system is very susceptible to injury,
-resulting in all damage to the character being doubled.
-</Pain_Sensitivity>
-	<Sensory_Deficiency type="str">This mutation indicates that the character suffers from
-either blindness or deafness (50%).
-</Sensory_Deficiency>
-	<key name="Density_Alteration_(Self)" type="str">This mutation grants the ability to instantly alter the body
+	<Reduced_Immune_System type="str">Whenever the character falls ill, whether it is from infection
+caused by combat/misadventure, or airborne infectious
+diseases, the character suffers an extra 10 hp of damage
+per day. If using the optional Disease rules characters with
+this mutation suffer a -4 saving throw adjustment against
+diseases, and the duration is doubled.
+</Reduced_Immune_System>
+	<Empathy type="str">The character can attune himself to the emotions of other
+beings and is capable of instilling emotions in creatures
+who are successfully attacked with this mutation. This
+mutation has a range of 90 feet.
+</Empathy>
+	<Plane_Shift type="str">This mutation grants the power to visit realities in other
+dimensions. These dimensions are accessed through
+temporary doors which the mutant creates using the power
+of his mind. These doors appear as large portals 10’x10’
+in size, and will last for 6 rounds or until the mutant closes
+them intentionally. Once entered, they cannot be exited
+without a mutant with this ability opening another door.
+The mutant can only choose to open doors to worlds he
+has visited before. Otherwise, the doorway leads to a
+random world of the ML’s choice and design. This ability
+only works once per week.
+</Plane_Shift>
+	<Increased_Balance type="str">The character will never fall or stumble, and can climb
+almost any surface without being in danger of losing
+balance.
+</Increased_Balance>
+	<Pain_Insensitivity type="str">The character lacks the awareness that living creatures
+normally possess with regard to their bodies and
+immediate surroundings. The character does not feel pain
+when injured, even if a weapon has penetrated his body.
+The character will not be able to tell how much damage
+he has sustained without making a visual checkup of his
+entire body. The ML should keep track of the character’s
+hit points.
+</Pain_Insensitivity>
+	<Toxic_Weapon type="str">The character is endowed with a weapon that is toxic to
+those affected by it. This could be in the form of a gas that
+affects everyone in a specific radius, a spray that can affect
+a specific target, or a bite/sting that affects a target at a
+range of touch. Some common types of toxic weapons are
+paralyzing venoms, blinding gasses or sprays, and acidic
+bodily fluids. The range or radius of the attack is up to
+30’. Any kind of poison must be rolled on the poison table
+in the Adventuring section to determine poison class at
+character generation, or alternative effects may be
+designed with the ML. In general, no attack should exceed
+10d6 in damage (with the exception of poisons that may
+inflict death).
+</Toxic_Weapon>
+	<Mind_Thrust type="str">The mutant is capable of firing a bolt of pure mental
+energy into the mind of another creature, doing 3d6 hp
+damage at up to 50 feet. This ability takes time to
+recharge, and can only be used once every two rounds.
+</Mind_Thrust>
+	<Possession type="str">The mutant may wrest control over another creature’s
+body, subjecting himself to all of the sensations the
+possessed creature experiences. If the creature dies while
+possessed, the mutant dies as well. During the time he
+possesses another body, the body of the mutant is
+unconscious and vulnerable to attack. He may relinquish
+control of the body at any time, and will return instantly to
+his own body.
+
+This power works at a range of 50 feet, but once inside
+another body the possessor can travel any distance with
+no ill effects.
+</Possession>
+	<Teleport type="str">This ability allows the mutant to disappear from one
+location and appear in a location up to 20 miles distant
+without physically crossing the intervening space. If the
+mutant has never been to the location he is teleporting to
+or is only slightly familiar with it (ML’s discretion) he has a
+25% chance of suffering 10d6 damage upon arrival as he
+teleports into a space occupied by another object, or
+misjudges some aspect of the location. If he is intimately
+familiar with his destination or has spent 2d4 hours
+conjuring an image of the location in his mind he can
+teleport safely.
+</Teleport>
+	<Plant_Fragrance_Development type="str">The plant can send out a scent that is enticing to all living
+creatures. This scent can be smelled for a range of up to 5
+miles in windy conditions, or 90 feet in regular conditions.
+
+The enticing scent overwhelms any creature that fails a
+saving throw versus poison. Every creature so enticed will
+stay as close to the plant as possible and try to protect it,
+even to the point of fighting other creatures that draw
+near. Every 5 rounds anyone enticed by the plant’s
+fragrance may make another saving throw. Until the victim
+is successful, he will stay near the plant until he dies from
+severe dehydration or starvation.
+
+The scent itself deals no damage, but the plant may have
+other mutations capable of doing so.
+</Plant_Fragrance_Development>
+	<Know_Direction type="str">The character is incapable of being lost, even if all other
+senses are somehow nullified. He will always be able to
+find a location where he has been previously, and will
+know its relation to any location in which he currently
+resides.
+</Know_Direction>
+	<Metamorph type="str">The character can choose (at character creation) another
+creature that he or she can transform into. The character
+does not gain the mutations of the creature, just the
+physical appearance and natural abilities (such as claws or
+sharp teeth). This physical change (in either direction)
+takes 2 full rounds of inactivity before it is complete.
+</Metamorph>
+	<Control_Weather type="str">The mutant can change the weather in the local area. It
+takes 1 round to use the mutation and an additional 1d4
+rounds for the effects to manifest. The mutant calls forth
+weather appropriate to the climate and season of the
+area.
+
+Possible Weather:
+
+Spring = Tornado, thunderstorm, sleet storm, or
+hot weather
+
+Summer = Torrential rain, heat wave, or hailstorm
+
+Autumn = Hot or cold weather, fog, or sleet
+
+Winter = Frigid cold, blizzard, or thaw
+
+Late winter = Hurricane-force winds or early spring
+(coastal area)
+
+The mutant controls the general tendencies of the weather,
+such as the direction and intensity of the wind, but cannot
+control specific applications of the weather-where lightning
+strikes, for example, or the exact path of a tornado.
+Contradictory weather conditions are not possible
+simultaneously. Control weather can do away with
+atmospheric phenomena (naturally occurring or otherwise)
+as well as create them.
+</Control_Weather>
+	<Plant_Natural_Armor type="str">The plant has developed a thicker skin or shell that
+provides armor against physical attacks. In all other ways
+this mutation resembles natural armor from the
+human/animal mutations list.
+</Plant_Natural_Armor>
+	<Electric_Charge_Generation type="str">The plant can use some of the excess energy not converted
+to food into a stored electrical charge capable of
+damaging creatures that come in contact with it. This
+electrical weapon does 4d6 hp damage, and must be
+recharged. The plant will be fully charged again after four
+rounds, and may deliver smaller shocks (non-damaging,
+but uncomfortable) every round if under constant
+harassment by predators or opponents.
+</Electric_Charge_Generation>
+	<Pituitary_Deformation type="str">This defect indicates the pituitary gland of the mutant has
+been deformed by mutation, causing unnatural aging.
+
+A character with this defect appears much older than he
+really is, generally two to three times his actual age.
+Lifespan is also hindered by this deformation, resulting in a
+maximum natural lifespan of 40-50 years.
+</Pituitary_Deformation>
+	<key name="Density_Alteration_(Others)" type="str">This mutation grants the ability to instantly alter the body
 density of a target, thus shrinking or enlarging, with
 maximum enlargement up to twice the natural body size.
 Each fraction of a body size change is accompanied by an
@@ -81,166 +664,44 @@ character impervious to damage from sharp implements.
 This mutation has a range of 90 feet, a duration of 1d4
 turns, and cannot be used on the mutant who wields it.
 </key>
-	<Greater_Force_Screen type="str">This force screen can be used at a range of 4’, and is
-capable of enclosing other creatures. It can take 5d6 hp
-worth of damage before it collapses (the ML determines
-this secretly each time the power is used), and can be used
-once per day. It can also be employed in the same
-manner as the regular force screen.
-</Greater_Force_Screen>
+	<Acute_Hyper_Healing type="str">The character may concentrate his mental energies to
+allow him to heal 4x the normal rate. He will also be free
+from physical pain and fatigue for up to 24 hours. This
+power may be used once per week.
+</Acute_Hyper_Healing>
+	<Regenerative_Capability type="str">When provided with proper rest and food, this mutation
+allows the character to recuperate from injury at a
+staggering rate. Given time, mutants may re-grow severed
+limbs.
+
+The character heals 10 extra hit points per day. If he
+should be so unfortunate as to lose a limb or extremity
+(and survive), the lost body part will regenerate over a
+period of 1d4+2 weeks. A head may never be regrown,
+and characters do not regenerate from death.
+</Regenerative_Capability>
+	<Energy_Retaining_Cell_Structure type="str">The mutant’s body has a higher than normal level of
+electrical energy coursing through his body, energy which
+he can focus into a shock capable of damaging
+opponents who touch him. This electrical shock does 3d6
+hp damage.
+</Energy_Retaining_Cell_Structure>
 	<Albinism type="str">This mutation prevents the formation of melanin. The
 mutant’s hair and skin are bone white, and his eyes have
 light pink irises. Due to the lack of pigment in the eyes, the
 being is highly sensitive to light, and suffers a –2 penalty to
 hit when in daylight.
 </Albinism>
-	<Epidermal_Photosynthesis type="str">Characters with this mutation get energy from the sun,
-processing it through their bodies as though it were food.
-If they spend long periods of inactivity in direct sunlight,
-they will be able to heal wounds more quickly (4x) than the
-regular healing rate (1d3 per day of complete rest). When
-they are out of the sun (i.e. at night or in a dark cave) they
-are forced to move more slowly in order to conserve their
-rapidly depleting energy. This reduces their movement to
-50% of the normal rate. Such characters are also more
-susceptible to cold and heat, and they suffer a –2 penalty
-to saving throws versus cold or heat based energy attacks.
-</Epidermal_Photosynthesis>
-	<Phantasmal_Damage type="str">When the mutant is damaged, his mind radiates waves of
-negative energy in a feedback loop through his nervous
-system that causes the effective damage from an attack to
-be doubled.
-</Phantasmal_Damage>
-	<Energy_Ray type="str">Every 3 rounds, this mutation grants the ability to emit a
-blast of energy (roll 1d6; 1-2 heat, 3-4 cold, 5 radiation,
-6 electricity) from the hands (or other upper appendages)
-that inflicts 4d6 hit points of damage to a distance of 50
-feet. Only one type of energy may be chosen at character
-creation
-</Energy_Ray>
-	<Epidermal_Susceptibility type="str">The epidermis of the mutant becomes defective in some
-way, either causing 1d6 hp of damage for coming into
-contact with usually harmless substances (such as water),
-or adding +1 per die of damage caused by specific injury,
-such as by fire, radiation, slashing weapons, or
-penetrating weapons.
-The mutation can also be something that constantly
-creates a serious inconvenience for the character, such as
-glowing skin, uncontrollable pigment shifting, or skin that
-always attracts certain kinds of vermin or larger creatures.
-</Epidermal_Susceptibility>
-	<Reflective_Cellular_Structure type="str">The plant’s skin is essentially impenetrable to a randomly
-determined form of energy. Roll 1d8; 1-2 electricity; 3-4
-heat; 5-6 cold; 7-8 radiation.
-</Reflective_Cellular_Structure>
-	<Unique_Sense type="str">The mutant with a unique sense may detect certain kinds
-of phenomenon that are not detectable by the usual
-senses. These might include the ability to “feel” radiation
-to a distance of 60’, “smell” water within a mile, or sense
-when certain kinds of weather are imminent. The player
-and Mutant Lord may devise an appropriate sense, and
-what its range will be. Some senses may have
-corresponding new organs.
-</Unique_Sense>
-	<Thermal_Sensitivity type="str">The plant is susceptible to heat or cold (50%). Such energy
-based attacks deal 2 extra points per die of damage in
-addition to the regular damage inflicted.
-</Thermal_Sensitivity>
-	<Projectile_Thorns type="str">The plant is endowed with a substantial number of thorns.
-These thorns are capable of being thrown if the plant has
-mobility and any level of intelligence. The throwing range
-of these thorns is like a dagger, and they deal 1d4 hp
-damage if they strike a creature. Some plants (50%) grow
-thorns that are covered with toxins. Determine the class of
-the poison randomly.
-</Projectile_Thorns>
-	<Damage_Turning type="str">This mutation allows the character to return any incoming
-damage to the origin of the attack. For this power to work
-the mutant must use every bit of his concentration, taking
-no other actions. Any movement of more than one or two
-small steps will cause this power to fail.
-
-The power gradually builds up, allowing 3d6 hp worth of
-damage to be turned the first round. This increases by 1d6
-per round up to a maximum of 20d6 hp worth of damage.
-The mutant only takes damage that is above his current hp
-level of damage turning. For instance, in the first round the
-character rolls 3d6, with a result of 14. He may turn up to
-14 hp of damage the first round. The next round he adds
-1d6 to the current running total of 14. He can keep the
-power working as long as he remains still and
-concentrating, and he may maintain concentration when
-he receives damage. The mutant cannot turn attacks that
-cause no damage. If such powers are successful, they can
-interfere with this ability.
-</Damage_Turning>
-	<Prey_Scent type="str">The mutant’s body sends out waves of scent that will
-attract predators. The ML may increase the occurrence of
-wandering monsters, at his discretion.
-</Prey_Scent>
-	<key name="Natural_Armor_(Plant)" type="str">The plant has developed a thicker skin or shell that
-provides armor against physical attacks. In all other ways
-this mutation resembles natural armor from the
-human/animal mutations list.
-</key>
-	<Fragrance_Development type="str">The mutant has the ability to produce a subtle yet hypnotic
-fragrance. The fragrance is generally derived from
-mutated pheromones/hormones (that are emitted at the
-mutant’s will), but could come in another form-spores, for
-instance. Once per day the mutant can emit a scent that
-forces up to 8 HD of creatures, or any single creature with
-less than 13 HD (or 13 CON) within 15 feet to save versus
-poison or fall into a hypnotic trance for 2d4 rounds.
-Victims may be ordered to commit any act that is not
-suicidal, up to and including attacking friends.
-</Fragrance_Development>
-	<Plane_Shift type="str">This mutation grants the power to visit realities in other
-dimensions. These dimensions are accessed through
-temporary doors which the mutant creates using the power
-of his mind. These doors appear as large portals 10’x10’
-in size, and will last for 6 rounds or until the mutant closes
-them intentionally. Once entered, they cannot be exited
-without a mutant with this ability opening another door.
-The mutant can only choose to open doors to worlds he
-has visited before. Otherwise, the doorway leads to a
-random world of the ML’s choice and design. This ability
-only works once per week.
-</Plane_Shift>
-	<Natural_Armor type="str">This mutation indicates that the character has grown a
-natural defense mechanism over the entire body. It can be
-thick fur, scales, a shell, or even rubbery skin. This armor
-is moderate (1-3 on 1d6) or extreme (4-6 on 1d6).
-Moderate armor grants an AC of 6, while extreme natural
-armor grants an AC of 4, but reduces movement to 75%
-of its regular rate.
-</Natural_Armor>
-	<Animate_Seeds type="str">This mutation allows the seeds of a plant to maneuver
-once away from the plant. The seeds can have their own
-plant mutations, but will grow up to have the same
-mutations as the adult plant that spawned them.
-</Animate_Seeds>
-	<Precognition type="str">The mutant is capable of seeing up to 3 minutes into the
-future, but only with respect to dangerous things that will
-affect him. If the future indicates that he is going to suffer
-some form of damage, he immediately suffers 1d6 hp
-damage. If he is confronted with a vision of his death or of
-suffering a grievous wound that would take more than 1⁄2
-of his hit points, he suffers 2d6 hp damage and
-immediately enters a comatose state lasting 1 turn.
-</Precognition>
-	<Ultraviolet_Vision type="str">The character can see the UV spectrum and will be able to
-see objects that emit this type of energy. This spectrum
-includes gamma radiation, x-rays, and other high intensity
-radiation. As a result, a character with this vision can see if
-areas have a high level of background radiation. At night,
-this vision allows a character to see to a distance of 300’.
-Since this vision relies on heavy background radiation, it is
-not useful underground unless there is a source of
-radiation for illumination. If a mutant has ordinary vision
-and ultraviolet vision, the ultraviolet vision is only usable in
-darkness, and it takes 1 round to transition between each
-form.
-</Ultraviolet_Vision>
+	<Temperature_Control type="str">With this mutation, the character can raise or lower the
+temperature of a visible object within a range of 90 feet.
+The specific form of the power must be determined at
+character generation (50% heat, 50% cold). The mental
+nature of this mutation requires concentration, and the
+effect is a graduated level of damage equaling 1d6 per
+round. The maximum amount of damage that can be
+dealt is 10d6 per round. The ML will decide when an
+object or being combusts or freezes completely.
+</Temperature_Control>
 	<Obese type="str">The character suffers from obesity, and his weight is twice 
 that of an average individual of his species. The ML may 
 apply encumbrance or combat modifiers when it seems as 
@@ -250,26 +711,127 @@ and declare that the fat accumulates there, giving one or
 more limbs a grotesque, bloated shape compared to that 
 of the rest of the body. 
 </Obese>
-	<Parasitic_Control type="str">If the character can attack and latch onto another creature
-for 3 rounds, he or she will maintain control over the
-creature as long as the two are in physical contact.
-</Parasitic_Control>
-	<Accumulated_Resistance type="str">Through years of exposure to a certain substance
-(chemicals or radiation, for instance), or concentrated
-form of energy (such as heat, cold, or light) in the mutant’s
-environment, a resistance against said source has been
-accumulated, allowing the mutant to take more damage
-from one of these sources.
+	<Optic_Emissions type="str">This mutation takes two forms. Roll 1d6, and on a roll of
+1-3 the mutant character receives the ability to project a
+flash of very bright light from the eyes (bright eyes),
+blinding an opponent within 30’ for 1d4 rounds. This
+blindness causes the opponent a penalty of -4 to attack
+rolls and increases his armor class by 4. This ability is
+useful regardless of daytime or nighttime. On a roll of 4-6,
+the character has the ability to discharge a burst of
+radiation from the eyes (gamma eyes), that can reach 30’.
+Damage is determined at character creation by rolling for
+the class of the radiation on the radiation table in the
+Adventuring section.
+</Optic_Emissions>
+	<Increased_Physical_Attribute type="str">One or more physical attributes is increased. Roll 1d6 to
+determine the specific effects.
 
-This mutation gives the mutant a hit point reserve equal to
-his total hit points. This hit point reserve is used to take
-damage from the substance he is resistant to before it
-begins to affect his regular pool of hit points. This separate
-pool heals in the same manner and at the same time as
-the character’s hit point pool, even if that rate is changed
-by other mutations such as acute hyper healing or body
-adjustment.
-</Accumulated_Resistance>
+1-2 Increased Strength: The character can summon bursts
+of great strength, dealing an extra 3d6 when damaging an
+opponent with a hand-to-hand weapon.
+
+3-4 Increased Dexterity: The character’s AC is adjusted by
+–2. This bonus is cumulative with any other DEX bonuses.
+
+5-6 Increased Constitution: The character receives
+Constitution x2 in extra hit points, and receives +2 to all
+saving throws versus poison.
+</Increased_Physical_Attribute>
+	<Thermal_Emissions type="str">The plant is capable of generating a ray of heat or cold
+(50%) capable of doing 4d6 damage to those it comes in
+contact with. Depending on the size of the plant, it may
+have 1d3 heat or cold emitting flowers or branches. The
+range of this attack is 50 feet. The ML may determine if
+there is a difference between intelligent plants and other
+plants with regard to this power. A suggested difference is
+a -2 attack adjustment for plants with no higher order
+mental functions.
+</Thermal_Emissions>
+	<Combat_Empathy type="str">The character is so attuned to the minute body language
+of others that he can tell what they are going to do before
+they do it. This gives him a +1 to hit in combat, and +3
+hp damage per damage die rolled in a successful attack.
+</Combat_Empathy>
+	<Quickness type="str">This mutation makes the mutant much quicker in all
+respects. Movement speed is doubled, mental tasks take
+half as long to accomplish, and the character may attack
+two times per round in physical combat (not mental
+combat).
+</Quickness>
+	<Natural_Armor type="str">This mutation indicates that the character has grown a
+natural defense mechanism over the entire body. It can be
+thick fur, scales, a shell, or even rubbery skin. This armor
+is moderate (1-3 on 1d6) or extreme (4-6 on 1d6).
+Moderate armor grants an AC of 6, while extreme natural
+armor grants an AC of 4, but reduces movement to 75%
+of its regular rate.
+</Natural_Armor>
+	<Echolocation type="str">The mutant has the ability to gather information on his
+surroundings by using a type of natural sonar. The mutant
+must emit a noise (some kind of clicking or speech will
+do), which then reverberates off of the surface of any
+surrounding objects or creatures, is picked up by an
+external sense organ and translated into a rough, colorless
+picture of all objects in the mutant’s surroundings. This
+allows the character to interact with the surroundings as if
+he has sight, even if he does not have eyes or regular sight
+is obscured. This does not allow the mutant to see through
+objects, nor will it allow him to read text or see pictures.
+This works for a range of 90 feet, or 270 feet if the
+character also has the increased hearing mutation.
+Mutants with this ability will have a better chance of
+striking an opponent, receiving a +2 to hit in combat.
+</Echolocation>
+	<Chameleon_Epidermis type="str">The mutant’s outer cellular structure has been mutated,
+allowing the cells to actually alter their lucidness,
+appearance, and color. In effect, this allows the mutant to
+subtly change colors on a cellular level. The being may
+hide, if stationary, almost as if invisible. The color change
+takes place immediately, and requires no concentration by
+the mutant. The Mutant Lord should assign a percentage
+chance, based on the situation, that the mutant will not be
+noticed when using this camouflage. In complete darkness
+or thick cover, the percentage could be 95%, while in
+daylight if the character is unmoving it might be 50%.
+
+Characters wearing heavy armor or fully garbed
+receive no benefit from Chameleon Epidermis.
+</Chameleon_Epidermis>
+	<Poisonous_Spores type="str">Whenever the plant is disturbed, it will emit a cloud of
+spores. These spores can cause any effect the player and
+Mutant Lord wishes. The most basic type of poisonous
+spore simply has a random class of poison, but others may
+be hallucinogenic, paralytic, or allergy inducing. All will
+allow a saving throw versus poison.
+</Poisonous_Spores>
+	<Prehensile_Tendrils type="str">These plant growths are capable of movement and a
+rudimentary sense of touch. Prehensile tendrils come in
+two forms, Simple and Constrictive. Roll 1d6:
+
+1-3 Simple tendrils: These have a randomly determined
+(3d6) DEX and are capable of wielding weapons, but are
+not strong enough to do damage on their own. Higher
+DEX scores are due to aspects of the plant that make it
+more dexterous, like sticky fibers and clingy cilia.
+
+4-6 Constrictive Tendrils: These tendrils can do 2d6
+damage through constriction and are capable of rapid
+movement. A successful attack roll achieves constriction,
+and the victim will suffer damage on each consecutive
+round.
+
+Because the growth pattern of such plants dictates that the
+tendrils grow to full size quickly, even small plants with this
+mutation are considered to have tendrils at least 10’ long,
+and are capable of growing their tendrils to any length the
+ML desires. To randomly determine the length of the
+tendrils, simply multiply the base of 10’ by a roll of: 1d6
+for small plants, 1d10 for medium sized plants, or 1d20
+for large or tree sized plants. PCs with this mutation may
+choose the length of their tendrils, but the length should
+range from 10’ to 20’.
+</Prehensile_Tendrils>
 	<Aberrant_Form type="str">This mutation covers a wide array of effects over the entire
 bodily structure of the mutant. Roll 1d8 to determine the
 nature of the mutation.
@@ -308,489 +870,19 @@ with a natural weapon, unless he possesses more than one
 attack per round. A natural weapon may (25%) be
 equipped with a toxic weapon, such as poison.
 </Aberrant_Form>
-	<Control_Light_Waves type="str">The character can control light, creating a number of
-interesting effects. He can bend light around himself,
-becoming invisible, or he may remove all light from a
-small area (10’ radius) at a range of 30 feet. He may also
-completely dissipate laser fire anywhere within this 30’
-range. All of these effects require concentration, such that
-the mutant may move at full speed but not attack when
-concentrating on using this mutation.
-</Control_Light_Waves>
-	<Night_Vision type="str">Individuals with this mutation can see in complete
-darkness to a range of 60 feet by utilizing minute amounts
-of available light. Vision is in black and white only, and
-does not function in utter darkness underground, since
-some small light must be present (starlight, moonlight),
-even if it is so dim normal sight does not perceive it.
-</Night_Vision>
-	<Increased_Balance type="str">The character will never fall or stumble, and can climb
-almost any surface without being in danger of losing
-balance.
-</Increased_Balance>
-	<Killing_Sphere type="str">This powerful mutation allows the mutant to generate a
-25’ radius sphere of deadly mental energy centered on the
-mutant. Within this sphere of energy all creatures except
-the mutant (friend or foe!) have their hit points reduced to
-1 point, and must save versus stun attacks or be knocked
-unconscious for 1d10 rounds. After using this mutation,
-the mutant is exhausted from the force of the mental
-exertion and may move at full rate but not attack for 2d10
-rounds.
-</Killing_Sphere>
-	<Neural_Telekinesis type="str">With this mutation the character can lift or move WILx10
-pounds using only the power of his mind. This ability does
-not extend to lifting the mutant, however. To the mutant,
-using this power feels like lifting the object with his
-strength, and so requires some concentration. This ability
-has a range of 50 feet, and can only be used to hold
-things for 5 rounds before the mutant becomes tired and
-must set the objects down. The mutant must rest for 5
-rounds before using the power again.
-
-Any use of this mutation on another creature, or objects
-carried by another creature, is considered a mental attack
-and must be handled accordingly.
-</Neural_Telekinesis>
-	<Free_Movement type="str">The plant is capable of maneuvering on its own at
-standard movement. This may be through the use of leg-
-like protrusions or by pulling itself along the ground with
-vines or other branches.
-</Free_Movement>
-	<Shriek type="str">The mutant’s vocal cords are substantially altered,
-allowing him to produce sounds both above and below
-the normal human auditory range. The culmination of this
-ability seems to be a focused shout, using the sonic
-vibrations on everyone in the immediate vicinity of the
-mutant.
-
-Once per day, the mutant can let out a horrible shriek that
-affects everyone within a 10’ radius of him. Targets in the
-area of effect must save versus stun attacks or take 1d4
-points of sonic damage and be deafened for 1d6+4
-rounds. Those who successfully save are unaffected.
-Mutants with the mutation echolocation suffer a -2 penalty
-to save.
-</Shriek>
-	<Radioactive_Emissions type="str">The plant has become irradiated through mutation, and is
-capable of giving off a randomly determined class of
-radiation at a range of 150’. A good sized patch of these
-plants is capable of clearing a large area of animals and
-other radiation sensitive creatures, and will often become
-a safe haven for creatures that are immune to the effects
-of radiation.
-</Radioactive_Emissions>
-	<key name="Density_Alteration_(Others)" type="str">This mutation grants the ability to instantly alter the body
-density of a target, thus shrinking or enlarging, with
-maximum enlargement up to twice the natural body size.
-Each fraction of a body size change is accompanied by an
-equal fraction increase or decrease to armor class and
-speed. For example, reduction of size by 1/4 also reduces
-(improves) armor class and movement by 1/4. Becoming
-twice as large increases armor class by a multiple of two
-(to a maximum of 10) and divides movement in half as
-well. Note that reduction of body density to 1/8 makes a
-character impervious to damage from sharp implements.
-
-This mutation has a range of 90 feet, a duration of 1d4
-turns, and cannot be used on the mutant who wields it.
-</key>
-	<Atrophied_Cerebellum type="str">The mutant’s brain has atrophied in certain areas due to a
-genetic birth defect. As a result of this mutation, the
-mutant suffers a one-time –2 reduction of INT and DEX,
-due to deterioration in mental capacity and coordination.
-</Atrophied_Cerebellum>
-	<Defective_Dual_Cerebellum type="str">The character has a second brain that hinders his thought
-processes. This brain has 1d4 mental mutations of its own
-(half of which should be defects, round up), which should
-be kept secret from the player until an opportunity to
-discover them comes about during play. This second brain
-may have an entirely different personality and motives than
-the character, and may try to foil the character’s actions at
-inconvenient times. This is up to the ML’s discretion. This
-“Hyde” brain may attempt to take over the mutant’s body,
-as the mutation possession, once per month for a duration
-of 24 hours.
-</Defective_Dual_Cerebellum>
-	<Thermal_Vision type="str">The character can see the heat generated by living beings,
-heat-emitting weapons, or other natural heat sources. This
-vision functions to a distance of 60’ if the mutant has
-ordinary vision as well, or to 90’ if thermal vision is the
-only form of sight the mutant possesses (the eyes emit
-infrared radiation to boost the distance). If a mutant has
-ordinary vision and thermal vision, the thermal vision is
-only usable in darkness, and it takes 1 round to transition
-between them. Immense flashes of heat or those coming
-from close proximity to the character can be
-overwhelming, blinding the character for 2d4 rounds.
-</Thermal_Vision>
-	<Increased_Willpower type="str">The mutant gains 4 points to his WIL, and gains a bonus
-of 10% to technology rolls.
-</Increased_Willpower>
-	<Reduced_Immune_System type="str">Whenever the character falls ill, whether it is from infection
-caused by combat/misadventure, or airborne infectious
-diseases, the character suffers an extra 10 hp of damage
-per day. If using the optional Disease rules characters with
-this mutation suffer a -4 saving throw adjustment against
-diseases, and the duration is doubled.
-</Reduced_Immune_System>
-	<Dual_Headed type="str">The mutant has developed a second head next
-to the first. He can only be surprised on a roll
-of 1 on 1d6. Roll one die for each head
-whenever using senses (listening, looking for
-traps), choosing the best result.
-</Dual_Headed>
-	<Dual_Cerebellum type="str">The character has 2 fully functional brains that work in
-concert. The mutant receives a bonus of 10% to all
-technology rolls, and the character receives one extra
-random mental mutation that belongs to the extra brain.
-Both brains have identical WIL. Having two brains also
-helps to protect the mutant from mental attacks. Whenever
-the character is the subject of a mental attack, the attacker
-must successfully attack each brain.
-
-Note that a character with two brains may or may not
-have two heads. One brain may be located in an
-unexpected part of the body, or as part of a small, sickly
-or undeveloped conjoined twin.
-</Dual_Cerebellum>
+	<Energy_Ray type="str">Every 3 rounds, this mutation grants the ability to emit a
+blast of energy (roll 1d6; 1-2 heat, 3-4 cold, 5 radiation,
+6 electricity) from the hands (or other upper appendages)
+that inflicts 4d6 hit points of damage to a distance of 50
+feet. Only one type of energy may be chosen at character
+creation
+</Energy_Ray>
 	<Injected_Poison_Sap type="str">The plant has a toxic sap that is injected when the plant’s
 branches or vines are stepped on or otherwise blundered
 into. A PC with this mutation may use this as an attack
 each round. The class of the poison is determined
 randomly.
 </Injected_Poison_Sap>
-	<Mental_Phantasm type="str">With this power, the mutant is capable of creating a
-realistic, illusory environment in the mind of another
-conscious creature. These visions are realistic to all senses
-but touch. Once the target tries to make physical contact
-with any element of the phantasm it dissolves into reality.
-</Mental_Phantasm>
-	<Intellectual_Affinity type="str">Thanks to advanced thinking capabilities, the mutant gains
-one of the following abilities (roll 1d6):
-
-1-2 Martial Affinity: +4 to hit in combat and +1d6
-damage.
-
-3-4 Tinkerer Affinity: Bonus of 20% to technology rolls.
-The character may also make weapons that do extra
-damage, up to +4. These weapons take extra long to
-build.
-
-5-6 Bartering Affinity: +3 Charisma when trying to sell an
-object, and any object sold will yield up to a multiple of
-1d4+1 in profits if the person being bartered with can
-afford it.
-</Intellectual_Affinity>
-	<Acute_Hyper_Healing type="str">The character may concentrate his mental energies to
-allow him to heal 4x the normal rate. He will also be free
-from physical pain and fatigue for up to 24 hours. This
-power may be used once per week.
-</Acute_Hyper_Healing>
-	<Natural_Vegetal_Weapons type="str">his mutation covers all types of aspects of a plant that
-could generally be considered “natural”. This includes
-things like large thorns (up to 12 inches), or sharp leaves
-capable of cutting into flesh or clothing. While dangerous
-on their own, these will generally only affect characters
-that blunder into the plant unaware of its danger. When
-such weapons are attached to plants that are capable of
-attacking or moving their vines or limbs about, however,
-they become very dangerous indeed.
-
-The types of weapons covered by Natural Vegetal
-Weapons can do 1d4, 1d6, or 1d8 damage. Determine
-randomly for PCs by rolling 1d6; 1-2 1d4; 3-4 1d6; 5-6
-1d8. These weapons may have other effects decided by
-the ML. They may be passive, or attached to mobile vines.
-</Natural_Vegetal_Weapons>
-	<Poison_Susceptibility type="str">This mutation makes all poisons much more dangerous to
-the character. All saving throws versus poison are made
-with a penalty of -4.
-</Poison_Susceptibility>
-	<Hemophilia type="str">The mutant’s white blood cells are diminished in count, 
-preventing him from healing as quickly as a normal 
-specimen of his kind. This mutant may only heal 1d3 hp 
-every other day. Once the character is injured, he begins 
-to bleed profusely, losing 2 hit points per round until the 
-wounds can be properly bandaged. 
-</Hemophilia>
-	<Chameleon_Epidermis type="str">The mutant’s outer cellular structure has been mutated,
-allowing the cells to actually alter their lucidness,
-appearance, and color. In effect, this allows the mutant to
-subtly change colors on a cellular level. The being may
-hide, if stationary, almost as if invisible. The color change
-takes place immediately, and requires no concentration by
-the mutant. The Mutant Lord should assign a percentage
-chance, based on the situation, that the mutant will not be
-noticed when using this camouflage. In complete darkness
-or thick cover, the percentage could be 95%, while in
-daylight if the character is unmoving it might be 50%.
-
-Characters wearing heavy armor or fully garbed
-receive no benefit from Chameleon Epidermis.
-</Chameleon_Epidermis>
-	<Nocturnal type="str">The plant is completely motionless during daylight hours.
-As soon as the sun dips below the horizon or the plant is in
-full shadow for 1d4 rounds, however, it will begin to move
-or otherwise act if it is able.
-</Nocturnal>
-	<Combat_Empathy type="str">The character is so attuned to the minute body language
-of others that he can tell what they are going to do before
-they do it. This gives him a +1 to hit in combat, and +3
-hp damage per damage die rolled in a successful attack.
-</Combat_Empathy>
-	<Mental_Barrier type="str">Any mental attacks against this mutant receive a –4
-penalty to their attack roll. A character with this mutation
-gains the ability to sense other creatures that have mental
-mutations at a range of 90 feet. This secondary ability
-does not require a roll.
-</Mental_Barrier>
-	<Empathy type="str">The character can attune himself to the emotions of other
-beings and is capable of instilling emotions in creatures
-who are successfully attacked with this mutation. This
-mutation has a range of 90 feet.
-</Empathy>
-	<Poisonous_Spores type="str">Whenever the plant is disturbed, it will emit a cloud of
-spores. These spores can cause any effect the player and
-Mutant Lord wishes. The most basic type of poisonous
-spore simply has a random class of poison, but others may
-be hallucinogenic, paralytic, or allergy inducing. All will
-allow a saving throw versus poison.
-</Poisonous_Spores>
-	<Quick_Mind type="str">The mutant is capable of learning how to use technology
-at a much higher rate of speed than other characters (in
-1/3 the time), and receives a bonus of 30% to technology
-rolls. When confronted with a mental attack, an attacker
-must roll to attack three times, succeeding each time (roll
-three times for the one attack). Because of his incredible
-leaps of logic, a mutant with this ability has a 100%
-chance of figuring out whether someone is telling the truth.
-</Quick_Mind>
-	<Mind_Reflection type="str">The mutant may reflect any mental attack he experiences
-back at the attacker, but he still suffers the effects of the
-attack. He may only reflect a power that he has been
-successfully stricken by, and only as many times as he has
-been stricken by it. The reflected power strikes the mind of
-the attacker, and it can never target any other creature.
-</Mind_Reflection>
-	<Electric_Charge_Generation type="str">The plant can use some of the excess energy not converted
-to food into a stored electrical charge capable of
-damaging creatures that come in contact with it. This
-electrical weapon does 4d6 hp damage, and must be
-recharged. The plant will be fully charged again after four
-rounds, and may deliver smaller shocks (non-damaging,
-but uncomfortable) every round if under constant
-harassment by predators or opponents.
-</Electric_Charge_Generation>
-	<key name="Fragrance_Development_(Plants)" type="str">The plant can send out a scent that is enticing to all living
-creatures. This scent can be smelled for a range of up to 5
-miles in windy conditions, or 90 feet in regular conditions.
-
-The enticing scent overwhelms any creature that fails a
-saving throw versus poison. Every creature so enticed will
-stay as close to the plant as possible and try to protect it,
-even to the point of fighting other creatures that draw
-near. Every 5 rounds anyone enticed by the plant’s
-fragrance may make another saving throw. Until the victim
-is successful, he will stay near the plant until he dies from
-severe dehydration or starvation.
-
-The scent itself deals no damage, but the plant may have
-other mutations capable of doing so.
-</key>
-	<Slow_Mutant type="str">This mutation makes the mutant much slower in all
-respects. Movement speed is halved, mental tasks take
-twice as long to accomplish, and the character may attack
-once every other round.
-</Slow_Mutant>
-	<Reflective_Epidermis type="str">The character’s skin is essentially impenetrable to a
-particular form of energy. At character creation, roll 1d8.
-A roll result of 1-2 is electricity, 3-4 is heat, 5-6 is cold,
-and 7-8 is radiation. The mutant will never suffer damage
-from this energy source.
-</Reflective_Epidermis>
-	<Know_Direction type="str">The character is incapable of being lost, even if all other
-senses are somehow nullified. He will always be able to
-find a location where he has been previously, and will
-know its relation to any location in which he currently
-resides.
-</Know_Direction>
-	<Thermal_Emissions type="str">The plant is capable of generating a ray of heat or cold
-(50%) capable of doing 4d6 damage to those it comes in
-contact with. Depending on the size of the plant, it may
-have 1d3 heat or cold emitting flowers or branches. The
-range of this attack is 50 feet. The ML may determine if
-there is a difference between intelligent plants and other
-plants with regard to this power. A suggested difference is
-a -2 attack adjustment for plants with no higher order
-mental functions.
-</Thermal_Emissions>
-	<Reduced_Oxygen_Efficiency type="str">This mutation makes it harder for the character to get
-oxygen into the circulatory system. This means that, after
-any amount of extended physical activity (including
-combat) lasting more than 5 rounds, the character must
-rest or fall unconscious for 3d6 rounds. Further, when
-exploring ruins these characters need to rest for 1 turn
-after 3 turns of exploration. See “Rest” in the Adventuring
-Rules section.
-</Reduced_Oxygen_Efficiency>
-	<Full_Senses type="str">The plant is capable of utilizing one or more human
-senses, or other senses such as sonar, thermal vision or
-other unusual senses. It is up to the player and Mutant
-Lord to determine how the plant uses them. If this mutation
-is rolled more than once, one or more of the acquired
-senses may become increased as per the increased senses
-physical mutation.
-</Full_Senses>
-	<Bizarre_Appearance type="str">This mutation can take a number of forms. The character’s
-hair color, eye color, skin color (or any combination) can
-be a color not normally found in humans. Odd hair colors
-might be light red, unusually fair blond, white, platinum,
-or silvery gray. Skin hues might include extensive freckling,
-melanin blotches, irregularly livid tones, etc. Eye colors
-could be red, pink, white, unusual flecked combinations
-etc. Other mutations are possible, such as scales instead
-of skin, general cosmetic deformity, or general animal-like
-deformity. Whatever the abnormal condition, it is clear
-that the character is not a normal human or animal.
-</Bizarre_Appearance>
-	<Possession type="str">The mutant may wrest control over another creature’s
-body, subjecting himself to all of the sensations the
-possessed creature experiences. If the creature dies while
-possessed, the mutant dies as well. During the time he
-possesses another body, the body of the mutant is
-unconscious and vulnerable to attack. He may relinquish
-control of the body at any time, and will return instantly to
-his own body.
-
-This power works at a range of 50 feet, but once inside
-another body the possessor can travel any distance with
-no ill effects.
-</Possession>
-	<Tripping_Tendrils type="str">These tendrils have a very low strength (1d4), and are
-capable of only very slow movement. Given enough time,
-however, they can crush a small or weakened creature in
-their grasp. Once in position, without resistance, they may
-inflict 1d6 hp damage per round. The plant usually grows
-a large patch (2d10 feet in diameter) of these vines to trip
-victims. Victims who fall unconscious on vines such as
-these are not likely to waken.
-</Tripping_Tendrils>
-	<Optic_Emissions type="str">This mutation takes two forms. Roll 1d6, and on a roll of
-1-3 the mutant character receives the ability to project a
-flash of very bright light from the eyes (bright eyes),
-blinding an opponent within 30’ for 1d4 rounds. This
-blindness causes the opponent a penalty of -4 to attack
-rolls and increases his armor class by 4. This ability is
-useful regardless of daytime or nighttime. On a roll of 4-6,
-the character has the ability to discharge a burst of
-radiation from the eyes (gamma eyes), that can reach 30’.
-Damage is determined at character creation by rolling for
-the class of the radiation on the radiation table in the
-Adventuring section.
-</Optic_Emissions>
-	<Prehensile_Tail type="str">The mutant has developed a special tail. The tail is not
-necessarily a balancing tool, but more of an “additional
-limb”.
-
-The tail can grapple objects like a hand (much like a new
-world monkey’s tail), allowing the mutant to hang from
-tree limbs, for instance, leaving the arms and legs free to
-perform other actions of a more complex and agile
-nature. Some typical bonuses granted by the mutation
-might be a +2 bonus to Dexterity checks when climbing or
-balancing (+4 if climbing trees), etc. The tail can also be
-used in more mundane ways, such as holding a light
-source, so the character can employ both hands to fight.
-The tail cannot use weapons or hold a shield, however, as
-it is not quite that dexterous.
-</Prehensile_Tail>
-	<Pituitary_Deformation type="str">This defect indicates the pituitary gland of the mutant has
-been deformed by mutation, causing unnatural aging.
-
-A character with this defect appears much older than he
-really is, generally two to three times his actual age.
-Lifespan is also hindered by this deformation, resulting in a
-maximum natural lifespan of 40-50 years.
-</Pituitary_Deformation>
-	<Phobia type="str">The mutant has an irrational fear of some creature or
-object. Whenever he comes face to face with the object of
-his fear, he flees immediately, throwing anything in his
-hands at the feared object/creature in an effort to distract
-or harm it. He will flee in the opposite direction at full
-movement for 1d4 rounds.
-
-Roll 1d6 to find out what category his fear falls into. The
-ML will flesh out the specifics.
-
-1. Other technological (robots, vehicles)
-
-2. Weaponry (energy weapons, other)
-
-3. Animal
-
-4. Plant
-
-5. Ordinary object
-
-6. Insect
-
-</Phobia>
-	<Ancestral_Form type="str">This mental mutation can reduce an opponent’s
-mutational capabilities, eventually removing all forms of
-mutation and returning it to its original, unadulterated
-form. On each round after a successful mental attack with
-this mutation, the target has one mutation removed
-permanently (randomly determined), until none are left.
-Rarely (5%), this power allows a powerful mutant to
-regress a pure specimen further down the evolutionary
-line, to a previous stage of its evolution. For example, a
-pure human might become a dimmer-witted Homo
-erectus, and onward. This attack may only be attempted
-for the duration of one encounter, whether it succeeds or
-not, and cannot be used again for 1 week.
-</Ancestral_Form>
-	<Dermal_Poison_Slime type="str">The mutant is covered in a thick gooey slime (like a frog)
-that is poisonous to those who touch or attempt to ingest
-the mutant. Roll on the poison table (see Adventuring
-Rules) at character creation for the class of the poison in
-the slime. Successful bare-hand attacks and bite attacks
-against the mutant require the attacker to attempt a saving
-throw versus poison. Bare-hand attacks made by the
-mutant have the same effect.
-</Dermal_Poison_Slime>
-	<Animal_Limbs_or_Organs type="str">This mutation gives the plant any kind of organs or limbs
-normally found in humans or animals. The player and
-Mutant Lord will determine the exact nature of the new
-limbs or organs.
-</Animal_Limbs_or_Organs>
-	<Prehensile_Tendrils type="str">These plant growths are capable of movement and a
-rudimentary sense of touch. Prehensile tendrils come in
-two forms, Simple and Constrictive. Roll 1d6:
-
-1-3 Simple tendrils: These have a randomly determined
-(3d6) DEX and are capable of wielding weapons, but are
-not strong enough to do damage on their own. Higher
-DEX scores are due to aspects of the plant that make it
-more dexterous, like sticky fibers and clingy cilia.
-
-4-6 Constrictive Tendrils: These tendrils can do 2d6
-damage through constriction and are capable of rapid
-movement. A successful attack roll achieves constriction,
-and the victim will suffer damage on each consecutive
-round.
-
-Because the growth pattern of such plants dictates that the
-tendrils grow to full size quickly, even small plants with this
-mutation are considered to have tendrils at least 10’ long,
-and are capable of growing their tendrils to any length the
-ML desires. To randomly determine the length of the
-tendrils, simply multiply the base of 10’ by a roll of: 1d6
-for small plants, 1d10 for medium sized plants, or 1d20
-for large or tree sized plants. PCs with this mutation may
-choose the length of their tendrils, but the length should
-range from 10’ to 20’.
-</Prehensile_Tendrils>
 	<Body_Adjustment type="str">The character can heal all of his hit points once every 24
 hours. In addition, if the character is in a life or death
 situation, this mutation can double his physical attributes
@@ -799,7 +891,27 @@ situation, this mutation can double his physical attributes
 This power may only be used 1d4 times per week (roll at
 character creation).
 </Body_Adjustment>
-	<key name="Shriek_(Plant)" type="str">Whenever a plant with this mutation is damaged, it gives
+	<Radioactive_Emissions type="str">The plant has become irradiated through mutation, and is
+capable of giving off a randomly determined class of
+radiation at a range of 150’. A good sized patch of these
+plants is capable of clearing a large area of animals and
+other radiation sensitive creatures, and will often become
+a safe haven for creatures that are immune to the effects
+of radiation.
+</Radioactive_Emissions>
+	<Increased_Willpower type="str">The mutant gains 4 points to his WIL, and gains a bonus
+of 10% to technology rolls.
+</Increased_Willpower>
+	<Flight type="str">The plant has developed some way of coasting on strong
+winds and, if the plant is intelligent, it may have actual
+winged flight. The method of flight is up to the ML.
+Perhaps the plant has grown special cupped leaves or a
+series of light tubules that make it structurally capable of
+flight. For winged flight by modified leaves, see complete
+wing development for movement. Otherwise, the plant’s
+movement rate will be heavily dependent on wind speeds.
+</Flight>
+	<Plant_Shriek type="str">Whenever a plant with this mutation is damaged, it gives
 off a piercing shriek that is capable of damaging everyone
 within a 30’ radius. This strange attack does not harm
 other similar plants. The shriek causes 3d6 damage (save
@@ -810,272 +922,34 @@ large patch of these plants is injured all at once, such as
 when they are trampled by large creatures or vehicles roll
 3d10 for damage instead of 3d6. An intelligent plant may
 use this ability every 4 rounds at will.
-</key>
-	<Mind_Thrust type="str">The mutant is capable of firing a bolt of pure mental
-energy into the mind of another creature, doing 3d6 hp
-damage at up to 50 feet. This ability takes time to
-recharge, and can only be used once every two rounds.
-</Mind_Thrust>
-	<Vegetal_Parasite type="str">If the plant can attack and latch onto another creature for
-3 rounds (one successful attack roll for three consecutive
-rounds), it will maintain control over the creature as long
-as the two are in physical contact. Plants will usually use
-these controlled bodies for protection or food, and a plant
-may control as many creatures as it has limbs to touch
-them.
-</Vegetal_Parasite>
-	<Metamorph type="str">The character can choose (at character creation) another
-creature that he or she can transform into. The character
-does not gain the mutations of the creature, just the
-physical appearance and natural abilities (such as claws or
-sharp teeth). This physical change (in either direction)
-takes 2 full rounds of inactivity before it is complete.
-</Metamorph>
-	<key name="Accumulated_Resistance_(Plants)" type="str">With this mutation, the plant has learned to change its
-structure to gain complete immunity to any energy-based
-attack that it has experienced in the past, including heat,
-cold, electricity, radiation, or energy weapons.
-</key>
-	<Frailty type="str">This is a highly variable mutation, and can be used to 
-create any number of body weaknesses. Examples include 
-brittle bones or susceptibility to bruising. These would 
-increase damage by falls or other blunt force trauma by a 
-degree decided on by the ML. However, damage should 
-usually be increased no more than by +3 per die of 
-damage. 
-</Frailty>
-	<Quickness type="str">This mutation makes the mutant much quicker in all
-respects. Movement speed is doubled, mental tasks take
-half as long to accomplish, and the character may attack
-two times per round in physical combat (not mental
-combat).
-</Quickness>
-	<Spiny_Growth type="str">rts of the mutant’s body are covered with prickly spines,
-which may be small, medium, or large. Roll 1d6 at
-character generation to determine the size. Small spines
-(1-2) inflict 1d4 damage, medium spines (3-4) inflict 1d6,
-and large spines (5-6) are capable of inflicting 1d8
-damage. Any type can be removed and thrown as a
-dagger. With a little effort, the small spines are capable of
-being hidden beneath normal clothing, but the medium
-and large spines are virtually impossible to conceal
-because of their size.
-</Spiny_Growth>
-	<Increased_Caloric_Needs type="str">This drawback requires the character to eat twice the 
-normal amount of food daily. During times of vigorous 
-activity, this need becomes more acute. For every 5 rounds 
-of vigorous activity, the character must eat for 1 round or 
-lose 2 hit points and 1 point of STR each melee round 
-until he eats again or until the activity stops. All losses will 
-be regained at an equal rate for each round that food is 
-consumed, until all loss of hit points and STR is regained. 
-</Increased_Caloric_Needs>
-	<Grenade-like_Fruit type="str">Plants with this mutation have pods that are explosive and
-deal 2d6 hp damage to creatures within 10’. Upon
-exploding, the pod may also release radiation (50%) of a
-randomly determined class. The range for this mutation
-varies based on the size of the plant, and whether or not it
-is capable of moving under its own power. If the plant is
-incapable of movement, the pods simply drop near the
-base. If the plant is small (1’-2’), there is a 25% chance a
-dropped pod will explode. If it is a medium sized plant (3’-
-5’) there is a 45% chance, and if it is a tree-sized plant (6
-ft. or beyond), there is an 80% chance of detonation when
-dropped. Extremely tall plants may have a 100% chance,
-or the ML may declare that any size plant has a higher
-chance because of the chemical makeup of the pods.
-
-Plants that are capable of movement can throw their own
-pods at a range determined by multiplying the plant’s
-height x 10 feet.
-</Grenade-like_Fruit>
-	<Gigantism type="str">Mutated genes have altered the mutant’s physical size, an
-effect either related to a pituitary defect or a change in the
-genetic program during the years of body growth and
-development. While this serves to increase strength and
-size potential substantially, the mutant is nonetheless
-noticeably different than others of his species.
-
-The original size is based on a 6 foot height. Roll 3d6,
-adding that many feet to the size of the mutant, achieving
-sizes between 9 and 24 feet. The mutant gets a bonus to
-damage, based on his height. Note that all mutants with
-gigantism suffer a -1 penalty to hit creatures 3’ tall or
-smaller.
-
-Damage Dice Bonus: Height 9’ = +1, 12’ = +2, 18’ = +3, 24’ = +4
-
-*The Damage Dice Bonus is only applicable to non-powered
-hand weapons.
-</Gigantism>
-	<Force_Screen type="str">This mutation allows the character to create an invisible
-field of energy that is difficult to penetrate. The force
-screen is close to the mutant’s body, extending only a few
-inches from his skin. It is capable of taking 5d6 hp worth
-of damage (the ML determines this secretly each time the
-power is used) before it collapses, leaving the mutant
-unprotected. The power may only be used once per day.
-</Force_Screen>
-	<Increased_Physical_Attribute type="str">One or more physical attributes is increased. Roll 1d6 to
-determine the specific effects.
-
-1-2 Increased Strength: The character can summon bursts
-of great strength, dealing an extra 3d6 when damaging an
-opponent with a hand-to-hand weapon.
-
-3-4 Increased Dexterity: The character’s AC is adjusted by
-–2. This bonus is cumulative with any other DEX bonuses.
-
-5-6 Increased Constitution: The character receives
-Constitution x2 in extra hit points, and receives +2 to all
-saving throws versus poison.
-</Increased_Physical_Attribute>
-	<Abnormal_Size type="str">The plant is either much larger than normal or much
-smaller than the average specimen. Roll 1d20 and
-multiply or divide the plant’s normal size by that number to
-arrive at the new abnormal size. See dwarfism and
-gigantism for potential size effects on combat.
-</Abnormal_Size>
-	<Dermal_Poison_Sap type="str">The sap of the plant is poisonous to creatures that come in
-contact with it or ingest it. The poison effects should be
-determined with a roll on the poison table.
-</Dermal_Poison_Sap>
-	<key name="Prey_Scent_(Plant)" type="str">The plant sends out waves of scent that attracts predators.
-In the case of a mobile, intelligent PC plant, the ML may
-increase the chances of encountering some types of
-monsters.
-</key>
-	<Control_Weather type="str">The mutant can change the weather in the local area. It
-takes 1 round to use the mutation and an additional 1d4
-rounds for the effects to manifest. The mutant calls forth
-weather appropriate to the climate and season of the
-area.
-
-Possible Weather:
-
-Spring = Tornado, thunderstorm, sleet storm, or
-hot weather
-
-Summer = Torrential rain, heat wave, or hailstorm
-
-Autumn = Hot or cold weather, fog, or sleet
-
-Winter = Frigid cold, blizzard, or thaw
-
-Late winter = Hurricane-force winds or early spring
-(coastal area)
-
-The mutant controls the general tendencies of the weather,
-such as the direction and intensity of the wind, but cannot
-control specific applications of the weather-where lightning
-strikes, for example, or the exact path of a tornado.
-Contradictory weather conditions are not possible
-simultaneously. Control weather can do away with
-atmospheric phenomena (naturally occurring or otherwise)
-as well as create them.
-</Control_Weather>
-	<Temperature_Control type="str">With this mutation, the character can raise or lower the
-temperature of a visible object within a range of 90 feet.
-The specific form of the power must be determined at
-character generation (50% heat, 50% cold). The mental
-nature of this mutation requires concentration, and the
-effect is a graduated level of damage equaling 1d6 per
-round. The maximum amount of damage that can be
-dealt is 10d6 per round. The ML will decide when an
-object or being combusts or freezes completely.
-</Temperature_Control>
-	<Simian_Deformity type="str">A mutant who suffers from this mutation has an altered
-appearance that mimics that of the great apes (such as
-gorillas and chimpanzees) - shorter legs, quadrupedal,
-and elongated arms that permit the knuckles to touch the
-ground and aid in movement.
-
-The character’s shortened legs reduce his base speed to
-2/3 normal. However, if all 4 limbs are used to move
-(arms and legs), his speed is normal. A character using his
-arms to assist movement cannot be wielding a weapon or
-carrying items in his hands.
-</Simian_Deformity>
-	<Toxic_Weapon type="str">The character is endowed with a weapon that is toxic to
-those affected by it. This could be in the form of a gas that
-affects everyone in a specific radius, a spray that can affect
-a specific target, or a bite/sting that affects a target at a
-range of touch. Some common types of toxic weapons are
-paralyzing venoms, blinding gasses or sprays, and acidic
-bodily fluids. The range or radius of the attack is up to
-30’. Any kind of poison must be rolled on the poison table
-in the Adventuring section to determine poison class at
-character generation, or alternative effects may be
-designed with the ML. In general, no attack should exceed
-10d6 in damage (with the exception of poisons that may
-inflict death).
-</Toxic_Weapon>
-	<Weak_Will type="str">The WIL of the mutant is reduced to 3.
-</Weak_Will>
-	<Negative_Empathy type="str">The mutant sends out waves of negative mental energy,
-causing anyone with less than 17 Intelligence within a 90’
-radius to have a 15% probability of attacking the mutant.
-Only one check is necessary per person until they leave
-the field and reenter it.
-</Negative_Empathy>
-	<Psionic_Flight type="str">The character may fly through the air with a movement of
-up to WIL x 10. Any encumbrance will hinder the
-movement by reducing the speed at a level set by the ML.
-</Psionic_Flight>
-	<Teleport type="str">This ability allows the mutant to disappear from one
-location and appear in a location up to 20 miles distant
-without physically crossing the intervening space. If the
-mutant has never been to the location he is teleporting to
-or is only slightly familiar with it (ML’s discretion) he has a
-25% chance of suffering 10d6 damage upon arrival as he
-teleports into a space occupied by another object, or
-misjudges some aspect of the location. If he is intimately
-familiar with his destination or has spent 2d4 hours
-conjuring an image of the location in his mind he can
-teleport safely.
-</Teleport>
-	<Vision_Impairment type="str">This mutation covers all visual impairments that fall short
-of total blindness, including macular degeneration,
-myopia, severe light sensitivity, cataracts, etc. This
-condition makes it extremely difficult for the mutant to
-discern objects more than 50 feet away. Characters with
-this mutation have a -2 to hit in combat.
-</Vision_Impairment>
-	<Carnivore type="str">The plant has mouths that are capable of inflicting 1d8
-damage with a bite. Roll 1d12 to determine how many
-mouths are on the plant.
-</Carnivore>
+</Plant_Shriek>
+	<Ultraviolet_Vision type="str">The character can see the UV spectrum and will be able to
+see objects that emit this type of energy. This spectrum
+includes gamma radiation, x-rays, and other high intensity
+radiation. As a result, a character with this vision can see if
+areas have a high level of background radiation. At night,
+this vision allows a character to see to a distance of 300’.
+Since this vision relies on heavy background radiation, it is
+not useful underground unless there is a source of
+radiation for illumination. If a mutant has ordinary vision
+and ultraviolet vision, the ultraviolet vision is only usable in
+darkness, and it takes 1 round to transition between each
+form.
+</Ultraviolet_Vision>
 	<Neural_Telepathy type="str">Using this ability, the mutant can connect his mind with
 another creature’s mind and communicate directly, even if
 the two creatures speak completely different languages or
 are of different species. The range of this ability is 30 feet.
 </Neural_Telepathy>
-	<Dwarfism type="str">Mutated genes have altered the mutant’s
-physical size, an effect either related to a
-pituitary defect or a change in the genetic
-program during the years of body
-growth and development. With this
-mutation, the mutant is a dwarf, a
-mutant with substantially decreased
-size and body weight.
-
-To figure out the character’s size, start
-with a base of 6 feet. Roll 1d4+1
-and subtract the result from 6 to get
-the height of the character in feet.
-This will give a range from 1 and 4
-feet.
-
-The character’s diminutive size makes
-it harder to damage opponents, but
-also makes it more difficult for opponents to land
-successful blows on the mutant, since he presents such a
-small target. A dwarf mutant has a +1 to hit targets of
-human sized or larger with a non-powered hand weapon.
-He does -1 to damage for every 1’ shorter than he is from
-3 feet, with an equal reduction (improvement) of AC for
-each foot he is shorter than 3’.
-</Dwarfism>
+	<Unique_Sense type="str">The mutant with a unique sense may detect certain kinds
+of phenomenon that are not detectable by the usual
+senses. These might include the ability to “feel” radiation
+to a distance of 60’, “smell” water within a mile, or sense
+when certain kinds of weather are imminent. The player
+and Mutant Lord may devise an appropriate sense, and
+what its range will be. Some senses may have
+corresponding new organs.
+</Unique_Sense>
 	<Defective_Mind_Reflection type="str">This defect creates a chance that mental attacks attempted
 by the mutant backfire, causing injury to him instead of his
 enemy. The chance of this occurring is 25%.
@@ -1084,29 +958,6 @@ In the case of powers that inflict no damage, the Mutant
 Lord should find some way to make the power backfire or
 become an inconvenience to the character.
 </Defective_Mind_Reflection>
-	<Reduced_Fertility type="str">Very few of these plants will exist in one localized area.
-With human intervention, this trait can be bred out of a
-plant type in a number of generations through the
-application of advanced horticulture practices.
-</Reduced_Fertility>
-	<Flight type="str">The plant has developed some way of coasting on strong
-winds and, if the plant is intelligent, it may have actual
-winged flight. The method of flight is up to the ML.
-Perhaps the plant has grown special cupped leaves or a
-series of light tubules that make it structurally capable of
-flight. For winged flight by modified leaves, see complete
-wing development for movement. Otherwise, the plant’s
-movement rate will be heavily dependent on wind speeds.
-</Flight>
-	<Pain_Insensitivity type="str">The character lacks the awareness that living creatures
-normally possess with regard to their bodies and
-immediate surroundings. The character does not feel pain
-when injured, even if a weapon has penetrated his body.
-The character will not be able to tell how much damage
-he has sustained without making a visual checkup of his
-entire body. The ML should keep track of the character’s
-hit points.
-</Pain_Insensitivity>
 	<Disintegration type="str">With this powerful mutation, the mutant can completely
 destroy matter on a molecular level. Doing so requires so
 much energy expenditure, however, that the mutant is
@@ -1124,52 +975,201 @@ Once the mutant has used this power, the ML must
 determine, via a secret 1d6 roll, how many days it will be
 before the power may be used another time.
 </Disintegration>
-	<Regenerative_Capability type="str">When provided with proper rest and food, this mutation
-allows the character to recuperate from injury at a
-staggering rate. Given time, mutants may re-grow severed
-limbs.
+	<Simian_Deformity type="str">A mutant who suffers from this mutation has an altered
+appearance that mimics that of the great apes (such as
+gorillas and chimpanzees) - shorter legs, quadrupedal,
+and elongated arms that permit the knuckles to touch the
+ground and aid in movement.
 
-The character heals 10 extra hit points per day. If he
-should be so unfortunate as to lose a limb or extremity
-(and survive), the lost body part will regenerate over a
-period of 1d4+2 weeks. A head may never be regrown,
-and characters do not regenerate from death.
-</Regenerative_Capability>
-	<Energy_Retaining_Cell_Structure type="str">The mutant’s body has a higher than normal level of
-electrical energy coursing through his body, energy which
-he can focus into a shock capable of damaging
-opponents who touch him. This electrical shock does 3d6
-hp damage.
-</Energy_Retaining_Cell_Structure>
+The character’s shortened legs reduce his base speed to
+2/3 normal. However, if all 4 limbs are used to move
+(arms and legs), his speed is normal. A character using his
+arms to assist movement cannot be wielding a weapon or
+carrying items in his hands.
+</Simian_Deformity>
+	<Dermal_Acid_Sap type="str">The plant’s sap is a concentrated acid that will inflict 3d6
+hp damage every round to creatures that come in contact
+with it.
+</Dermal_Acid_Sap>
+	<Atrophied_Cerebellum type="str">The mutant’s brain has atrophied in certain areas due to a
+genetic birth defect. As a result of this mutation, the
+mutant suffers a one-time –2 reduction of INT and DEX,
+due to deterioration in mental capacity and coordination.
+</Atrophied_Cerebellum>
+	<Dual_Cerebellum type="str">The character has 2 fully functional brains that work in
+concert. The mutant receives a bonus of 10% to all
+technology rolls, and the character receives one extra
+random mental mutation that belongs to the extra brain.
+Both brains have identical WIL. Having two brains also
+helps to protect the mutant from mental attacks. Whenever
+the character is the subject of a mental attack, the attacker
+must successfully attack each brain.
+
+Note that a character with two brains may or may not
+have two heads. One brain may be located in an
+unexpected part of the body, or as part of a small, sickly
+or undeveloped conjoined twin.
+</Dual_Cerebellum>
+	<Vision_Impairment type="str">This mutation covers all visual impairments that fall short
+of total blindness, including macular degeneration,
+myopia, severe light sensitivity, cataracts, etc. This
+condition makes it extremely difficult for the mutant to
+discern objects more than 50 feet away. Characters with
+this mutation have a -2 to hit in combat.
+</Vision_Impairment>
+	<Mental_Barrier type="str">Any mental attacks against this mutant receive a –4
+penalty to their attack roll. A character with this mutation
+gains the ability to sense other creatures that have mental
+mutations at a range of 90 feet. This secondary ability
+does not require a roll.
+</Mental_Barrier>
+	<Reflective_Cellular_Structure type="str">The plant’s skin is essentially impenetrable to a randomly
+determined form of energy. Roll 1d8; 1-2 electricity; 3-4
+heat; 5-6 cold; 7-8 radiation.
+</Reflective_Cellular_Structure>
+	<Shriek type="str">The mutant’s vocal cords are substantially altered,
+allowing him to produce sounds both above and below
+the normal human auditory range. The culmination of this
+ability seems to be a focused shout, using the sonic
+vibrations on everyone in the immediate vicinity of the
+mutant.
+
+Once per day, the mutant can let out a horrible shriek that
+affects everyone within a 10’ radius of him. Targets in the
+area of effect must save versus stun attacks or take 1d4
+points of sonic damage and be deafened for 1d6+4
+rounds. Those who successfully save are unaffected.
+Mutants with the mutation echolocation suffer a -2 penalty
+to save.
+</Shriek>
+	<Metaconcert type="str">This ability allows the mutant to link its mind with other
+mutants of a similar type or those who have the same
+mental mutation. These include those with the
+Metaconcert mutation, or other mental mutations that
+facilitate control between the minds of two beings. The
+mutant may combine his WIL with the WIL of other mutants
+for conducting a mental attack, or some other joint
+purpose.
+</Metaconcert>
+	<Full_Senses type="str">The plant is capable of utilizing one or more human
+senses, or other senses such as sonar, thermal vision or
+other unusual senses. It is up to the player and Mutant
+Lord to determine how the plant uses them. If this mutation
+is rolled more than once, one or more of the acquired
+senses may become increased as per the increased senses
+physical mutation.
+</Full_Senses>
+	<Chameleon_Metamorph type="str">The plant can change color or shape in order to look like
+any other kind of plant, but the mass of the plant is
+unchanged. If the plant has a level of intelligence it can
+alter the color to benefit it in other ways as well (see
+chameleon epidermis).
+</Chameleon_Metamorph>
+	<Fragrance_Development type="str">The mutant has the ability to produce a subtle yet hypnotic
+fragrance. The fragrance is generally derived from
+mutated pheromones/hormones (that are emitted at the
+mutant’s will), but could come in another form-spores, for
+instance. Once per day the mutant can emit a scent that
+forces up to 8 HD of creatures, or any single creature with
+less than 13 HD (or 13 CON) within 15 feet to save versus
+poison or fall into a hypnotic trance for 2d4 rounds.
+Victims may be ordered to commit any act that is not
+suicidal, up to and including attacking friends.
+</Fragrance_Development>
+	<key name="Density_Alteration_(Self)" type="str">This mutation grants the ability to instantly alter the body
+density of a target, thus shrinking or enlarging, with
+maximum enlargement up to twice the natural body size.
+Each fraction of a body size change is accompanied by an
+equal fraction increase or decrease to armor class and
+speed. For example, reduction of size by 1/4 also reduces
+(improves) armor class and movement by 1/4. Becoming
+twice as large increases armor class by a multiple of two
+(to a maximum of 10) and divides movement in half as
+well. Note that reduction of body density to 1/8 makes a
+character impervious to damage from sharp implements.
+
+This mutation has a range of 90 feet, a duration of 1d4
+turns, and cannot be used on the mutant who wields it.
+</key>
+	<Increased_Caloric_Needs type="str">This drawback requires the character to eat twice the 
+normal amount of food daily. During times of vigorous 
+activity, this need becomes more acute. For every 5 rounds 
+of vigorous activity, the character must eat for 1 round or 
+lose 2 hit points and 1 point of STR each melee round 
+until he eats again or until the activity stops. All losses will 
+be regained at an equal rate for each round that food is 
+consumed, until all loss of hit points and STR is regained. 
+</Increased_Caloric_Needs>
+	<key name="Prey_Scent_(Plant)" type="str">The plant sends out waves of scent that attracts predators.
+In the case of a mobile, intelligent PC plant, the ML may
+increase the chances of encountering some types of
+monsters.
+</key>
+	<Epidermal_Susceptibility type="str">The epidermis of the mutant becomes defective in some
+way, either causing 1d6 hp of damage for coming into
+contact with usually harmless substances (such as water),
+or adding +1 per die of damage caused by specific injury,
+such as by fire, radiation, slashing weapons, or
+penetrating weapons.
+The mutation can also be something that constantly
+creates a serious inconvenience for the character, such as
+glowing skin, uncontrollable pigment shifting, or skin that
+always attracts certain kinds of vermin or larger creatures.
+</Epidermal_Susceptibility>
+	<Damage_Turning type="str">This mutation allows the character to return any incoming
+damage to the origin of the attack. For this power to work
+the mutant must use every bit of his concentration, taking
+no other actions. Any movement of more than one or two
+small steps will cause this power to fail.
+
+The power gradually builds up, allowing 3d6 hp worth of
+damage to be turned the first round. This increases by 1d6
+per round up to a maximum of 20d6 hp worth of damage.
+The mutant only takes damage that is above his current hp
+level of damage turning. For instance, in the first round the
+character rolls 3d6, with a result of 14. He may turn up to
+14 hp of damage the first round. The next round he adds
+1d6 to the current running total of 14. He can keep the
+power working as long as he remains still and
+concentrating, and he may maintain concentration when
+he receives damage. The mutant cannot turn attacks that
+cause no damage. If such powers are successful, they can
+interfere with this ability.
+</Damage_Turning>
+	<Projectile_Thorns type="str">The plant is endowed with a substantial number of thorns.
+These thorns are capable of being thrown if the plant has
+mobility and any level of intelligence. The throwing range
+of these thorns is like a dagger, and they deal 1d4 hp
+damage if they strike a creature. Some plants (50%) grow
+thorns that are covered with toxins. Determine the class of
+the poison randomly.
+</Projectile_Thorns>
+	<Reduced_Oxygen_Efficiency type="str">This mutation makes it harder for the character to get
+oxygen into the circulatory system. This means that, after
+any amount of extended physical activity (including
+combat) lasting more than 5 rounds, the character must
+rest or fall unconscious for 3d6 rounds. Further, when
+exploring ruins these characters need to rest for 1 turn
+after 3 turns of exploration. See “Rest” in the Adventuring
+Rules section.
+</Reduced_Oxygen_Efficiency>
+	<Parasitic_Control type="str">If the character can attack and latch onto another creature
+for 3 rounds, he or she will maintain control over the
+creature as long as the two are in physical contact.
+</Parasitic_Control>
+	<Precognition type="str">The mutant is capable of seeing up to 3 minutes into the
+future, but only with respect to dangerous things that will
+affect him. If the future indicates that he is going to suffer
+some form of damage, he immediately suffers 1d6 hp
+damage. If he is confronted with a vision of his death or of
+suffering a grievous wound that would take more than 1⁄2
+of his hit points, he suffers 2d6 hp damage and
+immediately enters a comatose state lasting 1 turn.
+</Precognition>
 	<Ability_Boost type="str">Once per day the mutant is capable of concentrating his
 mental energy to such a degree that one of his abilities is
 doubled for 1d10 consecutive rounds, or he gains +1 to
 attack rolls for 1d10 rounds. The character may choose
 either of these options each time the mutation is used.
 </Ability_Boost>
-	<Echolocation type="str">The mutant has the ability to gather information on his
-surroundings by using a type of natural sonar. The mutant
-must emit a noise (some kind of clicking or speech will
-do), which then reverberates off of the surface of any
-surrounding objects or creatures, is picked up by an
-external sense organ and translated into a rough, colorless
-picture of all objects in the mutant’s surroundings. This
-allows the character to interact with the surroundings as if
-he has sight, even if he does not have eyes or regular sight
-is obscured. This does not allow the mutant to see through
-objects, nor will it allow him to read text or see pictures.
-This works for a range of 90 feet, or 270 feet if the
-character also has the increased hearing mutation.
-Mutants with this ability will have a better chance of
-striking an opponent, receiving a +2 to hit in combat.
-</Echolocation>
-	<Complete_Wing_Development type="str">The mutant has developed a complete set of wings, either in the
-form of fleshy membranes, feathery wings, bat-like
-extremities, or even scaly or insect-like versions. With these
-wings the character can fly with a movement of 120’. The
-mutant may fly while carrying only 25% of his body weight.
-Creatures over 150 pounds cannot use these wings for
-flight, but they leap to a distance of 120’, with a maximum
-height of 80’.
-</Complete_Wing_Development>
 </root>
