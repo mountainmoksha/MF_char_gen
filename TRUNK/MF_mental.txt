@@ -14,7 +14,7 @@
 31-33 Empathy
 34-35 Flight, Psionic
 36-38 Force Screen
-39-40 Force Screen, Greater
+39-40 Greater Force Screen
 41-42 Increased Willpower
 43-45 Intellectual Affinity
 46-47 Killing Sphere
