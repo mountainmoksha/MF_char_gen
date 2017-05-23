@@ -71,7 +71,7 @@ class PDFViewHandler(tornado.web.RequestHandler):
 
         file_name = create_pdf.gen_char_pdf(character)
 
-        file_name = create_pdf.combine_pdfs(file_name)
+        file_name = create_pdf.combine_pdfs(character, file_name)
 
         redir_location = '<html><head>'
         redir_location += '<meta http-equiv="refresh" content="0; '
