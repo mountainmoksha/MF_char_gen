@@ -1,0 +1,12 @@
+Thanks to advanced thinking capabilities, the mutant gains
+one of the following abilities (roll 1d6):|
+1-2 Martial Affinity: +4 to hit in combat and +1d6
+damage.|
+3-4 Tinkerer Affinity: Bonus of 20% to technology rolls.
+The character may also make weapons that do extra
+damage, up to +4. These weapons take extra long to
+build.|
+5-6 Bartering Affinity: +3 Charisma when trying to sell an
+object, and any object sold will yield up to a multiple of
+1d4+1 in profits if the person being bartered with can
+afford it.

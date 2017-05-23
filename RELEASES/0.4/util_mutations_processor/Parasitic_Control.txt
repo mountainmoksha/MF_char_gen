@@ -1,0 +1,3 @@
+If the character can attack and latch onto another creature
+for 3 rounds, he or she will maintain control over the
+creature as long as the two are in physical contact.

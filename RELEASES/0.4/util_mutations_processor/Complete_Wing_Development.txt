@@ -1,0 +1,8 @@
+The mutant has developed a complete set of wings, either in the
+form of fleshy membranes, feathery wings, bat-like
+extremities, or even scaly or insect-like versions. With these
+wings the character can fly with a movement of 120’. The
+mutant may fly while carrying only 25% of his body weight.
+Creatures over 150 pounds cannot use these wings for
+flight, but they leap to a distance of 120’, with a maximum
+height of 80’.

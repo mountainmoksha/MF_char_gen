@@ -1,0 +1,6 @@
+This defect creates a chance that mental attacks attempted
+by the mutant backfire, causing injury to him instead of his
+enemy. The chance of this occurring is 25%.|
+In the case of powers that inflict no damage, the Mutant
+Lord should find some way to make the power backfire or
+become an inconvenience to the character.

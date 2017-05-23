@@ -1,0 +1,3 @@
+The sap of the plant is poisonous to creatures that come in
+contact with it or ingest it. The poison effects should be
+determined with a roll on the poison table.
