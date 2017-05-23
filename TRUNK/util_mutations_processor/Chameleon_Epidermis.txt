@@ -9,4 +9,5 @@ chance, based on the situation, that the mutant will not be
 noticed when using this camouflage. In complete darkness
 or thick cover, the percentage could be 95%, while in
 daylight if the character is unmoving it might be 50%.|
-Characters wearing heavy armor or fully garbed receive no benefit from Chameleon Epidermis.
+Characters wearing heavy armor or fully garbed
+receive no benefit from Chameleon Epidermis.
