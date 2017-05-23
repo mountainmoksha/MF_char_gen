@@ -1,8 +1,0 @@
-The character can control light, creating a number of
-interesting effects. He can bend light around himself,
-becoming invisible, or he may remove all light from a
-small area (10’ radius) at a range of 30 feet. He may also
-completely dissipate laser fire anywhere within this 30’
-range. All of these effects require concentration, such that
-the mutant may move at full speed but not attack when
-concentrating on using this mutation.

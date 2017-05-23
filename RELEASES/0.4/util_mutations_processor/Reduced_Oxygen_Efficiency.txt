@@ -1,8 +1,0 @@
-This mutation makes it harder for the character to get
-oxygen into the circulatory system. This means that, after
-any amount of extended physical activity (including
-combat) lasting more than 5 rounds, the character must
-rest or fall unconscious for 3d6 rounds. Further, when
-exploring ruins these characters need to rest for 1 turn
-after 3 turns of exploration. See “Rest” in the Adventuring
-Rules section.

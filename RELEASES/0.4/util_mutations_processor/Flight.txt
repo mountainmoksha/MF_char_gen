@@ -1,8 +1,0 @@
-The plant has developed some way of coasting on strong
-winds and, if the plant is intelligent, it may have actual
-winged flight. The method of flight is up to the ML.
-Perhaps the plant has grown special cupped leaves or a
-series of light tubules that make it structurally capable of
-flight. For winged flight by modified leaves, see complete
-wing development for movement. Otherwise, the plant’s
-movement rate will be heavily dependent on wind speeds.
