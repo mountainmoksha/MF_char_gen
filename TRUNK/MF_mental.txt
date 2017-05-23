@@ -8,7 +8,7 @@
 16-18 Control Light Waves
 19-20 Control Weather
 21-23 Damage Turning
-24-25 Density Alteration (Others)
+24-25 Density Alteration of Others
 26-27 Disintegration
 28-30 Dual Cerebellum
 31-33 Empathy
