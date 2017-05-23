@@ -34,8 +34,8 @@
 81-82 Temperature Control
 83-85 Vampiric Field
 86-87 Atrophied Cerebellum
-88-89 Dual Cerebellum (Defective)
-90-92 Mind Reflection (Defective)
+88-89 Defective Dual Cerebellum
+90-92 Defective Mind Reflection
 91-93 Negative Empathy
 94-95 Phantasmal Damage
 96-98 Phobia
