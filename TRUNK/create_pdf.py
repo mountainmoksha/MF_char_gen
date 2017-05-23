@@ -56,6 +56,8 @@ def gen_char_pdf(character):
         file_name = 'char_pdfs/' + character['alt-name'].replace(' ', '_') + '_blank.pdf'
 
     character_canvas = canvas.Canvas(file_name)
+    character_canvas.setFont('Helvetica-Bold', 8)
+    character_canvas.setFillColorRGB(1.0, 0.0, 0.0)
 
     character_canvas.drawString(77, 528, str((character['attributes'])['Strength']))
     character_canvas.drawString(77, 488, str((character['attributes'])['Dexterity']))
@@ -68,20 +70,20 @@ def gen_char_pdf(character):
         character_canvas.drawString(246, 683, str(character['name']))
 
     if 'sub_type' in character:
-        character_canvas.drawString(446, 700, str(character['type']))
-        character_canvas.drawString(446, 683, '(' + str(character['sub_type']) + ')')
+        character_canvas.drawString(456, 697, str(character['type']))
+        character_canvas.drawString(456, 686, '(' + str(character['sub_type']) + ')')
     else:
-        character_canvas.drawString(446, 683, str(character['type']))
+        character_canvas.drawString(456, 686, str(character['type']))
 
     character_canvas.drawString(373, 647, str(character['level']))
     character_canvas.drawString(480, 647, str(character['XP']))
-    character_canvas.drawString(413, 575, str(character['HP']))
-    character_canvas.drawString(508, 575, str(character['AC']))
+    character_canvas.drawString(415, 575, str(character['HP']))
+    character_canvas.drawString(513, 575, str(character['AC']))
 
-    character_canvas.drawString(408, 483, str(character['energy_save']))
-    character_canvas.drawString(408, 439, str(character['poison_death_save']))
-    character_canvas.drawString(408, 393, str(character['stun_save']))
-    character_canvas.drawString(408, 347, str(character['rad_save']))
+    character_canvas.drawString(409, 483, str(character['energy_save']))
+    character_canvas.drawString(409, 439, str(character['poison_death_save']))
+    character_canvas.drawString(409, 393, str(character['stun_save']))
+    character_canvas.drawString(409, 347, str(character['rad_save']))
 
     character_canvas.drawString(222, 538, str(character['str_mod']))
 
@@ -106,75 +108,83 @@ def gen_char_pdf(character):
 
     # this advances us to page 2:
     character_canvas.showPage()
+    character_canvas.setFont('Helvetica-Bold', 8)
+    character_canvas.setFillColorRGB(0.0, 0.0, 1.0)
 
     # top of page, on these sheets
     mutations_current_height = 670
 
     if (character['plant'])[0] != '':
         character_canvas.drawString(75, mutations_current_height, 'Plant Mutations:')
-        mutations_current_height -= 13
+        mutations_current_height -= 9
         for mutation in character['plant']:
             character_canvas.drawString(85, mutations_current_height, mutation)
-            mutations_current_height = mutations_current_height - 13
+            mutations_current_height -= 9
             # put in description
             text = doc_obj.getElementsByTagName(mutation.replace(' ', '_'))
             try:
                 lines = text[0].firstChild.nodeValue
                 for line in lines.split('\n'):
                     character_canvas.drawString(95, mutations_current_height, line)
-                    mutations_current_height -= 13
+                    mutations_current_height -= 9
             except IndexError:
                 print(mutation.replace(' ', '_'), 'not found')
         # this advances us to the next page
         character_canvas.showPage()
+        character_canvas.setFont('Helvetica-Bold', 8)
+        character_canvas.setFillColorRGB(0.0, 0.0, 1.0)
 
     # top of page, on these sheets
     mutations_current_height = 670
 
     if (character['physical'])[0] != '':
         character_canvas.drawString(75, mutations_current_height, 'Physical Mutations:')
-        mutations_current_height -= 13
+        mutations_current_height -= 9
         for mutation in character['physical']:
             if mutation[:4] == 'Pick':
                 character_canvas.drawString(85, mutations_current_height, 'Pick')
             else:
                 character_canvas.drawString(85, mutations_current_height, mutation)
-            mutations_current_height -= 13
+            mutations_current_height -= 9
             # put in description
             text = doc_obj.getElementsByTagName(mutation.replace(' ', '_'))
             try:
                 lines = text[0].firstChild.nodeValue
                 for line in lines.split('\n'):
                     character_canvas.drawString(95, mutations_current_height, line)
-                    mutations_current_height -= 13
+                    mutations_current_height -= 9
             except IndexError:
                 print(mutation.replace(' ', '_'), 'not found')
         # this advances us to the next page
         character_canvas.showPage()
+        character_canvas.setFont('Helvetica-Bold', 8)
+        character_canvas.setFillColorRGB(0.0, 0.0, 1.0)
 
     # top of page, on these sheets
     mutations_current_height = 670
 
     if (character['mental'])[0] != '':
         character_canvas.drawString(75, mutations_current_height, 'Mental Mutations:')
-        mutations_current_height -= 13
+        mutations_current_height -= 9
         for mutation in character['mental']:
             if mutation[:4] == 'Pick':
                 character_canvas.drawString(85, mutations_current_height, 'Pick')
             else:
                 character_canvas.drawString(85, mutations_current_height, mutation)
-            mutations_current_height -= 13
+            mutations_current_height -= 9
             # put in description
             text = doc_obj.getElementsByTagName(mutation.replace(' ', '_'))
             try:
                 lines = text[0].firstChild.nodeValue
                 for line in lines.split('\n'):
                     character_canvas.drawString(95, mutations_current_height, line)
-                    mutations_current_height -= 13
+                    mutations_current_height -= 9
             except IndexError:
                 print(mutation.replace(' ', '_'), 'not found')
         # this advances us to the next page
         character_canvas.showPage()
+        character_canvas.setFont('Helvetica-Bold', 8)
+        character_canvas.setFillColorRGB(0.5, 0.0, 0.5)
 
 
     character_canvas.drawString(360, 270, str(character['GP']) + ' GP')
