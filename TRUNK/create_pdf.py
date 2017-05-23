@@ -8,15 +8,20 @@ import xml.dom.minidom
 import gen_char
 
 
-def combine_pdfs(overlay_file_name):
+def combine_pdfs(character, overlay_file_name):
     """add the previously-created, filled pdf to
        Goblinoid games's stock sheet"""
 
-    base_file_name = 'pdf/mfcharsheet.pdf'
-    final_file_name = overlay_file_name.replace('_blank', '')
+    total_pages = 2
+    if (character['plant'])[0] != '':
+        total_pages += 1
+    if (character['physical'])[0] != '':
+        total_pages += 1
+    if (character['mental'])[0] != '':
+        total_pages += 1
 
-    overlay_0 = PageMerge().add(PdfReader(overlay_file_name).pages[0])[0]
-    overlay_1 = PageMerge().add(PdfReader(overlay_file_name).pages[1])[0]
+    base_file_name = 'pdf/mfcharsheet_' + str(total_pages) + '_page.pdf'
+    final_file_name = overlay_file_name.replace('_blank', '')
 
     trailer = PdfReader(base_file_name)
 
@@ -24,11 +29,8 @@ def combine_pdfs(overlay_file_name):
 
     for page in trailer.pages:
 
-        if page_idx == 0:
-            PageMerge(page).add(overlay_0).render()
-
-        if page_idx == 1:
-            PageMerge(page).add(overlay_1).render()
+        overlay = PageMerge().add(PdfReader(overlay_file_name).pages[page_idx])[0]
+        PageMerge(page).add(overlay).render()
 
         page_idx = page_idx + 1
 
@@ -105,6 +107,7 @@ def gen_char_pdf(character):
     # this advances us to page 2:
     character_canvas.showPage()
 
+    # top of page, on these sheets
     mutations_current_height = 670
 
     if (character['plant'])[0] != '':
@@ -122,6 +125,11 @@ def gen_char_pdf(character):
                     mutations_current_height -= 13
             except IndexError:
                 print(mutation.replace(' ', '_'), 'not found')
+        # this advances us to the next page
+        character_canvas.showPage()
+
+    # top of page, on these sheets
+    mutations_current_height = 670
 
     if (character['physical'])[0] != '':
         character_canvas.drawString(75, mutations_current_height, 'Physical Mutations:')
@@ -141,6 +149,11 @@ def gen_char_pdf(character):
                     mutations_current_height -= 13
             except IndexError:
                 print(mutation.replace(' ', '_'), 'not found')
+        # this advances us to the next page
+        character_canvas.showPage()
+
+    # top of page, on these sheets
+    mutations_current_height = 670
 
     if (character['mental'])[0] != '':
         character_canvas.drawString(75, mutations_current_height, 'Mental Mutations:')
@@ -160,9 +173,9 @@ def gen_char_pdf(character):
                     mutations_current_height -= 13
             except IndexError:
                 print(mutation.replace(' ', '_'), 'not found')
+        # this advances us to the next page
+        character_canvas.showPage()
 
-    # this advances us to page 3:
-    character_canvas.showPage()
 
     character_canvas.drawString(360, 270, str(character['GP']) + ' GP')
 
@@ -172,8 +185,8 @@ def gen_char_pdf(character):
 
 if __name__ == '__main__':
 
-    CHARACTER = gen_char.char('Mutant Human', 10)
+    CHARACTER = gen_char.char('Mutant Animal', 10)
 
     FILE_NAME = gen_char_pdf(CHARACTER)
 
-    print(combine_pdfs(FILE_NAME))
+    print(combine_pdfs(CHARACTER, FILE_NAME))
