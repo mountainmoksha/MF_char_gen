@@ -4,6 +4,7 @@
 import os
 from reportlab.pdfgen import canvas
 from pdfrw import PageMerge, PdfReader, PdfWriter
+import xml.dom.minidom
 import gen_char
 
 
@@ -40,6 +41,12 @@ def combine_pdfs(overlay_file_name):
 def gen_char_pdf(character):
     """put the numbers and words from a character on a "blank" sheet
        to be added to the stock sheet"""
+
+    file_name = 'mutations_descriptions.xml'
+    xml_p = open(file_name, 'r')
+    xml_string = xml_p.read()
+    xml_p.close()
+    doc_obj = xml.dom.minidom.parseString(xml_string)
 
     if 'name' in character:
         file_name = 'char_pdfs/' + character['name'].replace(' ', '_') + '_blank.pdf'
@@ -88,44 +95,72 @@ def gen_char_pdf(character):
 
     mutations_current_height = 250
 
+    if 'level_modifiers' in character:
+        character_canvas.drawString(75, mutations_current_height, 'Level Modifiers:')
+        mutations_current_height = mutations_current_height - 13
+        for level_mod_key in character['level_modifiers']:
+            character_canvas.drawString(85, mutations_current_height, (character['level_modifiers'])[level_mod_key])
+            mutations_current_height = mutations_current_height - 13
+
+    # this advances us to page 2:
+    character_canvas.showPage()
+
+    mutations_current_height = 670
+
     if (character['plant'])[0] != '':
         character_canvas.drawString(75, mutations_current_height, 'Plant Mutations:')
-        mutations_current_height = mutations_current_height - 13
+        mutations_current_height -= 13
         for mutation in character['plant']:
             character_canvas.drawString(85, mutations_current_height, mutation)
             mutations_current_height = mutations_current_height - 13
+            # put in description
+            text = doc_obj.getElementsByTagName(mutation.replace(' ', '_'))
+            try:
+                lines = text[0].firstChild.nodeValue
+                for line in lines.split('\n'):
+                    character_canvas.drawString(95, mutations_current_height, line)
+                    mutations_current_height -= 13
+            except IndexError:
+                print(mutation.replace(' ', '_'), 'not found')
 
     if (character['physical'])[0] != '':
         character_canvas.drawString(75, mutations_current_height, 'Physical Mutations:')
-        mutations_current_height = mutations_current_height - 13
+        mutations_current_height -= 13
         for mutation in character['physical']:
             if mutation[:4] == 'Pick':
                 character_canvas.drawString(85, mutations_current_height, 'Pick')
             else:
                 character_canvas.drawString(85, mutations_current_height, mutation)
-            mutations_current_height = mutations_current_height - 13
+            mutations_current_height -= 13
+            # put in description
+            text = doc_obj.getElementsByTagName(mutation.replace(' ', '_'))
+            try:
+                lines = text[0].firstChild.nodeValue
+                for line in lines.split('\n'):
+                    character_canvas.drawString(95, mutations_current_height, line)
+                    mutations_current_height -= 13
+            except IndexError:
+                print(mutation.replace(' ', '_'), 'not found')
 
     if (character['mental'])[0] != '':
         character_canvas.drawString(75, mutations_current_height, 'Mental Mutations:')
-        mutations_current_height = mutations_current_height - 13
+        mutations_current_height -= 13
         for mutation in character['mental']:
             if mutation[:4] == 'Pick':
                 character_canvas.drawString(85, mutations_current_height, 'Pick')
             else:
                 character_canvas.drawString(85, mutations_current_height, mutation)
-            mutations_current_height = mutations_current_height - 13
+            mutations_current_height -= 13
+            # put in description
+            text = doc_obj.getElementsByTagName(mutation.replace(' ', '_'))
+            try:
+                lines = text[0].firstChild.nodeValue
+                for line in lines.split('\n'):
+                    character_canvas.drawString(95, mutations_current_height, line)
+                    mutations_current_height -= 13
+            except IndexError:
+                print(mutation.replace(' ', '_'), 'not found')
 
-    mutations_current_height = 250
-
-    if 'level_modifiers' in character:
-        character_canvas.drawString(300, mutations_current_height, 'Level Modifiers:')
-        mutations_current_height = mutations_current_height - 13
-        for level_mod_key in character['level_modifiers']:
-            character_canvas.drawString(310, mutations_current_height, (character['level_modifiers'])[level_mod_key])
-            mutations_current_height = mutations_current_height - 13
-
-    # this advances us to page 2:
-    character_canvas.showPage()
     # this advances us to page 3:
     character_canvas.showPage()
 
@@ -137,7 +172,7 @@ def gen_char_pdf(character):
 
 if __name__ == '__main__':
 
-    CHARACTER = gen_char.char()
+    CHARACTER = gen_char.char('Mutant Human', 10)
 
     FILE_NAME = gen_char_pdf(CHARACTER)
 
