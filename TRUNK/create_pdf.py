@@ -185,7 +185,7 @@ def gen_char_pdf(character):
 
 if __name__ == '__main__':
 
-    CHARACTER = gen_char.char('Mutant Animal', 10)
+    CHARACTER = gen_char.char()
 
     FILE_NAME = gen_char_pdf(CHARACTER)
 
