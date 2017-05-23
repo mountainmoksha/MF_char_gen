@@ -1,0 +1,5 @@
+The character’s skin is essentially impenetrable to a
+particular form of energy. At character creation, roll 1d8.
+A roll result of 1-2 is electricity, 3-4 is heat, 5-6 is cold,
+and 7-8 is radiation. The mutant will never suffer damage
+from this energy source.

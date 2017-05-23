@@ -1,0 +1,3 @@
+The plant’s sap is a concentrated acid that will inflict 3d6
+hp damage every round to creatures that come in contact
+with it.

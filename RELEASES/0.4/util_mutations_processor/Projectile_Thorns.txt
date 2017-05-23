@@ -1,0 +1,7 @@
+The plant is endowed with a substantial number of thorns.
+These thorns are capable of being thrown if the plant has
+mobility and any level of intelligence. The throwing range
+of these thorns is like a dagger, and they deal 1d4 hp
+damage if they strike a creature. Some plants (50%) grow
+thorns that are covered with toxins. Determine the class of
+the poison randomly.

@@ -1,0 +1,4 @@
+When the mutant is damaged, his mind radiates waves of
+negative energy in a feedback loop through his nervous
+system that causes the effective damage from an attack to
+be doubled.

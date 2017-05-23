@@ -1,0 +1,11 @@
+Whenever a plant with this mutation is damaged, it gives
+off a piercing shriek that is capable of damaging everyone
+within a 30’ radius. This strange attack does not harm
+other similar plants. The shriek causes 3d6 damage (save
+versus stun attacks for half), and may be used every 4
+rounds until the plant is killed. Mutants with the
+echolocation mutation suffer a -2 penalty to save. If a
+large patch of these plants is injured all at once, such as
+when they are trampled by large creatures or vehicles roll
+3d10 for damage instead of 3d6. An intelligent plant may
+use this ability every 4 rounds at will.

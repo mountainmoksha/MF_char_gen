@@ -1,0 +1,17 @@
+Plants with this mutation have pods that are explosive and
+deal 2d6 hp damage to creatures within 10’. Upon
+exploding, the pod may also release radiation (50%) of a
+randomly determined class. The range for this mutation
+varies based on the size of the plant, and whether or not it
+is capable of moving under its own power. If the plant is
+incapable of movement, the pods simply drop near the
+base. If the plant is small (1’-2’), there is a 25% chance a
+dropped pod will explode. If it is a medium sized plant (3’-
+5’) there is a 45% chance, and if it is a tree-sized plant (6
+ft. or beyond), there is an 80% chance of detonation when
+dropped. Extremely tall plants may have a 100% chance,
+or the ML may declare that any size plant has a higher
+chance because of the chemical makeup of the pods.|
+Plants that are capable of movement can throw their own
+pods at a range determined by multiplying the plant’s
+height x 10 feet.

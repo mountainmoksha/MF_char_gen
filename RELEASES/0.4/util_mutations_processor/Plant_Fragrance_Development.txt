@@ -1,0 +1,13 @@
+The plant can send out a scent that is enticing to all living
+creatures. This scent can be smelled for a range of up to 5
+miles in windy conditions, or 90 feet in regular conditions.|
+The enticing scent overwhelms any creature that fails a
+saving throw versus poison. Every creature so enticed will
+stay as close to the plant as possible and try to protect it,
+even to the point of fighting other creatures that draw
+near. Every 5 rounds anyone enticed by the plant’s
+fragrance may make another saving throw. Until the victim
+is successful, he will stay near the plant until he dies from
+severe dehydration or starvation.|
+The scent itself deals no damage, but the plant may have
+other mutations capable of doing so.

@@ -1,0 +1,8 @@
+This drawback requires the character to eat twice the 
+normal amount of food daily. During times of vigorous 
+activity, this need becomes more acute. For every 5 rounds 
+of vigorous activity, the character must eat for 1 round or 
+lose 2 hit points and 1 point of STR each melee round 
+until he eats again or until the activity stops. All losses will 
+be regained at an equal rate for each round that food is 
+consumed, until all loss of hit points and STR is regained. 

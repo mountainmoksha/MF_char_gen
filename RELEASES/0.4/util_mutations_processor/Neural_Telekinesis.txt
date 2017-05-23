@@ -1,0 +1,12 @@
+With this mutation the character can lift or move WILx10
+pounds using only the power of his mind. This ability does
+not extend to lifting the mutant, however. To the mutant,
+using this power feels like lifting the object with his
+strength, and so requires some concentration. This ability
+has a range of 50 feet, and can only be used to hold
+things for 5 rounds before the mutant becomes tired and
+must set the objects down. The mutant must rest for 5
+rounds before using the power again.|
+Any use of this mutation on another creature, or objects
+carried by another creature, is considered a mental attack
+and must be handled accordingly.

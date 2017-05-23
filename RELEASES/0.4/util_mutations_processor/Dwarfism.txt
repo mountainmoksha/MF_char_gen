@@ -1,0 +1,23 @@
+Mutated genes have altered the mutant’s
+physical size, an effect either related to a
+pituitary defect or a change in the genetic
+program during the years of body
+growth and development. With this
+mutation, the mutant is a dwarf, a
+mutant with substantially decreased
+size and body weight.|
+To figure out the character’s size, start
+with a base of 6 feet. Roll 1d4+1
+and subtract the result from 6 to get
+the height of the character in feet.
+This will give a range from 1 and 4
+feet.|
+The character’s diminutive size makes
+it harder to damage opponents, but
+also makes it more difficult for opponents to land
+successful blows on the mutant, since he presents such a
+small target. A dwarf mutant has a +1 to hit targets of
+human sized or larger with a non-powered hand weapon.
+He does -1 to damage for every 1’ shorter than he is from
+3 feet, with an equal reduction (improvement) of AC for
+each foot he is shorter than 3’.
