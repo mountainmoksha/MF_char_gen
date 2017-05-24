@@ -5,6 +5,7 @@ import tornado.ioloop
 import tornado.web
 import gen_char
 import create_pdf
+import logging
 
 class MainHandler(tornado.web.RequestHandler):
     """Handler for main page of MF char gen"""
@@ -65,6 +66,13 @@ class PDFViewHandler(tornado.web.RequestHandler):
                 else:
                     level_select = int(section.split('=')[1])
 
+        log_line = str('character request: class_select=' + str(class_select) +
+                       ' sub_spec=' + str(sub_spec) + ' assign_name=' + str(assign_name)
+                       + ' rand_synth=' + str(rand_synth) + ' rand_repl='
+                       + str(rand_repl) + ' level_select=' + str(level_select) +
+                       ' method=' + method)
+        logger.info(log_line)
+
         character = gen_char.char(class_select, level_select, sub_spec,
                                   assign_name, rand_synth, rand_repl,
                                   method)
@@ -96,6 +104,17 @@ def make_app():
 
 
 if __name__ == "__main__":
+
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
+    handler = logging.FileHandler('/var/log/mfchargen.log')
+    handler.setLevel(logging.INFO)
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+
+    logger.info('Tornado layer starting')
+
     APP = make_app()
     APP.listen(80)
     tornado.ioloop.IOLoop.current().start()
