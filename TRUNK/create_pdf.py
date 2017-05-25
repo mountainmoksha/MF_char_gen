@@ -109,6 +109,7 @@ def gen_char_pdf(character):
     # this advances us to page 2:
     character_canvas.showPage()
     character_canvas.setFont('Helvetica-Bold', 8)
+    dir(character_canvas)
     character_canvas.setFillColorRGB(0.0, 0.0, 1.0)
 
     # top of page, on these sheets

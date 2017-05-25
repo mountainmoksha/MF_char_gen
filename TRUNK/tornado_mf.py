@@ -77,6 +77,9 @@ class PDFViewHandler(tornado.web.RequestHandler):
                                   assign_name, rand_synth, rand_repl,
                                   method)
 
+        log_line = 'returning: ' + str(character)
+        logger.info(log_line)
+
         file_name = create_pdf.gen_char_pdf(character)
 
         file_name = create_pdf.combine_pdfs(character, file_name)
