@@ -56,7 +56,7 @@ def gen_char_pdf(character):
         file_name = 'char_pdfs/' + character['alt-name'].replace(' ', '_') + '_blank.pdf'
 
     character_canvas = canvas.Canvas(file_name)
-    character_canvas.setFont('Helvetica-Bold', 8)
+    character_canvas.setFont('Courier-BoldOblique', 8)
     character_canvas.setFillColorRGB(1.0, 0.0, 0.0)
 
     character_canvas.drawString(77, 528, str((character['attributes'])['Strength']))
@@ -108,8 +108,8 @@ def gen_char_pdf(character):
 
     # this advances us to page 2:
     character_canvas.showPage()
-    character_canvas.setFont('Helvetica-Bold', 8)
-    dir(character_canvas)
+    character_canvas.setFont('Courier-BoldOblique', 8)
+#    print(character_canvas.getAvailableFonts())
     character_canvas.setFillColorRGB(0.0, 0.0, 1.0)
 
     # top of page, on these sheets
@@ -132,7 +132,7 @@ def gen_char_pdf(character):
                 print(mutation.replace(' ', '_'), 'not found')
         # this advances us to the next page
         character_canvas.showPage()
-        character_canvas.setFont('Helvetica-Bold', 8)
+        character_canvas.setFont('Courier-BoldOblique', 8)
         character_canvas.setFillColorRGB(0.0, 0.0, 1.0)
 
     # top of page, on these sheets
@@ -158,7 +158,7 @@ def gen_char_pdf(character):
                 print(mutation.replace(' ', '_'), 'not found')
         # this advances us to the next page
         character_canvas.showPage()
-        character_canvas.setFont('Helvetica-Bold', 8)
+        character_canvas.setFont('Courier-BoldOblique', 8)
         character_canvas.setFillColorRGB(0.0, 0.0, 1.0)
 
     # top of page, on these sheets
@@ -184,9 +184,13 @@ def gen_char_pdf(character):
                 print(mutation.replace(' ', '_'), 'not found')
         # this advances us to the next page
         character_canvas.showPage()
-        character_canvas.setFont('Helvetica-Bold', 8)
+        character_canvas.setFont('Courier-BoldOblique', 8)
         character_canvas.setFillColorRGB(0.5, 0.0, 0.5)
 
+    # do this (potentially again) here, in case there
+    # weren't any mutations
+    character_canvas.setFont('Courier-BoldOblique', 8)
+    character_canvas.setFillColorRGB(0.5, 0.0, 0.5)
 
     character_canvas.drawString(360, 270, str(character['GP']) + ' GP')
 
