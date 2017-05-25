@@ -2,6 +2,7 @@
 """main module: Mutant Future low-level char gen"""
 
 import random
+import logging
 import read_muts
 import gen_attrs
 import gen_mods
@@ -350,6 +351,16 @@ def char(char_type=None, level=1, sub_type=True, gen_name=True, rand_synth=False
     gen_saves(character)
 
     gen_xp(character)
+
+    log_line = 'gen_char returning: ' + str(character)
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
+    handler = logging.FileHandler('/var/log/mfchargen.log')
+    handler.setLevel(logging.INFO)
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+    logger.info(log_line)
 
     return character
 
