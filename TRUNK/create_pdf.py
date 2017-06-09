@@ -142,10 +142,7 @@ def gen_char_pdf(character):
         character_canvas.drawString(75, mutations_current_height, 'Physical Mutations:')
         mutations_current_height -= 9
         for mutation in character['physical']:
-            if mutation[:4] == 'Pick':
-                character_canvas.drawString(85, mutations_current_height, 'Pick')
-            else:
-                character_canvas.drawString(85, mutations_current_height, mutation)
+            character_canvas.drawString(85, mutations_current_height, mutation)
             mutations_current_height -= 9
             # put in description
             text = doc_obj.getElementsByTagName(mutation.replace(' ', '_'))
@@ -168,10 +165,7 @@ def gen_char_pdf(character):
         character_canvas.drawString(75, mutations_current_height, 'Mental Mutations:')
         mutations_current_height -= 9
         for mutation in character['mental']:
-            if mutation[:4] == 'Pick':
-                character_canvas.drawString(85, mutations_current_height, 'Pick')
-            else:
-                character_canvas.drawString(85, mutations_current_height, mutation)
+            character_canvas.drawString(85, mutations_current_height, mutation)
             mutations_current_height -= 9
             # put in description
             text = doc_obj.getElementsByTagName(mutation.replace(' ', '_'))
