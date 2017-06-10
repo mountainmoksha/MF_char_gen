@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """main module: Mutant Future low-level char gen"""
 
+import datetime
 import random
 import read_muts
 import gen_attrs
@@ -350,6 +351,8 @@ def char(char_type=None, level=1, sub_type=True, gen_name=True, rand_synth=False
     gen_saves(character)
 
     gen_xp(character)
+
+    character['creation_time'] = str(datetime.datetime.utcnow())
 
     return character
 
