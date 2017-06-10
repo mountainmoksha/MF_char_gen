@@ -1,5 +1,0 @@
-The mutant sends out waves of negative mental energy,
-causing anyone with less than 17 Intelligence within a 90’
-radius to have a 15% probability of attacking the mutant.
-Only one check is necessary per person until they leave
-the field and reenter it.

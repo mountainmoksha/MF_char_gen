@@ -1,2 +1,0 @@
-This mutation indicates that the character suffers from
-either blindness or deafness (50%).

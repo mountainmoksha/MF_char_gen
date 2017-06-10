@@ -1,9 +1,0 @@
-The plant is capable of generating a ray of heat or cold
-(50%) capable of doing 4d6 damage to those it comes in
-contact with. Depending on the size of the plant, it may
-have 1d3 heat or cold emitting flowers or branches. The
-range of this attack is 50 feet. The ML may determine if
-there is a difference between intelligent plants and other
-plants with regard to this power. A suggested difference is
-a -2 attack adjustment for plants with no higher order
-mental functions.

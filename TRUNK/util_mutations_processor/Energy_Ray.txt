@@ -1,6 +1,0 @@
-Every 3 rounds, this mutation grants the ability to emit a
-blast of energy (roll 1d6; 1-2 heat, 3-4 cold, 5 radiation,
-6 electricity) from the hands (or other upper appendages)
-that inflicts 4d6 hit points of damage to a distance of 50
-feet. Only one type of energy may be chosen at character
-creation

@@ -1,8 +1,0 @@
-The character suffers from obesity, and his weight is twice 
-that of an average individual of his species. The ML may 
-apply encumbrance or combat modifiers when it seems as 
-though the character’s size would interfere with his abilities 
-in any way. It is also possible to choose one body location 
-and declare that the fat accumulates there, giving one or 
-more limbs a grotesque, bloated shape compared to that 
-of the rest of the body. 
