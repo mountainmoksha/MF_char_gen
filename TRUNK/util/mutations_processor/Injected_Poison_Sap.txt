@@ -1,0 +1,5 @@
+The plant has a toxic sap that is injected when the plant’s
+branches or vines are stepped on or otherwise blundered
+into. A PC with this mutation may use this as an attack
+each round. The class of the poison is determined
+randomly.

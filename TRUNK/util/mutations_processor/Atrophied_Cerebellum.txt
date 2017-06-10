@@ -1,0 +1,4 @@
+The mutant’s brain has atrophied in certain areas due to a
+genetic birth defect. As a result of this mutation, the
+mutant suffers a one-time –2 reduction of INT and DEX,
+due to deterioration in mental capacity and coordination.

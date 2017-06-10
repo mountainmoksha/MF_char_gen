@@ -1,0 +1,11 @@
+Characters with this mutation get energy from the sun,
+processing it through their bodies as though it were food.
+If they spend long periods of inactivity in direct sunlight,
+they will be able to heal wounds more quickly (4x) than the
+regular healing rate (1d3 per day of complete rest). When
+they are out of the sun (i.e. at night or in a dark cave) they
+are forced to move more slowly in order to conserve their
+rapidly depleting energy. This reduces their movement to
+50% of the normal rate. Such characters are also more
+susceptible to cold and heat, and they suffer a –2 penalty
+to saving throws versus cold or heat based energy attacks.

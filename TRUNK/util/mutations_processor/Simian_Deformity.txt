@@ -1,0 +1,10 @@
+A mutant who suffers from this mutation has an altered
+appearance that mimics that of the great apes (such as
+gorillas and chimpanzees) - shorter legs, quadrupedal,
+and elongated arms that permit the knuckles to touch the
+ground and aid in movement.|
+The character’s shortened legs reduce his base speed to
+2/3 normal. However, if all 4 limbs are used to move
+(arms and legs), his speed is normal. A character using his
+arms to assist movement cannot be wielding a weapon or
+carrying items in his hands.

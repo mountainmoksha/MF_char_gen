@@ -1,0 +1,21 @@
+The mutant can change the weather in the local area. It
+takes 1 round to use the mutation and an additional 1d4
+rounds for the effects to manifest. The mutant calls forth
+weather appropriate to the climate and season of the
+area.|
+Possible Weather:|
+Spring = Tornado, thunderstorm, sleet storm, or
+hot weather|
+Summer = Torrential rain, heat wave, or hailstorm|
+Autumn = Hot or cold weather, fog, or sleet|
+Winter = Frigid cold, blizzard, or thaw|
+Late winter = Hurricane-force winds or early spring
+(coastal area)|
+The mutant controls the general tendencies of the weather,
+such as the direction and intensity of the wind, but cannot
+control specific applications of the weather-where lightning
+strikes, for example, or the exact path of a tornado.
+Contradictory weather conditions are not possible
+simultaneously. Control weather can do away with
+atmospheric phenomena (naturally occurring or otherwise)
+as well as create them.

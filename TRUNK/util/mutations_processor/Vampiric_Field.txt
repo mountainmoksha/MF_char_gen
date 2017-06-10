@@ -1,0 +1,9 @@
+This mutation grants the mutant the ability to absorb the
+life essence (hit points) from all creatures (friend or foe)
+within a foot radius equal to 30+WIL. This power absorbs
+2d4 hp per round from all creatures in the radius, and
+these absorbed points go into a separate reserve for the
+mutant. All damage to the mutant is taken from these
+reserved points until they are gone; after this point the
+mutant’s regular hp begin to be affected. Stored hp will
+disappear after 24 hours.

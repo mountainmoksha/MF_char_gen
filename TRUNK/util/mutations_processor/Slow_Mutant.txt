@@ -1,0 +1,4 @@
+This mutation makes the mutant much slower in all
+respects. Movement speed is halved, mental tasks take
+twice as long to accomplish, and the character may attack
+once every other round.

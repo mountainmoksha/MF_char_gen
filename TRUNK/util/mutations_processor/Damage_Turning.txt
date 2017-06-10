@@ -1,0 +1,18 @@
+This mutation allows the character to return any incoming
+damage to the origin of the attack. For this power to work
+the mutant must use every bit of his concentration, taking
+no other actions. Any movement of more than one or two
+small steps will cause this power to fail.|
+The power gradually builds up, allowing 3d6 hp worth of
+damage to be turned the first round. This increases by 1d6
+per round up to a maximum of 20d6 hp worth of damage.
+The mutant only takes damage that is above his current hp
+level of damage turning. For instance, in the first round the
+character rolls 3d6, with a result of 14. He may turn up to
+14 hp of damage the first round. The next round he adds
+1d6 to the current running total of 14. He can keep the
+power working as long as he remains still and
+concentrating, and he may maintain concentration when
+he receives damage. The mutant cannot turn attacks that
+cause no damage. If such powers are successful, they can
+interfere with this ability.

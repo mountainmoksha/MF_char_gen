@@ -1,0 +1,3 @@
+The character may fly through the air with a movement of
+up to WIL x 10. Any encumbrance will hinder the
+movement by reducing the speed at a level set by the ML.
