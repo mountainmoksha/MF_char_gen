@@ -17,9 +17,18 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self):
         """respond to HTTP get method"""
 
-        form_file_p = open('char_gen_form/mf_char_gen.html', 'r')
-        for form_line in form_file_p:
+        form_file_head_p = open('char_gen_form/mf_char_gen_head.html', 'r')
+        for form_line in form_file_head_p:
             self.write(form_line)
+        form_file_head_p.close()
+        form_file_body_p = open('char_gen_form/mf_char_gen_body.html', 'r')
+        for form_line in form_file_body_p:
+            self.write(form_line)
+        form_file_body_p.close()
+        form_file_foot_p = open('char_gen_form/mf_char_gen_foot.html', 'r')
+        for form_line in form_file_foot_p:
+            self.write(form_line)
+        form_file_foot_p.close()
 
 
 class PDFViewHandler(tornado.web.RequestHandler):
