@@ -29,6 +29,13 @@ class SimpleTestCase(unittest.TestCase):
         self.assertTrue('Charisma' in attributes)
         self.assertTrue('Strength' in attributes)
 
+    def test_roll_4d6mL(self):
+
+        score = gen_attrs.roll_4d6mL()
+        # 3d6 scores will always fall between 3 and 18
+        self.assertTrue(score > 2)
+        self.assertTrue(score < 19)
+
 
 if __name__ == "__main__":
 
