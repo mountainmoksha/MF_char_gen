@@ -4,9 +4,9 @@
 import tornado.ioloop
 import tornado.web
 import gen_char
+import db_access
 import create_pdf
 import logging
-import tinydb
 
 class MainHandler(tornado.web.RequestHandler):
     """Handler for main page of MF char gen"""
@@ -83,17 +83,9 @@ class PDFViewHandler(tornado.web.RequestHandler):
         log_line = 'returning: ' + str(character)
         logger.info(log_line)
 
-        db = tinydb.TinyDB('chars.json')
-        db.insert(character)
-        db.close()
+        db_access.insert_char(character)
 
         # this will go into VIEW_PDF handler
-
-        # how to get chars out of the db:
-        # db = tinydb.TinyDB('chars.json')
-        # char_query = tinydb.Query()
-        # this_char = db.search(char_query.name == 'Vurim Hejoh')[0]
-        # db.close()
 
         file_name = create_pdf.gen_char_pdf(character)
 
