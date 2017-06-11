@@ -31,8 +31,8 @@ class MainHandler(tornado.web.RequestHandler):
         form_file_foot_p.close()
 
 
-class PDFViewHandler(tornado.web.RequestHandler):
-    """generate a character and view the PDF"""
+class EditHandler(tornado.web.RequestHandler):
+    """generate a character and edit attrs and muts"""
 
     def data_received(self, chunk):
         print('chunk is', chunk)
@@ -40,7 +40,7 @@ class PDFViewHandler(tornado.web.RequestHandler):
     def get(self):
         """respond to HTTP get method"""
 
-        # this will all go into CHAR_EDIT handler
+        print('in EditHandler::get')
 
         class_select = None
         sub_spec = False
@@ -94,7 +94,61 @@ class PDFViewHandler(tornado.web.RequestHandler):
 
         db_access.insert_char(character)
 
-        # this will go into VIEW_PDF handler
+        form_file_head_p = open('char_gen_form/mf_char_gen_head.html', 'r')
+        for form_line in form_file_head_p:
+            self.write(form_line)
+        form_file_head_p.close()
+        form_file_body_p = open('char_gen_form/mf_char_edit_body.html', 'r')
+        for form_line in form_file_body_p:
+            self.write(form_line)
+        form_file_body_p.close()
+        form_file_foot_p = open('char_gen_form/mf_char_gen_foot.html', 'r')
+        for form_line in form_file_foot_p:
+            self.write(form_line)
+        form_file_foot_p.close()
+
+
+class PDFViewHandler(tornado.web.RequestHandler):
+    """view a character PDF"""
+
+    def data_received(self, chunk):
+        print('chunk is', chunk)
+
+    def get(self):
+        """respond to HTTP get method"""
+
+        print('in PDFViewHandler::get')
+#        for section in self.request.uri.split('?'):
+#            this_section = section.split('=')
+#            if this_section[0] == 'class_select':
+#                class_select = section.split('=')[1]
+#                if class_select == 'Random':
+#                    class_select = None
+#                else:
+#                    class_select = class_select.replace("%20", " ")
+#            if this_section[0] == 'method':
+#                method = section.split('=')[1]
+#            if this_section[0] == 'sub_spec':
+#                if section.split('=')[1] == 'true':
+#                    sub_spec = True
+#            if this_section[0] == 'assign_name':
+#                if section.split('=')[1] == 'true':
+#                    assign_name = True
+#            if this_section[0] == 'rand_synth':
+#                if section.split('=')[1] == 'true':
+#                    rand_synth = True
+#            if this_section[0] == 'rand_repl':
+#                if section.split('=')[1] == 'true':
+#                    rand_repl = True
+#            if this_section[0] == 'level_select':
+#                if section.split('=')[1] == 'Random':
+#                    level_select = None
+#                else:
+#                    level_select = int(section.split('=')[1])
+
+        # after you know the name, retr from db
+
+        character = gen_char.char()
 
         file_name = create_pdf.gen_char_pdf(character)
 
@@ -113,6 +167,7 @@ def make_app():
     return tornado.web.Application([
         (r"/", MainHandler),
         (r"/VIEW_PDF", PDFViewHandler),
+        (r"/EDIT_CHAR", EditHandler),
         (r"/(MF_logo_color\.png)", tornado.web.StaticFileHandler, {"path": "./images"}),
         (r"/char_pdfs/(.*)", tornado.web.StaticFileHandler, {"path": "./char_pdfs"},),
         (r"/char_xmls/(.*)", tornado.web.StaticFileHandler, {"path": "./char_xmls"},),
