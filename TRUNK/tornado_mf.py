@@ -109,6 +109,15 @@ class EditHandler(tornado.web.RequestHandler):
         dex_score = str((character['attributes'])['Dexterity'])
         form_lines = form_lines.replace('<option value="' + dex_score + '" DEX_SELECTED',
                                        '<option value="' + dex_score + '" selected')
+        con_score = str((character['attributes'])['Constitution'])
+        form_lines = form_lines.replace('<option value="' + con_score + '" CON_SELECTED',
+                                       '<option value="' + con_score + '" selected')
+        wil_score = str((character['attributes'])['Willpower'])
+        form_lines = form_lines.replace('<option value="' + wil_score + '" WIL_SELECTED',
+                                       '<option value="' + wil_score + '" selected')
+        chr_score = str((character['attributes'])['Charisma'])
+        form_lines = form_lines.replace('<option value="' + chr_score + '" CHR_SELECTED',
+                                       '<option value="' + chr_score + '" selected')
         self.write(form_lines)
         form_file_body_p.close()
         form_file_foot_p = open('char_gen_form/mf_char_gen_foot.html', 'r')
