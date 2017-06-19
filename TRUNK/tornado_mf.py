@@ -31,6 +31,35 @@ class MainHandler(tornado.web.RequestHandler):
         form_file_foot_p.close()
 
 
+class CommitHandler(tornado.web.RequestHandler):
+    """commit a character's changes to the db"""
+
+    def data_received(self, chunk):
+        print('chunk is', chunk)
+
+    def get(self):
+        """respond to HTTP get method"""
+
+        name = None
+
+        for section in self.request.uri.split('?'):
+            this_section = section.split('=')
+            if this_section[0] == 'name':
+                name = section.split('=')[1]
+
+        name = name.replace('%20', ' ')
+
+        character = db_access.query_by_name(name)
+
+        name.replace(' ', '%20')
+
+        self.write('<head>')
+        self.write('<meta http-equiv="refresh" content="0; url=/VIEW_PDF?name=' + name + '" />')
+        self.write('</head>')
+
+        return
+
+
 class EditHandler(tornado.web.RequestHandler):
     """generate a character and edit attrs and muts"""
 
@@ -97,31 +126,13 @@ class EditHandler(tornado.web.RequestHandler):
             self.write(form_line)
         form_file_head_p.close()
 
-#        form_file_body_p = open('char_gen_form/mf_char_edit_body.html', 'r')
-#        form_lines = form_file_body_p.read()
-#        str_score = str((character['attributes'])['Strength'])
-#        form_lines = form_lines.replace('<option value="' + str_score + '" STR_SELECTED',
-#                                       '<option value="' + str_score + '" selected')
-#        int_score = str((character['attributes'])['Intelligence'])
-#        form_lines = form_lines.replace('<option value="' + int_score + '" INT_SELECTED',
-#                                       '<option value="' + int_score + '" selected')
-#        dex_score = str((character['attributes'])['Dexterity'])
-#        form_lines = form_lines.replace('<option value="' + dex_score + '" DEX_SELECTED',
-#                                       '<option value="' + dex_score + '" selected')
-#        con_score = str((character['attributes'])['Constitution'])
-#        form_lines = form_lines.replace('<option value="' + con_score + '" CON_SELECTED',
-#                                       '<option value="' + con_score + '" selected')
-#        wil_score = str((character['attributes'])['Willpower'])
-#        form_lines = form_lines.replace('<option value="' + wil_score + '" WIL_SELECTED',
-#                                       '<option value="' + wil_score + '" selected')
-#        chr_score = str((character['attributes'])['Charisma'])
-#        form_lines = form_lines.replace('<option value="' + chr_score + '" CHR_SELECTED',
-#                                       '<option value="' + chr_score + '" selected')
-#        self.write(form_lines)
-#        form_file_body_p.close()
         self.write('<body class="blurBg-false" style="background-color:#1A2223">')
-        self.write('<link rel="stylesheet" href="mf_char_gen_files/formoid1/formoid-biz-red.css" type="text/css" />')
-        self.write('<form class="formoid-biz-red" style="background-color:#1A2223;font-size:14px;font-family:\'Open Sans\',\'Helvetica Neue\', \'Helvetica\', Arial, Verdana, sans-serif;color:#ECECEC;max-width:480px;min-width:150px">')
+        self.write('<link rel="stylesheet" href="mf_char_gen_files/formoid1/formoid-biz-red.css" ')
+        self.write('type="text/css" />')
+        self.write('<form class="formoid-biz-red" style="background-color:#1A2223;')
+        self.write('font-size:14px;font-family:')
+        self.write('\'Open Sans\',\'Helvetica Neue\', \'Helvetica\', Arial, ')
+        self.write('Verdana, sans-serif;color:#ECECEC;max-width:480px;min-width:150px">')
         self.write('<img src="MF_logo_color.png" alt="MF_logo_color.png" width="100%">')
         self.write('<div class="title">')
         self.write('<h2>Mutant Future Character Generator</h2>')
@@ -225,14 +236,16 @@ class EditHandler(tornado.web.RequestHandler):
         self.write('</select>')
 
         self.write('<i></i></span></div></div><br>')
-        self.write('<div class="submit"><input type="submit" value="View PDF" onclick="view_pdf()"></div>')
+        self.write('<div class="submit"><input type="submit" ')
+        self.write('value="View PDF" onclick="view_pdf()"></div>')
         self.write('<br><img src="MF_logo_color.png" alt="MF_logo_color.png" width="100%">')
         self.write('</form>\n')
         self.write('<script>\n')
-        self.write('   function view_pdf() {\n')
-        self.write('        view_url = \"VIEW_PDF\"\n')
-        self.write('        window.open(view_url)\n')
-        self.write('   }\n')
+        self.write('function view_pdf() {\n')
+        self.write('view_url = \"COMMIT_CHAR?name=')
+        self.write(character['name'] + '\"\n')
+        self.write('window.open(view_url)\n')
+        self.write('}\n')
         self.write('</script>\n')
         self.write('<br>')
         self.write('</body>')
@@ -252,38 +265,18 @@ class PDFViewHandler(tornado.web.RequestHandler):
     def get(self):
         """respond to HTTP get method"""
 
-        print('in PDFViewHandler::get')
-#        for section in self.request.uri.split('?'):
-#            this_section = section.split('=')
-#            if this_section[0] == 'class_select':
-#                class_select = section.split('=')[1]
-#                if class_select == 'Random':
-#                    class_select = None
-#                else:
-#                    class_select = class_select.replace("%20", " ")
-#            if this_section[0] == 'method':
-#                method = section.split('=')[1]
-#            if this_section[0] == 'sub_spec':
-#                if section.split('=')[1] == 'true':
-#                    sub_spec = True
-#            if this_section[0] == 'assign_name':
-#                if section.split('=')[1] == 'true':
-#                    assign_name = True
-#            if this_section[0] == 'rand_synth':
-#                if section.split('=')[1] == 'true':
-#                    rand_synth = True
-#            if this_section[0] == 'rand_repl':
-#                if section.split('=')[1] == 'true':
-#                    rand_repl = True
-#            if this_section[0] == 'level_select':
-#                if section.split('=')[1] == 'Random':
-#                    level_select = None
-#                else:
-#                    level_select = int(section.split('=')[1])
+        name = None
 
-        # after you know the name, retr from db
+        for section in self.request.uri.split('?'):
+            this_section = section.split('=')
+            if this_section[0] == 'name':
+                name = section.split('=')[1]
+                name = name.replace('%20', ' ')
 
-        character = gen_char.char()
+        if name is None:
+            character = gen_char.char()
+        else:
+            character = db_access.query_by_name(name)
 
         file_name = create_pdf.gen_char_pdf(character)
 
@@ -303,6 +296,7 @@ def make_app():
         (r"/", MainHandler),
         (r"/VIEW_PDF", PDFViewHandler),
         (r"/EDIT_CHAR", EditHandler),
+        (r"/COMMIT_CHAR", CommitHandler),
         (r"/(MF_logo_color\.png)", tornado.web.StaticFileHandler, {"path": "./images"}),
         (r"/char_pdfs/(.*)", tornado.web.StaticFileHandler, {"path": "./char_pdfs"},),
         (r"/char_xmls/(.*)", tornado.web.StaticFileHandler, {"path": "./char_xmls"},),
