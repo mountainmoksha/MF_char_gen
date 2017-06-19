@@ -40,8 +40,6 @@ class EditHandler(tornado.web.RequestHandler):
     def get(self):
         """respond to HTTP get method"""
 
-        print('in EditHandler::get')
-
         class_select = None
         sub_spec = False
         assign_name = False
@@ -98,28 +96,147 @@ class EditHandler(tornado.web.RequestHandler):
         for form_line in form_file_head_p:
             self.write(form_line)
         form_file_head_p.close()
-        form_file_body_p = open('char_gen_form/mf_char_edit_body.html', 'r')
-        form_lines = form_file_body_p.read()
-        str_score = str((character['attributes'])['Strength'])
-        form_lines = form_lines.replace('<option value="' + str_score + '" STR_SELECTED',
-                                       '<option value="' + str_score + '" selected')
-        int_score = str((character['attributes'])['Intelligence'])
-        form_lines = form_lines.replace('<option value="' + int_score + '" INT_SELECTED',
-                                       '<option value="' + int_score + '" selected')
-        dex_score = str((character['attributes'])['Dexterity'])
-        form_lines = form_lines.replace('<option value="' + dex_score + '" DEX_SELECTED',
-                                       '<option value="' + dex_score + '" selected')
-        con_score = str((character['attributes'])['Constitution'])
-        form_lines = form_lines.replace('<option value="' + con_score + '" CON_SELECTED',
-                                       '<option value="' + con_score + '" selected')
-        wil_score = str((character['attributes'])['Willpower'])
-        form_lines = form_lines.replace('<option value="' + wil_score + '" WIL_SELECTED',
-                                       '<option value="' + wil_score + '" selected')
-        chr_score = str((character['attributes'])['Charisma'])
-        form_lines = form_lines.replace('<option value="' + chr_score + '" CHR_SELECTED',
-                                       '<option value="' + chr_score + '" selected')
-        self.write(form_lines)
-        form_file_body_p.close()
+
+#        form_file_body_p = open('char_gen_form/mf_char_edit_body.html', 'r')
+#        form_lines = form_file_body_p.read()
+#        str_score = str((character['attributes'])['Strength'])
+#        form_lines = form_lines.replace('<option value="' + str_score + '" STR_SELECTED',
+#                                       '<option value="' + str_score + '" selected')
+#        int_score = str((character['attributes'])['Intelligence'])
+#        form_lines = form_lines.replace('<option value="' + int_score + '" INT_SELECTED',
+#                                       '<option value="' + int_score + '" selected')
+#        dex_score = str((character['attributes'])['Dexterity'])
+#        form_lines = form_lines.replace('<option value="' + dex_score + '" DEX_SELECTED',
+#                                       '<option value="' + dex_score + '" selected')
+#        con_score = str((character['attributes'])['Constitution'])
+#        form_lines = form_lines.replace('<option value="' + con_score + '" CON_SELECTED',
+#                                       '<option value="' + con_score + '" selected')
+#        wil_score = str((character['attributes'])['Willpower'])
+#        form_lines = form_lines.replace('<option value="' + wil_score + '" WIL_SELECTED',
+#                                       '<option value="' + wil_score + '" selected')
+#        chr_score = str((character['attributes'])['Charisma'])
+#        form_lines = form_lines.replace('<option value="' + chr_score + '" CHR_SELECTED',
+#                                       '<option value="' + chr_score + '" selected')
+#        self.write(form_lines)
+#        form_file_body_p.close()
+        self.write('<body class="blurBg-false" style="background-color:#1A2223">')
+        self.write('<link rel="stylesheet" href="mf_char_gen_files/formoid1/formoid-biz-red.css" type="text/css" />')
+        self.write('<form class="formoid-biz-red" style="background-color:#1A2223;font-size:14px;font-family:\'Open Sans\',\'Helvetica Neue\', \'Helvetica\', Arial, Verdana, sans-serif;color:#ECECEC;max-width:480px;min-width:150px">')
+        self.write('<img src="MF_logo_color.png" alt="MF_logo_color.png" width="100%">')
+        self.write('<div class="title">')
+        self.write('<h2>Mutant Future Character Generator</h2>')
+        self.write('</div>')
+        self.write('<div class="element-select">')
+        self.write('<label class="title">Strength</label>')
+        self.write('<div class="large">')
+        self.write('<span>')
+        self.write('<select name="strength" id="strength_select">')
+
+        str_score = int((character['attributes'])['Strength'])
+        for attr_idx in range(3,18):
+            if str_score == attr_idx:
+                out_line = '<option value="' + str(attr_idx) + '" selected>'
+                out_line += str(attr_idx) + '</option>'
+                self.write(out_line)
+            else:
+                out_line = '<option value="' + str(attr_idx) + '">'
+                out_line += str(attr_idx) + '</option>'
+                self.write(out_line)
+        self.write('</select>')
+
+        self.write('<label class="title">Dexterity</label>')
+        self.write('<div class="large">')
+        self.write('<span>')
+        self.write('<select name="dexterity" id="dexterity_select">')
+        dex_score = int((character['attributes'])['Dexterity'])
+        for attr_idx in range(3,18):
+            if dex_score == attr_idx:
+                out_line = '<option value="' + str(attr_idx) + '" selected>'
+                out_line += str(attr_idx) + '</option>'
+                self.write(out_line)
+            else:
+                out_line = '<option value="' + str(attr_idx) + '">'
+                out_line += str(attr_idx) + '</option>'
+                self.write(out_line)
+        self.write('</select>')
+
+        self.write('<label class="title">Constitution</label>')
+        self.write('<div class="large">')
+        self.write('<span>')
+        self.write('<select name="constitution" id="constitution_select">')
+        con_score = int((character['attributes'])['Constitution'])
+        for attr_idx in range(3,18):
+            if con_score == attr_idx:
+                out_line = '<option value="' + str(attr_idx) + '" selected>'
+                out_line += str(attr_idx) + '</option>'
+                self.write(out_line)
+            else:
+                out_line = '<option value="' + str(attr_idx) + '">'
+                out_line += str(attr_idx) + '</option>'
+                self.write(out_line)
+        self.write('</select>')
+
+        self.write('<label class="title">Intelligence</label>')
+        self.write('<div class="large">')
+        self.write('<span>')
+        self.write('<select name="intelligence" id="intelligence_select">')
+        int_score = int((character['attributes'])['Intelligence'])
+        for attr_idx in range(3,18):
+            if int_score == attr_idx:
+                out_line = '<option value="' + str(attr_idx) + '" selected>'
+                out_line += str(attr_idx) + '</option>'
+                self.write(out_line)
+            else:
+                out_line = '<option value="' + str(attr_idx) + '">'
+                out_line += str(attr_idx) + '</option>'
+                self.write(out_line)
+        self.write('</select>')
+
+        self.write('<label class="title">Willpower</label>')
+        self.write('<div class="large">')
+        self.write('<span>')
+        self.write('<select name="willpower" id="willpower_select">')
+        wil_score = int((character['attributes'])['Willpower'])
+        for attr_idx in range(3,18):
+            if wil_score == attr_idx:
+                out_line = '<option value="' + str(attr_idx) + '" selected>'
+                out_line += str(attr_idx) + '</option>'
+                self.write(out_line)
+            else:
+                out_line = '<option value="' + str(attr_idx) + '">'
+                out_line += str(attr_idx) + '</option>'
+                self.write(out_line)
+        self.write('</select>')
+
+        self.write('<label class="title">Charisma</label>')
+        self.write('<div class="large">')
+        self.write('<span>')
+        self.write('<select name="charisma" id="charisma_select">')
+        cha_score = int((character['attributes'])['Charisma'])
+        for attr_idx in range(3,18):
+            if cha_score == attr_idx:
+                out_line = '<option value="' + str(attr_idx) + '" selected>'
+                out_line += str(attr_idx) + '</option>'
+                self.write(out_line)
+            else:
+                out_line = '<option value="' + str(attr_idx) + '">'
+                out_line += str(attr_idx) + '</option>'
+                self.write(out_line)
+        self.write('</select>')
+
+        self.write('<i></i></span></div></div><br>')
+        self.write('<div class="submit"><input type="submit" value="View PDF" onclick="view_pdf()"></div>')
+        self.write('<br><img src="MF_logo_color.png" alt="MF_logo_color.png" width="100%">')
+        self.write('</form>')
+        self.write('<script>')
+        self.write('   function view_pdf() {')
+        self.write('        view_url = \"VIEW_PDF\"')
+        self.write('        window.open(view_url)')
+        self.write('   }')
+        self.write('</script>')
+        self.write('<br>')
+        self.write('</body>')
+
         form_file_foot_p = open('char_gen_form/mf_char_gen_foot.html', 'r')
         for form_line in form_file_foot_p:
             self.write(form_line)
