@@ -47,6 +47,8 @@ class CommitHandler(tornado.web.RequestHandler):
             if this_section[0] == 'name':
                 name = section.split('=')[1]
 
+        #TODO: pull attrs out of url and commit
+
         name = name.replace('%20', ' ')
 
         character = db_access.query_by_name(name)
@@ -246,6 +248,7 @@ class EditHandler(tornado.web.RequestHandler):
         self.write('function view_pdf() {\n')
         self.write('view_url = \"COMMIT_CHAR?name=')
         self.write(character['name'] + '\"\n')
+        #TODO: put other attrs into new url
         self.write('window.open(view_url)\n')
         self.write('}\n')
         self.write('</script>\n')
