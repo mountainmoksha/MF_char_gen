@@ -236,8 +236,10 @@ class EditHandler(tornado.web.RequestHandler):
         self.write('</select>')
 
         self.write('<i></i></span></div></div><br>')
-        self.write('<div class="submit"><input type="submit" ')
-        self.write('value="View PDF" onclick="view_pdf()"></div>')
+#        self.write('<div class="submit"><input type="submit" ')
+#        self.write('value="View PDF" onclick="view_pdf()"></div>')
+        self.write('<div><button type="button" onclick="view_pdf()" ')
+        self.write('style="background-color:red;">VIEW PDF</button></div>')
         self.write('<br><img src="MF_logo_color.png" alt="MF_logo_color.png" width="100%">')
         self.write('</form>\n')
         self.write('<script>\n')
