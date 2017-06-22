@@ -1,4 +1,4 @@
-rts of the mutant’s body are covered with prickly spines,
+Parts of the mutant’s body are covered with prickly spines,
 which may be small, medium, or large. Roll 1d6 at
 character generation to determine the size. Small spines
 (1-2) inflict 1d4 damage, medium spines (3-4) inflict 1d6,
