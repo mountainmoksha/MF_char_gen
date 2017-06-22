@@ -96,7 +96,7 @@ class EditHandler(tornado.web.RequestHandler):
         ret_str += '<span>'
         ret_str += '<select name="' + attr.lower() + '" id="' + attr.lower() + '_select">'
         score = int((character['attributes'])[attr])
-        for attr_idx in range(3,18):
+        for attr_idx in range(3, 18):
             if score == attr_idx:
                 out_line = '<option value="' + str(attr_idx) + '" selected>'
                 out_line += str(attr_idx) + '</option>'
@@ -180,8 +180,10 @@ class EditHandler(tornado.web.RequestHandler):
         self.write('\'Open Sans\',\'Helvetica Neue\', \'Helvetica\', Arial, ')
         self.write('Verdana, sans-serif;color:#ECECEC;max-width:480px;min-width:150px">')
         self.write('<img src="MF_logo_color.png" alt="MF_logo_color.png" width="100%">')
+
         self.write('<div class="title">')
-        self.write('<h2>Mutant Future Character Generator</h2>')
+        self.write('<h2>Name:  ' + character['name'] + '</h2>')
+        self.write('<h2>Class:  ' + character['type'] + '</h2>')
         self.write('</div>')
 
         self.write('<div class="element-select">')
