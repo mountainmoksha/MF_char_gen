@@ -88,6 +88,31 @@ class EditHandler(tornado.web.RequestHandler):
     def data_received(self, chunk):
         print('chunk is', chunk)
 
+    def mutations_dropdown(self, label, mutations_file):
+        """generate drop-down for mutations"""
+
+        ret_str = '<label class="title">' + label + '</label>'
+        ret_str += '<div class="large">'
+
+        for drop_idx in range(4):
+            ret_str += '<span>'
+            ret_str += str('<select name="' + label.replace(' ', '_') + str(drop_idx) +
+                           '" id="' + label.replace(' ', '_') + str(drop_idx) + '_select">')
+            out_line = '<option value="None..." >None...</option>'
+            for mutation in open(mutations_file, 'r'):
+                mutation = mutation.rstrip()[6:]
+                #out_line = '<option value="' + mutation + '" selected>'
+                out_line += '<option value="' + mutation.replace(' ', '_') + '" >'
+                out_line += mutation + '</option>'
+            ret_str += out_line
+            ret_str += '</span>'
+            ret_str += '</select><br>'
+
+        ret_str += '</div>'
+        ret_str += '<br>'
+
+        return ret_str
+
     def attr_dropdown(self, character, attr='Strength'):
         """generate drop-down for discreet attribute"""
 
@@ -193,6 +218,12 @@ class EditHandler(tornado.web.RequestHandler):
 
         for attr in character['attributes']:
             self.write(self.attr_dropdown(character, attr))
+
+        self.write(self.mutations_dropdown('Physical Mutations', 'MF_physical.txt'))
+
+        self.write(self.mutations_dropdown('Mental Mutations', 'MF_mental.txt'))
+
+        self.write(self.mutations_dropdown('Plant Mutations', 'MF_plant.txt'))
 
         self.write('<i></i></span></div></div><br>')
         self.write('<div><button type="button" onclick="view_pdf()" ')
