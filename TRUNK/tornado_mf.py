@@ -88,8 +88,13 @@ class EditHandler(tornado.web.RequestHandler):
     def data_received(self, chunk):
         print('chunk is', chunk)
 
-    def mutations_dropdown(self, label, mutations_file):
+    def mutations_dropdown(self, character, label, mutations_file):
         """generate drop-down for mutations"""
+
+        search_key = (label.split()[0]).lower()
+        if search_key in character:
+            print(character[search_key])
+            #TODO: use this down below to put selected on lines in drop downs
 
         ret_str = '<label class="title">' + label + '</label>'
         ret_str += '<div class="large">'
@@ -219,11 +224,17 @@ class EditHandler(tornado.web.RequestHandler):
         for attr in character['attributes']:
             self.write(self.attr_dropdown(character, attr))
 
-        self.write(self.mutations_dropdown('Physical Mutations', 'MF_physical.txt'))
+        if character['type'] != 'Pure Human':
+            self.write(self.mutations_dropdown(character, 'Physical Mutations',
+                                               'MF_physical.txt'))
 
-        self.write(self.mutations_dropdown('Mental Mutations', 'MF_mental.txt'))
+        if character['type'] != 'Pure Human':
+            self.write(self.mutations_dropdown(character, 'Mental Mutations',
+                                               'MF_mental.txt'))
 
-        self.write(self.mutations_dropdown('Plant Mutations', 'MF_plant.txt'))
+        if character['type'] == 'Mutant Plant':
+            self.write(self.mutations_dropdown(character, 'Plant Mutations',
+                                               'MF_plant.txt'))
 
         self.write('<i></i></span></div></div><br>')
         self.write('<div><button type="button" onclick="view_pdf()" ')
