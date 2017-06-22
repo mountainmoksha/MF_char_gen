@@ -8,27 +8,29 @@ import gen_char
 def query_by_name(name=''):
     """retrieve character from db by name"""
 
-    db = tinydb.TinyDB('chars.json')
+    database = tinydb.TinyDB('chars.json')
     char_query = tinydb.Query()
     try:
-        this_char = db.search(char_query.name == name)[0]
+        this_char = database.search(char_query.name == name)[0]
     except IndexError:
         this_char = None
-    db.close()
+    database.close()
     return this_char
 
 def insert_char(character):
     """insert a character dictionary into db"""
 
-    db = tinydb.TinyDB('chars.json')
-    db.insert(character)
-    db.close()
+    database = tinydb.TinyDB('chars.json')
+    database.insert(character)
+    database.close()
 
 def rm_by_name(name):
-    db = tinydb.TinyDB('chars.json')
+    """remove a character dict from db"""
+
+    database = tinydb.TinyDB('chars.json')
     char_query = tinydb.Query()
-    db.remove(char_query.name == name)
-    db.close()
+    database.remove(char_query.name == name)
+    database.close()
 
 if __name__ == '__main__':
 

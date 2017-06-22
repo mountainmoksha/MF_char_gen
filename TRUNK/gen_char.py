@@ -244,7 +244,7 @@ def char_name(character):
             else:
                 character_name = character_name + letter.lower()
 
-    elif (character['type'] == 'Mutant Animal'):
+    elif character['type'] == 'Mutant Animal':
 
         # one name, but longer
         for letter_idx in range(random.randrange(5, 8)):
@@ -258,7 +258,7 @@ def char_name(character):
             else:
                 character_name = character_name + letter.lower()
 
-    elif (character['type'] == 'Mutant Plant'):
+    elif character['type'] == 'Mutant Plant':
 
         # one name, but longer
         for letter_idx in range(random.randrange(5, 8)):
