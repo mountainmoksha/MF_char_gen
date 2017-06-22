@@ -308,10 +308,11 @@ def char(char_type=None, level=1, sub_type=True, gen_name=True, rand_synth=False
     character = {}
     character['type'] = char_type
 
+    character['name'] = char_name(character)
     if gen_name:
-        character['name'] = char_name(character)
+        character['use-name'] = True
     else:
-        character['alt-name'] = char_name(character)
+        character['use-name'] = False
 
     character['attributes'] = gen_attrs.attrs(method)
 

@@ -50,10 +50,7 @@ def gen_char_pdf(character):
     xml_p.close()
     doc_obj = xml.dom.minidom.parseString(xml_string)
 
-    if 'name' in character:
-        file_name = 'char_pdfs/' + character['name'].replace(' ', '_') + '_blank.pdf'
-    else:
-        file_name = 'char_pdfs/' + character['alt-name'].replace(' ', '_') + '_blank.pdf'
+    file_name = 'char_pdfs/' + character['name'].replace(' ', '_') + '_blank.pdf'
 
     character_canvas = canvas.Canvas(file_name)
     character_canvas.setFont('Courier-BoldOblique', 10)
@@ -66,7 +63,7 @@ def gen_char_pdf(character):
     character_canvas.drawString(77, 360, str((character['attributes'])['Willpower']))
     character_canvas.drawString(77, 318, str((character['attributes'])['Charisma']))
 
-    if 'name' in character:
+    if character['use-name']:
         character_canvas.drawString(246, 683, str(character['name']))
 
     if 'sub_type' in character:

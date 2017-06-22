@@ -182,7 +182,10 @@ class EditHandler(tornado.web.RequestHandler):
         self.write('<img src="MF_logo_color.png" alt="MF_logo_color.png" width="100%">')
 
         self.write('<div class="title">')
-        self.write('<h2>Name:  ' + character['name'] + '</h2>')
+        if character['use-name']:
+            self.write('<h2>Name:  ' + character['name'] + '</h2>')
+        else:
+            self.write('<h2>Name:</h2>')
         self.write('<h2>Class:  ' + character['type'] + '</h2>')
         self.write('</div>')
 
