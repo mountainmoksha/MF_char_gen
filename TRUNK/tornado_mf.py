@@ -180,7 +180,7 @@ class EditHandler(tornado.web.RequestHandler):
 #        ret_str += '<div class="large">'
         ret_str += '<select name="' + attr.lower() + '" id="' + attr.lower() + '_select">'
         score = int((character['attributes'])[attr])
-        for attr_idx in range(3, 18):
+        for attr_idx in range(3, 19):
             if score == attr_idx:
                 out_line = '<option value="' + str(attr_idx) + '" selected>'
                 out_line += str(attr_idx) + '</option>'
