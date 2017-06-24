@@ -41,6 +41,12 @@ class CommitHandler(tornado.web.RequestHandler):
         """respond to HTTP get method"""
 
         name = None
+        final_physical_muts = []
+        physical_muts = []
+        final_mental_muts = []
+        mental_muts = []
+        final_plant_muts = []
+        plant_muts = []
 
         for section in self.request.uri.split('?'):
             this_section = section.split('=')
@@ -58,6 +64,25 @@ class CommitHandler(tornado.web.RequestHandler):
                 willpower = section.split('=')[1]
             if this_section[0] == 'Charisma':
                 charisma = section.split('=')[1]
+            if this_section[0] == 'physical':
+                this_phys = (section.split('=')[1]).replace('%20', ' ')
+                physical_muts.append(this_phys)
+            if this_section[0] == 'mental':
+                this_ment = (section.split('=')[1]).replace('%20', ' ')
+                mental_muts.append(this_ment)
+            if this_section[0] == 'plant':
+                this_plant = (section.split('=')[1]).replace('%20', ' ')
+                plant_muts.append(this_plant)
+
+        for physical_mut in physical_muts:
+            if (physical_mut != 'None...'):
+                final_physical_muts.append(physical_mut.replace('_', ' '))
+        for mental_mut in mental_muts:
+            if mental_mut != 'None...':
+                final_mental_muts.append(mental_mut.replace('_', ' '))
+        for plant_mut in plant_muts:
+            if plant_mut != 'None...':
+                final_plant_muts.append(plant_mut.replace('_', ' '))
 
         name = name.replace('%20', ' ')
 
@@ -69,6 +94,10 @@ class CommitHandler(tornado.web.RequestHandler):
         (character['attributes'])['Intelligence'] = intelligence
         (character['attributes'])['Willpower'] = willpower
         (character['attributes'])['Charisma'] = charisma
+
+        character['physical'] = final_physical_muts
+        character['mental'] = final_mental_muts
+        character['plant'] = final_plant_muts
 
         db_access.rm_by_name(character['name'])
         db_access.insert_char(character)
@@ -92,22 +121,40 @@ class EditHandler(tornado.web.RequestHandler):
         """generate drop-down for mutations"""
 
         search_key = (label.split()[0]).lower()
+        total_drops = 4
+
+        if ((character['type'] == 'Basic Android') or
+            (character['type'] == 'Synthetic Android') or
+            (character['type'] == 'Replicant')):
+            total_drops = 3
+
+        if (character['type'] == 'Mutant Plant'):
+            if search_key == 'plant':
+                total_drops = 2
+            else:
+                total_drops = 6
+
+        search_muts = False
+
         if search_key in character:
-            print(character[search_key])
-            #TODO: use this down below to put selected on lines in drop downs
+            search_muts = True
 
         ret_str = '<label class="title">' + label + '</label>'
         ret_str += '<div class="large">'
 
-        for drop_idx in range(4):
+        for drop_idx in range(total_drops):
             ret_str += '<span>'
             ret_str += str('<select name="' + label.replace(' ', '_') + str(drop_idx) +
                            '" id="' + label.replace(' ', '_') + str(drop_idx) + '_select">')
             out_line = '<option value="None..." >None...</option>'
             for mutation in open(mutations_file, 'r'):
                 mutation = mutation.rstrip()[6:]
-                #out_line = '<option value="' + mutation + '" selected>'
-                out_line += '<option value="' + mutation.replace(' ', '_') + '" >'
+                if (search_muts and
+                   (drop_idx < len(character[search_key])) and
+                   ((character[search_key])[drop_idx] == mutation)):
+                    out_line += '<option value="' + mutation.replace(' ', '_') + '" selected>'
+                else:
+                    out_line += '<option value="' + mutation.replace(' ', '_') + '" >'
                 out_line += mutation + '</option>'
             ret_str += out_line
             ret_str += '</span>'
@@ -116,14 +163,14 @@ class EditHandler(tornado.web.RequestHandler):
         ret_str += '</div>'
         ret_str += '<br>'
 
-        return ret_str
+        return ret_str, total_drops
 
     def attr_dropdown(self, character, attr='Strength'):
         """generate drop-down for discreet attribute"""
 
-        ret_str = '<label class="title">' + attr + '</label>'
-        ret_str += '<div class="large">'
-        ret_str += '<span>'
+        ret_str = '<span>'
+        ret_str += '<label class="title">' + attr + '</label>'
+#        ret_str += '<div class="large">'
         ret_str += '<select name="' + attr.lower() + '" id="' + attr.lower() + '_select">'
         score = int((character['attributes'])[attr])
         for attr_idx in range(3, 18):
@@ -135,9 +182,9 @@ class EditHandler(tornado.web.RequestHandler):
                 out_line = '<option value="' + str(attr_idx) + '">'
                 out_line += str(attr_idx) + '</option>'
                 ret_str += out_line
-        ret_str += '</span>'
         ret_str += '</select>'
-        ret_str += '</div>'
+        ret_str += '</span>'
+#        ret_str += '</div>'
         ret_str += '<br>'
 
         return ret_str
@@ -224,17 +271,26 @@ class EditHandler(tornado.web.RequestHandler):
         for attr in character['attributes']:
             self.write(self.attr_dropdown(character, attr))
 
-        if character['type'] != 'Pure Human':
-            self.write(self.mutations_dropdown(character, 'Physical Mutations',
-                                               'MF_physical.txt'))
+        self.write('<br>')
+
+        no_phys_drops = 0
+        no_ment_drops = 0
+        no_plnt_drops = 0
 
         if character['type'] != 'Pure Human':
-            self.write(self.mutations_dropdown(character, 'Mental Mutations',
-                                               'MF_mental.txt'))
+            ret_str, no_phys_drops = self.mutations_dropdown(character, 'Physical Mutations',
+                                                             'MF_physical.txt')
+            self.write(ret_str)
+
+        if character['type'] != 'Pure Human':
+            ret_str, no_ment_drops = self.mutations_dropdown(character, 'Mental Mutations',
+                                                             'MF_mental.txt')
+            self.write(ret_str)
 
         if character['type'] == 'Mutant Plant':
-            self.write(self.mutations_dropdown(character, 'Plant Mutations',
-                                               'MF_plant.txt'))
+            ret_str, no_plnt_drops = self.mutations_dropdown(character, 'Plant Mutations',
+                                                             'MF_plant.txt')
+            self.write(ret_str)
 
         self.write('<i></i></span></div></div><br>')
         self.write('<div><button type="button" onclick="view_pdf()" ')
@@ -247,6 +303,21 @@ class EditHandler(tornado.web.RequestHandler):
         for attr in character['attributes']:
             self.write('view_url += \"?' + attr + '=\"\n')
             self.write(str('view_url += document.getElementById("' + attr.lower() +
+                           '_select").value' + '\n'))
+        for drop_idx in range(no_phys_drops):
+            self.write('view_url += \"?physical=\"\n')
+            self.write(str('view_url += document.getElementById("Physical_Mutations' +
+                           str(drop_idx) +
+                           '_select").value' + '\n'))
+        for drop_idx in range(no_ment_drops):
+            self.write('view_url += \"?mental=\"\n')
+            self.write(str('view_url += document.getElementById("Mental_Mutations' +
+                           str(drop_idx) +
+                           '_select").value' + '\n'))
+        for drop_idx in range(no_plnt_drops):
+            self.write('view_url += \"?plant=\"\n')
+            self.write(str('view_url += document.getElementById("Plant_Mutations' +
+                           str(drop_idx) +
                            '_select").value' + '\n'))
         self.write('window.open(view_url)\n')
         self.write('}\n')
