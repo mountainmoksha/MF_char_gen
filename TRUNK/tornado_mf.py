@@ -84,6 +84,13 @@ class CommitHandler(tornado.web.RequestHandler):
             if plant_mut != 'None...':
                 final_plant_muts.append(plant_mut.replace('_', ' '))
 
+        if len(final_physical_muts) == 0:
+            final_physical_muts.append('')
+        if len(final_mental_muts) == 0:
+            final_mental_muts.append('')
+        if len(final_plant_muts) == 0:
+            final_plant_muts.append('')
+
         name = name.replace('%20', ' ')
 
         character = db_access.query_by_name(name)
