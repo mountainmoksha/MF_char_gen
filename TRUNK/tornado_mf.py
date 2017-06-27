@@ -53,17 +53,17 @@ class CommitHandler(tornado.web.RequestHandler):
             if this_section[0] == 'name':
                 name = section.split('=')[1]
             if this_section[0] == 'Strength':
-                strength = section.split('=')[1]
+                strength = int(section.split('=')[1])
             if this_section[0] == 'Dexterity':
-                dexterity = section.split('=')[1]
+                dexterity = int(section.split('=')[1])
             if this_section[0] == 'Constitution':
-                constitution = section.split('=')[1]
+                constitution = int(section.split('=')[1])
             if this_section[0] == 'Intelligence':
-                intelligence = section.split('=')[1]
+                intelligence = int(section.split('=')[1])
             if this_section[0] == 'Willpower':
-                willpower = section.split('=')[1]
+                willpower = int(section.split('=')[1])
             if this_section[0] == 'Charisma':
-                charisma = section.split('=')[1]
+                charisma = int(section.split('=')[1])
             if this_section[0] == 'physical':
                 this_phys = (section.split('=')[1]).replace('%20', ' ')
                 physical_muts.append(this_phys)
@@ -95,12 +95,17 @@ class CommitHandler(tornado.web.RequestHandler):
 
         character = db_access.query_by_name(name)
 
-        (character['attributes'])['Strength'] = strength
-        (character['attributes'])['Dexterity'] = dexterity
-        (character['attributes'])['Constitution'] = constitution
-        (character['attributes'])['Intelligence'] = intelligence
-        (character['attributes'])['Willpower'] = willpower
-        (character['attributes'])['Charisma'] = charisma
+        del character['attributes']
+        attr_dict = {}
+
+        attr_dict['Strength'] = strength
+        attr_dict['Dexterity'] = dexterity
+        attr_dict['Constitution'] = constitution
+        attr_dict['Intelligence'] = intelligence
+        attr_dict['Willpower'] = willpower
+        attr_dict['Charisma'] = charisma
+
+        character['attributes'] = attr_dict
 
         character['physical'] = final_physical_muts
         character['mental'] = final_mental_muts

@@ -53,6 +53,7 @@ def gen_char_pdf(character):
     file_name = 'char_pdfs/' + character['name'].replace(' ', '_') + '_blank.pdf'
 
     character_canvas = canvas.Canvas(file_name)
+    character_canvas.setTitle(character['name'])
     character_canvas.setFont('Courier-BoldOblique', 10)
     character_canvas.setFillColorRGB(1.0, 0.0, 0.0)
 
