@@ -339,6 +339,7 @@ class EditHandler(tornado.web.RequestHandler):
                            str(drop_idx) +
                            '_select").value' + '\n'))
         self.write('window.open(view_url)\n')
+        self.write('window.close()\n')
         self.write('}\n')
         self.write('</script>\n')
         self.write('<br>')
