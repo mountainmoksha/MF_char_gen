@@ -1,0 +1,4 @@
+The mutant is capable of firing a bolt of pure mental
+energy into the mind of another creature, doing 3d6 hp
+damage at up to 50 feet. This ability takes time to
+recharge, and can only be used once every two rounds.

@@ -1,0 +1,11 @@
+This ability allows the mutant to disappear from one
+location and appear in a location up to 20 miles distant
+without physically crossing the intervening space. If the
+mutant has never been to the location he is teleporting to
+or is only slightly familiar with it (ML’s discretion) he has a
+25% chance of suffering 10d6 damage upon arrival as he
+teleports into a space occupied by another object, or
+misjudges some aspect of the location. If he is intimately
+familiar with his destination or has spent 2d4 hours
+conjuring an image of the location in his mind he can
+teleport safely.

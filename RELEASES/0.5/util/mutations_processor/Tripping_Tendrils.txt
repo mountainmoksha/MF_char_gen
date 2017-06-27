@@ -1,0 +1,8 @@
+These tendrils have a very low strength (1d4), and are
+capable of only very slow movement. Given enough time,
+however, they can crush a small or weakened creature in
+their grasp. Once in position, without resistance, they may
+inflict 1d6 hp damage per round. The plant usually grows
+a large patch (2d10 feet in diameter) of these vines to trip
+victims. Victims who fall unconscious on vines such as
+these are not likely to waken.

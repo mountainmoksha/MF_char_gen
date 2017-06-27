@@ -1,0 +1,12 @@
+The character can see the UV spectrum and will be able to
+see objects that emit this type of energy. This spectrum
+includes gamma radiation, x-rays, and other high intensity
+radiation. As a result, a character with this vision can see if
+areas have a high level of background radiation. At night,
+this vision allows a character to see to a distance of 300’.
+Since this vision relies on heavy background radiation, it is
+not useful underground unless there is a source of
+radiation for illumination. If a mutant has ordinary vision
+and ultraviolet vision, the ultraviolet vision is only usable in
+darkness, and it takes 1 round to transition between each
+form.

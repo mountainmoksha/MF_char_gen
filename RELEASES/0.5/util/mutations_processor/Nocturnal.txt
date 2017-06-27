@@ -1,0 +1,4 @@
+The plant is completely motionless during daylight hours.
+As soon as the sun dips below the horizon or the plant is in
+full shadow for 1d4 rounds, however, it will begin to move
+or otherwise act if it is able.

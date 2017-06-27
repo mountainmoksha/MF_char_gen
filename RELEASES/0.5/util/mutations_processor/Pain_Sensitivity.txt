@@ -1,0 +1,2 @@
+The character’s nervous system is very susceptible to injury,
+resulting in all damage to the character being doubled.
