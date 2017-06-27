@@ -152,7 +152,8 @@ class EditHandler(tornado.web.RequestHandler):
         for drop_idx in range(total_drops):
             ret_str += '<span>'
             ret_str += str('<select name="' + label.replace(' ', '_') + str(drop_idx) +
-                           '" id="' + label.replace(' ', '_') + str(drop_idx) + '_select">')
+                           '" id="' + label.replace(' ', '_') + str(drop_idx) + '_select"')
+            ret_str += ' style="background-color:black;color:white">'
             out_line = '<option value="None..." >None...</option>'
             for mutation in open(mutations_file, 'r'):
                 mutation = mutation.rstrip()[6:]
@@ -174,12 +175,14 @@ class EditHandler(tornado.web.RequestHandler):
 
     def attr_dropdown(self, character, attr='Strength'):
         """generate drop-down for discreet attribute"""
-
-        ret_str = '<span>'
-        ret_str += '<label class="title">' + attr + '</label>'
-#        ret_str += '<div class="large">'
-        ret_str += '<select name="' + attr.lower() + '" id="' + attr.lower() + '_select">'
         score = int((character['attributes'])[attr])
+
+        ret_str = '<tr>'
+        ret_str += '<td><label>' + attr + '</label></td>'
+        ret_str += '<td><label>' + str(score) + '</label></td>'
+        ret_str += '<td>'
+        ret_str += '<select name="' + attr.lower() + '" id="' + attr.lower() + '_select"'
+        ret_str += ' style="background-color:black;color:white">'
         for attr_idx in range(3, 19):
             if score == attr_idx:
                 out_line = '<option value="' + str(attr_idx) + '" selected>'
@@ -190,9 +193,8 @@ class EditHandler(tornado.web.RequestHandler):
                 out_line += str(attr_idx) + '</option>'
                 ret_str += out_line
         ret_str += '</select>'
-        ret_str += '</span>'
-#        ret_str += '</div>'
-        ret_str += '<br>'
+        ret_str += '</td>'
+        ret_str += '</tr>'
 
         return ret_str
 
@@ -274,10 +276,15 @@ class EditHandler(tornado.web.RequestHandler):
         self.write('</div>')
 
         self.write('<div class="element-select">')
+        self.write('<table>')
+        self.write('<th>Attribute</th>')
+        self.write('<th>Roll</th>')
+        self.write('<th>Select</th>')
 
         for attr in character['attributes']:
             self.write(self.attr_dropdown(character, attr))
 
+        self.write('<table>')
         self.write('<br>')
 
         no_phys_drops = 0
@@ -348,6 +355,7 @@ class PDFViewHandler(tornado.web.RequestHandler):
         """respond to HTTP get method"""
 
         name = None
+        logger.info('in PDFViewHandler with ' + self.request.uri)
 
         for section in self.request.uri.split('?'):
             this_section = section.split('=')
