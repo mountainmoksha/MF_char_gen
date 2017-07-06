@@ -397,9 +397,9 @@ def make_app():
         (r"/char_pdfs/(.*)", tornado.web.StaticFileHandler, {"path": "./char_pdfs"},),
         (r"/char_xmls/(.*)", tornado.web.StaticFileHandler, {"path": "./char_xmls"},),
         (r"/mf_char_gen_files/formoid1/(.*)", tornado.web.StaticFileHandler,
-         {"path": "./char_gen_form/mf_char_gen_files/formoid1"},),
+        {"path": "./char_gen_form/mf_char_gen_files/formoid1"},),
         (r"/(.*)", tornado.web.StaticFileHandler, {"path": "./"},),
-    ])
+    ], compress_response=True)
 
 
 if __name__ == "__main__":
