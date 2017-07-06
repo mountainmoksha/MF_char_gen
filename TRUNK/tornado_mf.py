@@ -270,7 +270,7 @@ class EditHandler(tornado.web.RequestHandler):
         self.write('font-size:14px;font-family:')
         self.write('\'Open Sans\',\'Helvetica Neue\', \'Helvetica\', Arial, ')
         self.write('Verdana, sans-serif;color:#ECECEC;max-width:480px;min-width:150px">')
-        self.write('<img src="MF_logo_color.png" alt="MF_logo_color.png" width="100%">')
+        self.write('<img src="MF_logo_color.jpeg" alt="MF_logo_color.jpeg" width="100%">')
 
         self.write('<div class="title">')
         if character['use-name']:
@@ -314,7 +314,7 @@ class EditHandler(tornado.web.RequestHandler):
         self.write('<i></i></span></div></div><br>')
         self.write('<div><button type="button" onclick="view_pdf()" ')
         self.write('style="background-color:red;">VIEW PDF</button></div>')
-        self.write('<br><img src="MF_logo_color.png" alt="MF_logo_color.png" width="100%">')
+        self.write('<br><img src="MF_logo_color.jpeg" alt="MF_logo_color.jpeg" width="100%">')
         self.write('</form>\n')
         self.write('<script>\n')
         self.write('function view_pdf() {\n')
@@ -393,7 +393,7 @@ def make_app():
         (r"/VIEW_PDF", PDFViewHandler),
         (r"/EDIT_CHAR", EditHandler),
         (r"/COMMIT_CHAR", CommitHandler),
-        (r"/(MF_logo_color\.png)", tornado.web.StaticFileHandler, {"path": "./images"}),
+        (r"/(MF_logo_color\.jpeg)", tornado.web.StaticFileHandler, {"path": "./images"}),
         (r"/char_pdfs/(.*)", tornado.web.StaticFileHandler, {"path": "./char_pdfs"},),
         (r"/char_xmls/(.*)", tornado.web.StaticFileHandler, {"path": "./char_xmls"},),
         (r"/mf_char_gen_files/formoid1/(.*)", tornado.web.StaticFileHandler,
