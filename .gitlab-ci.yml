@@ -10,4 +10,9 @@ install_deps:
     - cd bin
     - export PATH=`pwd`/:$PATH
     - echo export PATH=`pwd`/:\$PATH >> ~/.bashrc
-    - python3 -m pip install tornado pdfrw reportlab dicttoxml xmltodict tinydb ujson
+    - python3 -m pip install tornado pdfrw reportlab dicttoxml xmltodict tinydb ujson nose
+
+unit_tests:
+  script:
+    - cd /builds/exit_0/MF_char_gen/TRUNK/tests/
+    - nosetests -v *.py
