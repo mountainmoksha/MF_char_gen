@@ -1,6 +1,6 @@
 install_deps:
   script:
-    - echo shell
+    - echo $SHELL
       #    - wget https://www.open-mpi.org/software/ompi/v2.1/downloads/openmpi-2.1.0.tar.gz
       #    - tar xvzf openmpi-2.1.0.tar.gz
       #    - rm -Rf openmpi-2.1.0.tar.gz
