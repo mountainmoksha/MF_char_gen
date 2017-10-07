@@ -1,17 +1,13 @@
 install_deps:
   script:
-    - echo $SHELL
-      #    - wget https://www.open-mpi.org/software/ompi/v2.1/downloads/openmpi-2.1.0.tar.gz
-      #    - tar xvzf openmpi-2.1.0.tar.gz
-      #    - rm -Rf openmpi-2.1.0.tar.gz
-      #    - cd openmpi-2.1.0/
-      #    - ./configure --prefix=`pwd`/
-      #    - make
-      #    - make install
-      #    - cd bin
-      #    - export PATH=`pwd`/:$PATH
-      #    - echo export PATH=`pwd`/:\$PATH >> ~/.bashrc
-      #    - cd ../lib/
-      #    - export LD_LIBRARY_PATH=`pwd`/:$LD_LIBRARY_PATH
-      #    - echo export LD_LIBRARY_PATH=`pwd`/:\$LD_LIBRARY_PATH  >> ~/.bashrc
-      #    - python3 -m pip install tornado pdfrw reportlab dicttoxml xmltodict tinydb ujson
+    - wget https://www.python.org/ftp/python/3.4.3/Python-3.4.3.tar.xz
+    - tar xvf Python-3.4.3.tar.xz
+    - rm -Rf Python-3.4.3.tar.xz
+    - cd Python-3.4.3
+    - ./configure --prefix=`pwd`/
+    - make
+    - make install
+    - cd bin
+    - export PATH=`pwd`/:$PATH
+    - echo export PATH=`pwd`/:\$PATH >> ~/.bashrc
+    - python3 -m pip install tornado pdfrw reportlab dicttoxml xmltodict tinydb ujson
