@@ -8,4 +8,5 @@ unit_tests:
   script:
     - export PYTHONPATH=/builds/exit_0/MF_char_gen/TRUNK/:$PYTHONPATH
     - cd /builds/exit_0/MF_char_gen/TRUNK/tests/
-    - nosetests -v *.py
+      #    - nosetests -v *.py
+    - find / -name nosetests
