@@ -1,12 +1,10 @@
 image: python:3
 
-install_deps:
-  script:
-    - python3 -m pip install tornado pdfrw reportlab dicttoxml xmltodict tinydb ujson nose
+before_script:
+  - python3 -m pip install tornado pdfrw reportlab dicttoxml xmltodict tinydb ujson nose
 
 unit_tests:
   script:
     - export PYTHONPATH=/builds/exit_0/MF_char_gen/TRUNK/:$PYTHONPATH
     - cd /builds/exit_0/MF_char_gen/TRUNK/tests/
-      #    - nosetests -v *.py
-    - find / -name nosetests
+    - nosetests -v *.py
