@@ -2,19 +2,10 @@ image: python:3
 
 install_deps:
   script:
-    - wget https://www.python.org/ftp/python/3.4.3/Python-3.4.3.tar.xz
-    - tar xvf Python-3.4.3.tar.xz
-    - rm -Rf Python-3.4.3.tar.xz
-    - cd Python-3.4.3
-    - ./configure --prefix=`pwd`/
-    - make
-    - make install
-    - cd bin
-    - export PATH=`pwd`/:$PATH
-    - echo export PATH=`pwd`/:\$PATH >> ~/.bashrc
     - python3 -m pip install tornado pdfrw reportlab dicttoxml xmltodict tinydb ujson nose
 
 unit_tests:
   script:
+    - export PYTHONPATH=/builds/exit_0/MF_char_gen/TRUNK/:$PYTHONPATH
     - cd /builds/exit_0/MF_char_gen/TRUNK/tests/
     - nosetests -v *.py
