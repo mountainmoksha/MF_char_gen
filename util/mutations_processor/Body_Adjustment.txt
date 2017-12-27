@@ -1,0 +1,6 @@
+The character can heal all of his hit points once every 24
+hours. In addition, if the character is in a life or death
+situation, this mutation can double his physical attributes
+(Strength, Dexterity, movement) for 3d10 rounds.|
+This power may only be used 1d4 times per week (roll at
+character creation).

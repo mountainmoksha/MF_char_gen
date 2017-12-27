@@ -1,0 +1,13 @@
+The character is endowed with a weapon that is toxic to
+those affected by it. This could be in the form of a gas that
+affects everyone in a specific radius, a spray that can affect
+a specific target, or a bite/sting that affects a target at a
+range of touch. Some common types of toxic weapons are
+paralyzing venoms, blinding gasses or sprays, and acidic
+bodily fluids. The range or radius of the attack is up to
+30’. Any kind of poison must be rolled on the poison table
+in the Adventuring section to determine poison class at
+character generation, or alternative effects may be
+designed with the ML. In general, no attack should exceed
+10d6 in damage (with the exception of poisons that may
+inflict death).

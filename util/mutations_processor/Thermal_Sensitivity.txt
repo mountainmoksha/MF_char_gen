@@ -1,0 +1,3 @@
+The plant is susceptible to heat or cold (50%). Such energy
+based attacks deal 2 extra points per die of damage in
+addition to the regular damage inflicted.

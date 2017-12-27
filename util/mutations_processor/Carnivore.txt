@@ -1,0 +1,3 @@
+The plant has mouths that are capable of inflicting 1d8
+damage with a bite. Roll 1d12 to determine how many
+mouths are on the plant.

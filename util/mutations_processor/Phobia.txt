@@ -1,0 +1,14 @@
+The mutant has an irrational fear of some creature or
+object. Whenever he comes face to face with the object of
+his fear, he flees immediately, throwing anything in his
+hands at the feared object/creature in an effort to distract
+or harm it. He will flee in the opposite direction at full
+movement for 1d4 rounds.|
+Roll 1d6 to find out what category his fear falls into. The
+ML will flesh out the specifics.|
+1. Other technological (robots, vehicles)|
+2. Weaponry (energy weapons, other)|
+3. Animal|
+4. Plant|
+5. Ordinary object|
+6. Insect|

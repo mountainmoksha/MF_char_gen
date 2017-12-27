@@ -1,0 +1,13 @@
+This mutation grants the ability to instantly alter the body
+density of a target, thus shrinking or enlarging, with
+maximum enlargement up to twice the natural body size.
+Each fraction of a body size change is accompanied by an
+equal fraction increase or decrease to armor class and
+speed. For example, reduction of size by 1/4 also reduces
+(improves) armor class and movement by 1/4. Becoming
+twice as large increases armor class by a multiple of two
+(to a maximum of 10) and divides movement in half as
+well. Note that reduction of body density to 1/8 makes a
+character impervious to damage from sharp implements.|
+This mutation has a range of 90 feet, a duration of 1d4
+turns, and cannot be used on the mutant who wields it.

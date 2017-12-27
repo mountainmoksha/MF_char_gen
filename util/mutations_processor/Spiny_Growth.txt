@@ -1,0 +1,10 @@
+Parts of the mutant’s body are covered with prickly spines,
+which may be small, medium, or large. Roll 1d6 at
+character generation to determine the size. Small spines
+(1-2) inflict 1d4 damage, medium spines (3-4) inflict 1d6,
+and large spines (5-6) are capable of inflicting 1d8
+damage. Any type can be removed and thrown as a
+dagger. With a little effort, the small spines are capable of
+being hidden beneath normal clothing, but the medium
+and large spines are virtually impossible to conceal
+because of their size.

@@ -1,0 +1,9 @@
+When provided with proper rest and food, this mutation
+allows the character to recuperate from injury at a
+staggering rate. Given time, mutants may re-grow severed
+limbs.|
+The character heals 10 extra hit points per day. If he
+should be so unfortunate as to lose a limb or extremity
+(and survive), the lost body part will regenerate over a
+period of 1d4+2 weeks. A head may never be regrown,
+and characters do not regenerate from death.

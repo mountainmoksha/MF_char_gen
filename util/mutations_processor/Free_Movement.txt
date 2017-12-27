@@ -1,0 +1,4 @@
+The plant is capable of maneuvering on its own at
+standard movement. This may be through the use of leg-
+like protrusions or by pulling itself along the ground with
+vines or other branches.

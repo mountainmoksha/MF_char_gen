@@ -1,0 +1,7 @@
+The plant is capable of utilizing one or more human
+senses, or other senses such as sonar, thermal vision or
+other unusual senses. It is up to the player and Mutant
+Lord to determine how the plant uses them. If this mutation
+is rolled more than once, one or more of the acquired
+senses may become increased as per the increased senses
+physical mutation.
