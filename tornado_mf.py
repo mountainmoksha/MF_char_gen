@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """web server for Mutant Future character generator"""
 
+import pprint
 import tornado.ioloop
 import tornado.web
 import gen_char
@@ -253,7 +254,8 @@ class EditHandler(tornado.web.RequestHandler):
                                   assign_name, rand_synth, rand_repl,
                                   method)
 
-        log_line = 'returning: ' + str(character)
+        pprinter = pprint.PrettyPrinter(indent=4)
+        log_line = 'returning: \n' + pprinter.pformat(character)
         logger.info(log_line)
 
         db_access.insert_char(character)

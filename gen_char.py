@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """main module: Mutant Future low-level char gen"""
 
+import pprint
 import datetime
 import random
 import read_muts
@@ -360,4 +361,5 @@ def char(char_type=None, level=1, sub_type=True, gen_name=True, rand_synth=False
 if __name__ == '__main__':
 
     CHARACTER = char(None, None, True, True, False, False)
-    print(CHARACTER)
+    PPRINTER = pprint.PrettyPrinter(indent=4)
+    PPRINTER.pprint(CHARACTER)

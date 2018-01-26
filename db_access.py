@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """db access module for mfchargen"""
 
+import pprint
 import tinydb
 from tinydb.operations import delete
 import gen_char
@@ -37,5 +38,6 @@ if __name__ == '__main__':
     CHARACTER = gen_char.char()
     insert_char(CHARACTER)
     RET_CHAR = query_by_name(CHARACTER['name'])
-    print(RET_CHAR)
+    PPRINTER = pprint.PrettyPrinter(indent=4)
+    PPRINTER.pprint(RET_CHAR)
     rm_by_name(CHARACTER['name'])
