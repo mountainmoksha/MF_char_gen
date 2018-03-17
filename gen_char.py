@@ -176,6 +176,33 @@ def char_mutations(character):
         character['plant'] = ['']
 
 
+def char_to_hit(character):
+    """add to-hit numbers to character (by level in MF)"""
+
+    # level zero to hit table (this gen doesn't create zeros
+    to_hit_table = list(reversed(range(11, 21)))
+
+    for to_hit_idx in range(len(to_hit_table)):
+
+        if (character['level'] == 1) or (character['level'] == 2):
+            to_hit_table[to_hit_idx] -= 1
+        if (character['level'] == 3):
+            to_hit_table[to_hit_idx] -= 2
+        if (character['level'] == 4):
+            to_hit_table[to_hit_idx] -= 3
+        if (character['level'] == 5):
+            to_hit_table[to_hit_idx] -= 4
+        if (character['level'] == 6):
+            to_hit_table[to_hit_idx] -= 5
+        if (character['level'] == 7) or (character['level'] == 8):
+            to_hit_table[to_hit_idx] -= 6
+        if (character['level'] == 9):
+            to_hit_table[to_hit_idx] -= 7
+        if (character['level'] == 10):
+            to_hit_table[to_hit_idx] -= 8
+
+    character['to_hit'] = to_hit_table
+
 def char_hit_points(character):
     """obtain character hit points by class"""
 
@@ -353,6 +380,8 @@ def char(char_type=None, level=1, sub_type=True, gen_name=True, rand_synth=False
     gen_saves(character)
 
     gen_xp(character)
+
+    char_to_hit(character)
 
     character['creation_time'] = str(datetime.datetime.utcnow())
 
