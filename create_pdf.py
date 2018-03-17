@@ -104,6 +104,19 @@ def gen_char_pdf(character):
             character_canvas.drawString(85, mutations_current_height, (character['level_modifiers'])[level_mod_key])
             mutations_current_height = mutations_current_height - 13
 
+    # to hit table:
+    character_canvas.drawString(71, 88, str(character['to_hit'][0]))
+    character_canvas.drawString(100, 88, str(character['to_hit'][1]))
+    character_canvas.drawString(129, 88, str(character['to_hit'][2]))
+    character_canvas.drawString(158, 88, str(character['to_hit'][3]))
+    character_canvas.drawString(187, 88, str(character['to_hit'][4]))
+    character_canvas.drawString(216, 88, str(character['to_hit'][5]))
+    character_canvas.drawString(216, 88, str(character['to_hit'][5]))
+    character_canvas.drawString(245, 88, str(character['to_hit'][6]))
+    character_canvas.drawString(274, 88, str(character['to_hit'][7]))
+    character_canvas.drawString(303, 88, str(character['to_hit'][8]))
+    character_canvas.drawString(332, 88, str(character['to_hit'][9]))
+
     # this advances us to page 2:
     character_canvas.showPage()
     character_canvas.setFont('Courier-BoldOblique', 8)
