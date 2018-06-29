@@ -5,6 +5,6 @@ before_script:
 
 unit_tests:
   script:
-    - export PYTHONPATH=/builds/exit_0/MF_char_gen/TRUNK/:$PYTHONPATH
-    - cd /builds/exit_0/MF_char_gen/TRUNK/tests/
+    - export PYTHONPATH=/builds/exit_0/MF_char_gen/:$PYTHONPATH
+    - cd /builds/exit_0/MF_char_gen//tests/
     - nosetests -v *.py
