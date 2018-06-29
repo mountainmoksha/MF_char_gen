@@ -1,3 +1,0 @@
-This mutation makes all poisons much more dangerous to
-the character. All saving throws versus poison are made
-with a penalty of -4.

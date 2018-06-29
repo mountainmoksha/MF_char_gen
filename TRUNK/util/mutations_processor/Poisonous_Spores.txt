@@ -1,6 +1,0 @@
-Whenever the plant is disturbed, it will emit a cloud of
-spores. These spores can cause any effect the player and
-Mutant Lord wishes. The most basic type of poisonous
-spore simply has a random class of poison, but others may
-be hallucinogenic, paralytic, or allergy inducing. All will
-allow a saving throw versus poison.

@@ -1,7 +1,0 @@
-This mutation allows the character to create an invisible
-field of energy that is difficult to penetrate. The force
-screen is close to the mutant’s body, extending only a few
-inches from his skin. It is capable of taking 5d6 hp worth
-of damage (the ML determines this secretly each time the
-power is used) before it collapses, leaving the mutant
-unprotected. The power may only be used once per day.

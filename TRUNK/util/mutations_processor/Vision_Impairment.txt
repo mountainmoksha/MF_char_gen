@@ -1,6 +1,0 @@
-This mutation covers all visual impairments that fall short
-of total blindness, including macular degeneration,
-myopia, severe light sensitivity, cataracts, etc. This
-condition makes it extremely difficult for the mutant to
-discern objects more than 50 feet away. Characters with
-this mutation have a -2 to hit in combat.

@@ -1,7 +1,0 @@
-The plant has become irradiated through mutation, and is
-capable of giving off a randomly determined class of
-radiation at a range of 150’. A good sized patch of these
-plants is capable of clearing a large area of animals and
-other radiation sensitive creatures, and will often become
-a safe haven for creatures that are immune to the effects
-of radiation.

@@ -1,8 +1,0 @@
-The mutant is capable of seeing up to 3 minutes into the
-future, but only with respect to dangerous things that will
-affect him. If the future indicates that he is going to suffer
-some form of damage, he immediately suffers 1d6 hp
-damage. If he is confronted with a vision of his death or of
-suffering a grievous wound that would take more than 1⁄2
-of his hit points, he suffers 2d6 hp damage and
-immediately enters a comatose state lasting 1 turn.

@@ -1,9 +1,0 @@
-This powerful mutation allows the mutant to generate a
-25’ radius sphere of deadly mental energy centered on the
-mutant. Within this sphere of energy all creatures except
-the mutant (friend or foe!) have their hit points reduced to
-1 point, and must save versus stun attacks or be knocked
-unconscious for 1d10 rounds. After using this mutation,
-the mutant is exhausted from the force of the mental
-exertion and may move at full rate but not attack for 2d10
-rounds.

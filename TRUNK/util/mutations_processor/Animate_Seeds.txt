@@ -1,4 +1,0 @@
-This mutation allows the seeds of a plant to maneuver
-once away from the plant. The seeds can have their own
-plant mutations, but will grow up to have the same
-mutations as the adult plant that spawned them.
