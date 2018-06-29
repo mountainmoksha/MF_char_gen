@@ -1,5 +1,0 @@
-The mutant’s body has a higher than normal level of
-electrical energy coursing through his body, energy which
-he can focus into a shock capable of damaging
-opponents who touch him. This electrical shock does 3d6
-hp damage.

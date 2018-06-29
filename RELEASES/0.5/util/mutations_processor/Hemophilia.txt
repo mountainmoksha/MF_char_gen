@@ -1,6 +1,0 @@
-The mutant’s white blood cells are diminished in count, 
-preventing him from healing as quickly as a normal 
-specimen of his kind. This mutant may only heal 1d3 hp 
-every other day. Once the character is injured, he begins 
-to bleed profusely, losing 2 hit points per round until the 
-wounds can be properly bandaged. 

@@ -1,7 +1,0 @@
-This is a highly variable mutation, and can be used to 
-create any number of body weaknesses. Examples include 
-brittle bones or susceptibility to bruising. These would 
-increase damage by falls or other blunt force trauma by a 
-degree decided on by the ML. However, damage should 
-usually be increased no more than by +3 per die of 
-damage. 

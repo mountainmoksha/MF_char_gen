@@ -1,8 +1,0 @@
-The character lacks the awareness that living creatures
-normally possess with regard to their bodies and
-immediate surroundings. The character does not feel pain
-when injured, even if a weapon has penetrated his body.
-The character will not be able to tell how much damage
-he has sustained without making a visual checkup of his
-entire body. The ML should keep track of the character’s
-hit points.
