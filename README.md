@@ -7,6 +7,7 @@ A docker container containing this application can be found at https://hub.docke
 This character generator is written in python3
 
 <details>
+<summary>python dependencies</summary><p>
 This project currently requires a working python3 installation containing the following libraries:
 
 python3 -m pip install tornado pdfrw reportlab dicttoxml xmltodict tinydb ujson
